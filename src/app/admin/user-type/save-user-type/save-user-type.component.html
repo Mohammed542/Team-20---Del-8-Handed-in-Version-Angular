@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>{{data ? 'Update' : 'Create'}}</h1>
+<div mat-dialog-content style="min-width: 500px; min-height: 100px;">
+  <form [formGroup]="formGroup">
+    <div class="col-12">
+      <label class="col-4">Name:</label>
+      <mat-form-field appearance="fill" class="col-8">
+        <input matInput placeholder="Name" formControlName="name" required />
+        <mat-error *ngIf="formGroup.get('name').invalid && formGroup.get('name').touched">
+          Please provide a Name.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <label class="col-4">Description:</label>
+      <mat-form-field appearance="fill" class="col-8">
+        <input matInput placeholder="Description" formControlName="description" required />
+        <mat-error *ngIf="formGroup.get('description').invalid && formGroup.get('description').touched">
+          Please provide a Description.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions style="display: flex; justify-content: space-between">
+  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()"
+    [disabled]="formGroup.invalid || formGroup.status === 'PENDING' || loading">{{data ? 'Update' : 'Create'}}</button>
+</div>

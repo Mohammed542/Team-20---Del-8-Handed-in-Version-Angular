@@ -1,0 +1,56 @@
+<div style="padding-left: 30%; padding-top: 5%;">
+    <form [formGroup]="form" class="example-form" style="text-align: center;">
+        <mat-card style="text-align: left; max-width: 50%;" >
+        <mat-card-content>
+          <h2><b><u>Capture Unit Municipal Bill</u></b></h2>
+                <h3><b><u>Water and Sanitation</u></b></h3>
+                Total:&nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{APL4}}</mat-label>
+                    <input matInput placeholder="APL4" disabled>
+                </mat-form-field> KL<br>
+
+                Total Unit Usage:&nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{APL5}}</mat-label>
+                    <input matInput placeholder="APL4" disabled>
+                </mat-form-field> KL<br>
+
+                <h3><b><u>Unit Electricty Amount</u></b></h3>
+                Unit Electricty Amount:&nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{APL1}}</mat-label>
+                <input matInput placeholder="APL1" disabled>
+            </mat-form-field> Kwh<br>
+
+                <h3><b><u>Sewage</u></b></h3>
+                Unit Size:&nbsp;&nbsp;
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{APLFive}}</mat-label>
+                    <input matInput placeholder="APL5" disabled>
+                </mat-form-field><br>
+
+                Total Size of Building Units Combined:&nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{APL6}}</mat-label>
+                    <input matInput placeholder="APL6" disabled>
+                </mat-form-field><br>
+
+                Ratio:&nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{APL9}}</mat-label>
+                    <input matInput placeholder="APL5" disabled>
+                </mat-form-field><br>
+
+                Fixed Total Charge:&nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{APL7}}</mat-label>
+                    <input matInput placeholder="APL7" disabled>
+                </mat-form-field><br>
+
+                Total Sewage Total:&nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>{{APL8}}</mat-label>
+                    <input matInput placeholder="APL8" disabled>
+                </mat-form-field><br>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button>BACK</button>
+          <button mat-raised-button color="primary" type="submit" (click)="Capture()">CAPTURE</button>
+      </mat-card-actions>
+    </mat-card>
+    </form>
+  </div>

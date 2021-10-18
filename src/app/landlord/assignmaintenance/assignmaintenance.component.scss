@@ -1,0 +1,56 @@
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  padding: 5px
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.centre {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  
+  border: none;
+  color: white;
+  height: 120px;
+  width: 200px;
+   
+  text-align: center;
+  text-decoration: none;
+  float: right;    
+  font-size: 24px;
+  margin: 16px 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 50px;
+  
+}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}

@@ -1,0 +1,63 @@
+.main-div{
+    // border: 1px solid;
+    // border-color: black;
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+
+    padding: 20px;
+
+    h1{
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+
+        padding: 1px;
+    }
+
+    h4{
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .control-div{
+        padding: 1%;
+    }
+
+    .left-div{
+        // text-align: end;
+        // margin-top: 15px;  
+        margin-top: 1.2em;;
+        display: flex;
+        justify-content: flex-end;  
+    }
+
+    // .right-div{
+
+    //     #filterButton{
+    //         margin-top: -10px;
+    //         margin-left: 10px;
+
+    //         button{
+    //             border: 1px solid;
+    //         }
+    //     }
+    // }
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+
+    .selectClass{
+        width: 100%;
+    }
+
+    // .btnView{
+    //     text-align: center;
+    // }
+}

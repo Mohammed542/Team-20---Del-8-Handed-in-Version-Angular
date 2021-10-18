@@ -1,0 +1,164 @@
+<div>
+  <a mat-button href="https://imgur.com/gallery/Zj56pLv" target="_blank">
+    Help?
+    </a>
+  
+    <button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Hint: Capture Municipal Bill</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+            <div class="ml-5 mt-5 row">    
+              This screen allows the user to capture a municipal bill for a unit.
+             <br>
+              The user will enter the values found on the physical bill onto the system.  
+             <br>
+              The user will select inputs for the fields which provide options.                     
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+      <!-- Aasif End -->
+<div style="padding-left: 30%; padding-top: 5%;">
+  <form [formGroup]="form" (ngSubmit)="Next($event)" class="example-form" style="text-align: center;">
+    <mat-card style="text-align: left; max-width: 50%;" >
+      <mat-card-content>
+
+        <form [formGroup]="SaveForm" (ngSubmit)="GetData(SaveForm.value)" class="example-form" style="text-align: center;">
+            <!-- <mat-form-field appearance="fill" style="width:270px">
+              <mat-label>Building Name</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let building of buildings" [value]="building.BuildingName" (click)="storeBuilding(building.BuildingID)">{{building.BuildingName}}</mat-option>
+              </mat-select>
+              <mat-hint align="end">Select a Building Name</mat-hint>
+            </mat-form-field><br> -->
+
+            <mat-form-field appearance="fill">
+              <mat-label>Building Name</mat-label>
+              <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+                  <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+              </mat-select>
+              <mat-hint align="end">Select the Building Name.</mat-hint>
+              <mat-error *ngIf="SaveForm.controls.selectedBuilding.invalid">{{getErrorMessage("building")}}</mat-error>
+          </mat-form-field><br>
+
+            <!-- <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Select Unit Number</mat-label>
+              <input matInput placeholder="UnitNumber"  formControlName="UnitNumber" name="UnitNumber" type="number">
+              <mat-hint align="end">Unit Number</mat-hint>
+            </mat-form-field><br> -->
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select Unit</mat-label>
+              <mat-select (selectionChange)="onUnitChange($event)" formControlName="UnitNumber">
+                  <mat-option *ngIf="unitsList.length == 0">No Units</mat-option>
+                  <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+              </mat-select>
+              <mat-hint align="end">Select the Unit Number.</mat-hint>
+              <mat-error *ngIf="SaveForm.controls.UnitNumber.invalid">{{getErrorMessage("unit")}}</mat-error>
+          </mat-form-field><br>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Month</mat-label>
+                    <mat-select (selectionChange)="onMonthChange($event)" formControlName="selectedMonth">
+                        <mat-option value="January">January</mat-option>
+                        <mat-option value="February">February</mat-option>
+                        <mat-option value="March">March</mat-option>
+                        <mat-option value="April">April</mat-option>
+                        <mat-option value="May">May</mat-option>
+                        <mat-option value="June">June</mat-option>
+                        <mat-option value="July">July</mat-option>
+                        <mat-option value="August">August</mat-option>
+                        <mat-option value="September">September</mat-option>
+                        <mat-option value="October">October</mat-option>
+                        <mat-option value="November">November</mat-option>
+                        <mat-option value="December">December</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Select the Month of Payment.</mat-hint>
+                    <mat-error *ngIf="SaveForm.controls.selectedMonth.invalid">{{getErrorMessage("month")}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Year</mat-label>
+                    <mat-select (selectionChange)="onYearChange($event)" formControlName="selectedYear">
+                        <mat-option *ngFor="let years of range" value="{{ years.value }}">{{ years.label }}</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Select the Year of Payment.</mat-hint>
+                    <mat-error *ngIf="SaveForm.controls.selectedYear.invalid">{{getErrorMessage("year")}}</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+            <button mat-raised-button type="submit" [disabled]="!SaveForm.valid">Get Unit Data</button>
+        </form>
+
+        <br><br><br>
+          <h3><b><u>Rates</u></b></h3>
+          Unit Size:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>{{UnitSize}}</mat-label>
+            <input matInput placeholder="APL1" disabled>
+          </mat-form-field><br>
+          Total Size of building Units Combined:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>{{TotalSize}}</mat-label>
+              <input matInput placeholder="APL2" disabled>
+          </mat-form-field><br>
+          Unit Rate Amount:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>{{UnitRate}}</mat-label>
+            <input matInput placeholder="APL3" disabled>
+          </mat-form-field><br>
+          <br><br>
+          <div class="row">
+            <div class="one" style="text-align: left; ">
+              <h3><b><u>Previous Electricty</u></b></h3>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Reading Begining</mat-label>
+                <input matInput placeholder="615" type="number" formControlName="PreviousElectricty" name="PreviousElectricty">
+            </mat-form-field> Kwh<br>
+
+              <h3><b><u>Water and Sanitation</u></b></h3>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Unit Usage</mat-label>
+                <input matInput placeholder="75" type="number" formControlName="WaterandSanitationUnitUsage" name="WaterandSanitationUnitUsage">
+            </mat-form-field> KL<br>
+            </div>
+
+            <div class="column" style="text-align: left; ">
+              <h3><b><u>Current Electricty</u></b></h3>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Reading End</mat-label>
+                <input matInput placeholder="90" type="number" formControlName="CurrentElectricty" name="CurrentElectricty">
+            </mat-form-field> Kwh<br>
+            </div>
+          </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button>BACK</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">NEXT</button>
+        <button mat-raised-button color="danger">CANCEL</button>
+    </mat-card-actions>
+  </mat-card>
+  </form>
+</div>

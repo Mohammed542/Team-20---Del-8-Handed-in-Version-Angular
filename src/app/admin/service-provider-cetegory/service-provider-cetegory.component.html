@@ -1,0 +1,52 @@
+<div class="p-1">
+  <div class="m-5">
+    <div class="m-5" style="display: flex; justify-content: center">
+      <div>
+        <h1>Service Provider Category</h1>
+      </div>
+    </div>
+    <div class="col-12 d-flex" style="justify-content: space-between;">
+      <div class="col-2">
+        <button mat-raised-button color="primary" (click)="onOpen(null)">Create New</button>
+      </div>
+      <div class="col-2">
+        <mat-form-field style="width: 100%;">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+      </div>
+    </div>
+    <table aria-describedby="table" mat-table [dataSource]="dataSource" matSort matSortActive="Date"
+      matSortDirection="asc" class="mat-elevation-z8 col-12 mb-5">
+      <div *ngIf="dataSource?.data?.length === 0">
+        <tr class="mat-row" *matNoDataRow style="text-align: center">
+          <td class="mat-cell" colspan="9999">
+            There is no service provider category items captured
+          </td>
+        </tr>
+      </div>
+      <ng-container matColumnDef="Description">
+        <th id="Description" mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+        <td mat-cell *matCellDef="let item">
+          {{ item.Description }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Actions">
+        <th id="Actions" mat-header-cell *matHeaderCellDef mat-sort-header class="col-1">
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let item" class="col-1">
+          <div class="d-flex" style="justify-content: space-evenly;">
+            <button mat-mini-fab color="primary" (click)="onOpen(item)" style="margin-right: 1em;">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" (click)="onDelete(item)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

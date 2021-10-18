@@ -1,0 +1,115 @@
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="openDialog(form.value)">
+    <h1>Manual Payment Charge</h1>
+
+    <div class="container-fluid">
+        <div class="row control-div">
+            <div class="col-md-6 left-div">
+                <label>Charge Name:</label>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <input matInput formControlName="ChargeName">
+                    <mat-hint align="end">Provide the charge name.</mat-hint>
+                    <mat-error *ngIf="form.controls.ChargeName.invalid">{{getErrorMessage("name")}}</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row control-div">
+            <div class="col-md-6 left-div">
+                <label>Charge Amount:</label>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <mat-icon matPrefix>R</mat-icon>
+                    <input matInput formControlName="ChargeAmount">
+                    <mat-hint align="end">Provide the amount to charge.</mat-hint>
+                    <mat-error *ngIf="form.controls.ChargeAmount.invalid">{{getErrorMessage("amount")}}</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row control-div">
+            <div class="col-md-6 left-div">
+                <label>Building:</label>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Building</mat-label>
+                    <mat-select (selectionChange)="onBuildingChange($event)" formControlName="BuildingID">
+                        <mat-option *ngIf="allBuildings.length == 0" disabled>No Buildings</mat-option>
+                        <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Click the dropdown to select</mat-hint>
+                    <mat-error *ngIf="form.controls.BuildingID.invalid">{{getErrorMessage("building")}}</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row control-div">
+            <div class="col-md-6 left-div">
+                <label>Unit Number:</label>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Unit Number</mat-label>
+                    <mat-select (selectionChange)="onUnitChange($event)" formControlName="UnitID">
+                        <mat-option *ngIf="form.controls.UnitID.value != '' && form.controls.UnitID.value != undefined">None</mat-option>
+                        <mat-option *ngIf="form.controls.BuildingID.value == undefined || form.controls.BuildingID.value == ''" disabled>Please select a building first</mat-option>
+                        <mat-option *ngIf="unitsList.length == 0 && !(form.controls.BuildingID.value == undefined || form.controls.BuildingID.value == '')" disabled>No Units</mat-option>
+                        <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Click the dropdown to select</mat-hint>
+                    <mat-error *ngIf="form.controls.UnitID.invalid">{{getErrorMessage("unit")}}</mat-error>
+                    <mat-error *ngIf="form.controls.UnitID.value == 'none'">Please select a unit</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="control-div">
+        <label>Charge Name:</label>
+
+        <mat-form-field appearance="fill">
+            <input matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>Charge Amount:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-icon matPrefix>R</mat-icon>
+            <input matInput>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>Tenant to Charge:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Tenant</mat-label>
+            <mat-select>
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>Unit Number:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Unit Number</mat-label>
+            <mat-select>
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div> -->
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="clickCancel()">Cancel</button>
+        <!-- <button mat-flat-button color="primary" (click)="openDialog()">Charge</button> -->
+        <button mat-flat-button type="submit" color="primary" [disabled]="!form.valid">Charge</button>
+    </div>
+    </form>
+</div>

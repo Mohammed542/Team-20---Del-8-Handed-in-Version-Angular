@@ -1,0 +1,1772 @@
+<div class="main-div">
+    <h1>Your statement has been successfully generated!</h1>
+
+    <!-- <div class="pdf-div">
+        <embed src="http://infolab.stanford.edu/pub/papers/google.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" frameBorder="0" scrolling="auto" height="100%" width="100%">
+    </div> -->
+
+    <!-- <div class="pdf-div"> -->
+    <!-- <object data='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf' type="application/pdf" width="500" height="678">
+            
+        </object> -->
+
+    <!-- <iframe src='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf'>
+            <p>This browser does not support PDF!</p>
+        </iframe>
+    </div> -->
+
+    <div class="container">
+        <div id="htmlData" class="template-div">
+
+            <body lang=EN-ZA style='word-wrap:break-word'>
+    
+                <div class=WordSection1>
+    
+                    <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><span lang=EN-GB
+                            style='font-size:22.0pt;line-height:107%;color:red'>H&amp;A PROPERTY
+                            INVESTMENTS (Pty) Ltd</span></p>
+    
+                    <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><span lang=EN-GB>Reg No:
+                            CK1997/58297/23</span></p>
+    
+                    <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><b><span lang=EN-GB
+                                style='font-size:14.0pt;line-height:107%'>Statement</span></b></p>
+    
+                    <p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>Vat
+                            No: 4070194685</span></p>
+    
+                    <table class=MsoTable15Plain4 border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse'>
+                        <tr>
+                            <td width=501 valign=top style='width:375.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>33 Gerard
+                                    Sekoto Street</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Ferreirastown</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Johannesburg</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>2001</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>aaziescc@gmail.com</u></p>
+                            </td>
+                            <td width=197 valign=top style='width:147.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;text-align:right;line-height:normal'>P O Box 11526</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;text-align:right;line-height:normal'>Johannesburg</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;text-align:right;line-height:normal'>2000</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;text-align:right;line-height:normal'>&nbsp;</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;text-align:right;line-height:normal'>&nbsp;</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;text-align:right;line-height:normal'>Tel: 074-694-5766</p>
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <p class=MsoNormal style='margin-bottom:0cm'>&nbsp;</p>
+    
+                    <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none;display: inline;'>
+                        <tr style='height:95.7pt'>
+                            <td width=231 valign=top style='width:173.3pt;border:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:95.7pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>To:</p>
+                                <p *ngIf="tenantData" class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{ tenantData.FirstName }} {{ tenantData.LastName }}</p>
+                                <p *ngIf="tenantData" class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{ tenantData.EmailAddress }}</p>
+                                <p *ngIf="tenantData" class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{ tenantData.CellPhoneNumber }}</p>
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=right style='border-collapse:collapse;border:none;margin-left:6.75pt;margin-right:6.75pt;display: inline;'>
+                        <tr style='height:23.2pt'>
+                            <td width=255 valign=top style='width:191.15pt;border:solid windowtext 1.0pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;height:23.2pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Building Name:</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Unit No:</p>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Date:</p>
+                            </td>
+                            <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:23.2pt'>
+                                <p *ngIf="statementData == null" class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>&nbsp;</p>
+                                <p *ngIf="statementData == null" class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>&nbsp;</p>
+                                <p *ngIf="statementData != null" class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>{{ receivedData.buildingName }}</p>
+                                <p *ngIf="statementData != null" class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>{{ receivedData.unitNumber }}</p>
+                                <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>{{ receivedData.date }}</p>
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <p class=MsoNormal>&nbsp;</p>
+    
+                    <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+                        style='border-collapse:collapse;border:none'>
+                        <tr>
+                            <td width=139 valign=top style='width:124.55pt;border:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Date</p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:solid windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Inv No</p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:solid windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Amount</p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:solid windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Payment</p>
+                            </td>
+                            <td width=139 valign=top style='width:124.6pt;border:solid windowtext 1.5pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Balance</p>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+              solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                            <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+              none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+              padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                            </td>
+                        </tr> -->
+                        <tr *ngFor="let rows of receivedData.tableData">
+                            <td width=139 valign=top style='width:124.55pt;border-top:none;border-left:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{rows.invoiceDateString}}</p>
+                            </td>
+                            <td *ngIf="rows.invoiceNum != 0" width=139 valign=top style='width:124.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{rows.invoiceNum}}</p>
+                            </td>
+                            <td *ngIf="rows.invoiceNum == 0" width=139 valign=top style='width:124.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Balance B/F</p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{rows.chargeAmount}}</p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{rows.paymentAmount}}</p>
+                            </td>
+                            <td width=139 valign=top style='width:124.6pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>{{rows.balanceAmount}}</p>
+                            </td>
+                        </tr>
+                        <tr *ngIf="receivedData.tableData.length == 0">
+                            <td colspan="5" style="text-align: center; color: red;">
+                                *No payments or charges have been made during the selected date period*
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <p class=MsoNormal>&nbsp;</p>
+    
+                    <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+                        <tr>
+                            <td width=139 valign=top style='width:124.55pt;border:solid windowtext 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>Balance as at</b></p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:solid windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>{{currDate}}</b></p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:solid windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>&nbsp;</b></p>
+                            </td>
+                            <td width=139 valign=top style='width:124.55pt;border-top:solid windowtext 1.5pt;border-left:none;border-bottom:solid windowtext 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>&nbsp;</b></p>
+                            </td>
+                            <td width=139 valign=top style='width:124.6pt;border:solid windowtext 1.5pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                                <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal' *ngIf="finalBalance"><b>R{{finalBalance.balanceAmount}}</b></p>
+                                <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal' *ngIf="!finalBalance"><b>&nbsp;N/A</b></p>
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <p class=MsoNormal>&nbsp;</p>
+    
+                </div>
+    
+            </body>
+        </div>
+    </div>
+
+    <!-- <p>Message: {{ statementData.BuildingID }}</p> -->
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="onClick()">Back</button>
+        <button mat-flat-button color="primary" (click)="onHomeClick()">Back Home</button>
+        <button mat-flat-button color="primary" (click)="openPDF()">Download PDF</button>
+    </div>
+</div>
+
+<!-- <div id="htmlData">
+
+    <body lang=EN-ZA style='word-wrap:break-word'>
+
+        <div class=WordSection1>
+
+            <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><span lang=EN-GB
+                    style='font-size:22.0pt;line-height:107%;color:red'>H&amp;A PROPERTY
+                    INVESTMENTS (Pty) Ltd</span></p>
+
+            <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><span lang=EN-GB>Reg No:
+                    CK1997/58297/23</span></p>
+
+            <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center'><b><span lang=EN-GB
+                        style='font-size:14.0pt;line-height:107%'>Statement</span></b></p>
+
+            <p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>Vat
+                    No: 4070194685</span></p>
+
+            <table class=MsoTable15Plain4 border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse'>
+                <tr>
+                    <td width=501 valign=top style='width:375.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>33 Gerard
+                            Sekoto Street</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Ferreirastown</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Johannesburg</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>2001</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Email:���
+                            ��������������������<u>aaziescc@gmail.com</u></p>
+                    </td>
+                    <td width=197 valign=top style='width:147.4pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+      normal'>P O Box 11526</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+      normal'>Johannesburg</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+      normal'>2000</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+      normal'>&nbsp;</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+      normal'>&nbsp;</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+      normal'>Tel: 074-694-5766</p>
+                    </td>
+                </tr>
+            </table>
+
+            <p class=MsoNormal style='margin-bottom:0cm'>&nbsp;</p>
+
+            <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+                <tr style='height:95.7pt'>
+                    <td width=231 valign=top style='width:173.3pt;border:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt;height:95.7pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>To:</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=right style='border-collapse:collapse;border:none;margin-left:6.75pt;margin-right:
+     6.75pt'>
+                <tr style='height:23.2pt'>
+                    <td width=255 valign=top style='width:191.15pt;border:solid windowtext 1.0pt;
+      border-right:none;padding:0cm 5.4pt 0cm 5.4pt;height:23.2pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Unit No:</p>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Date:</p>
+                    </td>
+                    <td width=85 valign=top style='width:63.75pt;border:solid windowtext 1.0pt;
+      border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:23.2pt'>
+                        <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;
+      line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+            </table>
+
+            <p class=MsoNormal>&nbsp;</p>
+
+            <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border:solid windowtext 1.5pt;
+      border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Date</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:solid windowtext 1.5pt;
+      border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Inv No</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:solid windowtext 1.5pt;
+      border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Amount</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:solid windowtext 1.5pt;
+      border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Payment</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border:solid windowtext 1.5pt;
+      border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>Balance</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+      solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border-top:none;border-left:
+      none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>&nbsp;</p>
+                    </td>
+                </tr>
+            </table>
+
+            <p class=MsoNormal>&nbsp;</p>
+
+            <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+                <tr>
+                    <td width=139 valign=top style='width:104.55pt;border:solid windowtext 1.5pt;
+      border-right:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>Balance as
+                                at</b></p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:solid windowtext 1.5pt;
+      border-left:none;border-bottom:solid windowtext 1.5pt;border-right:none;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>&nbsp;</b></p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:solid windowtext 1.5pt;
+      border-left:none;border-bottom:solid windowtext 1.5pt;border-right:none;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>&nbsp;</b></p>
+                    </td>
+                    <td width=139 valign=top style='width:104.55pt;border-top:solid windowtext 1.5pt;
+      border-left:none;border-bottom:solid windowtext 1.5pt;border-right:none;
+      padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b>&nbsp;</b></p>
+                    </td>
+                    <td width=139 valign=top style='width:104.6pt;border:solid windowtext 1.5pt;
+      border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                        <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;
+      line-height:normal'><b>&nbsp;</b></p>
+                    </td>
+                </tr>
+            </table>
+
+            <p class=MsoNormal>&nbsp;</p>
+
+        </div>
+
+    </body>
+</div> -->
+
+<!-- <div class="col-md-8" id="htmlData">
+    <table class="table table-bordered">
+        <tr class="table-primary">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>Leanne</td>
+            <td>sincere@april.biz</td>
+            <td>1-770-736-8031 x56442</td>
+        </tr>
+    </table>
+</div> -->
+
+<!-- <div class="col-md-4 text-right">
+    <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+</div> -->

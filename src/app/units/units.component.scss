@@ -1,0 +1,85 @@
+body {
+    margin-left: 10%;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+input[type=text] {
+    font-size: large;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #3f51b5;
+    color: white;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+.example-container {
+    position: absolute;
+    top: 173px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+}
+.Search {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+tr td {
+    padding-top: 0;
+}
+tr:nth-child(2) td {
+    padding-top: 0;
+}
+.units-list {
+    align-items: left;
+    // border-style: groove;
+    padding: 5px 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+.units-list .image-col .image {
+    margin: initial;
+    text-align: left;
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-top: 0.5em;
+}
+.units-list .small {
+    font-size: 120%;
+}
+.units-list .text-col {
+    margin: auto 0px;
+    font-size: 100%;
+    font-weight: bold;
+}
+.units-list .actions-col {
+    text-align: end;
+    margin: auto 0px;
+}
+.units-list .actions-col .action {
+    line-height: 0;
+}
+.units-list .actions-col .icon {
+    font-size: 20px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    margin-top: 0.5em;
+}
+.button1 {
+    margin-left: 56em;
+}
+.button3 {
+    margin-left: 0.5em;
+    float: right;
+}

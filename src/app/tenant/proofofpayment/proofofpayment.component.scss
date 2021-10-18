@@ -1,0 +1,98 @@
+h1{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.main-div{
+    text-align: center;
+    // border: 1px solid;
+    // border-color: black;
+
+    width: 80%;
+    margin-left: 10%;
+    padding: 15px;
+
+    .pdf-div{
+        //width: 100%;
+        //height: 200%;
+        //padding: 2%;
+        //width: 21cm;
+        //height: 29.7cm;
+        //margin: 30mm 45mm 30mm 45mm;
+
+        margin: auto;
+        width: 80%;
+        //border: 5px solid #FFFF00;
+        padding: 10px;
+
+        iframe{
+            width: 21cm;
+            height: 29.7cm;
+        }
+    }
+
+    .icon-div{
+        width: 150px;
+        height: 150px;
+
+        background: lightgrey;
+
+        border: 3px solid lightgrey;
+        border-radius: 100%;
+
+        margin: auto;
+        margin-top: 12px;
+        margin-bottom: 23px;
+
+        mat-icon{
+            transform: scale(3);
+            text-align: center;
+            color: grey;
+            margin-top: 60px;
+        }
+    }
+
+    .control-div{
+        h4{
+            font-weight: bold;
+            display: inline;
+        }
+
+        input{
+            display: inline;
+        }
+        
+        mat-form-field{
+            padding: 6px;
+            margin-top: 2%;
+            background-color: transparent;
+            border-color: transparent;
+            width: 100%;
+        }
+
+        // #fileInput{
+        //     background-color: transparent;
+        //     border-color: transparent;
+        //     width: 100%;
+        // }
+    }
+
+    .left-div{
+        text-align: end;
+        padding-top: 2.5%;
+    }
+
+    .right-div{
+        text-align: start;
+    }
+
+    .bottombuttons{
+        margin: 10px;
+        font-size: 20px;
+    }
+    
+    .midbut{
+        margin: 10px;
+    }
+}

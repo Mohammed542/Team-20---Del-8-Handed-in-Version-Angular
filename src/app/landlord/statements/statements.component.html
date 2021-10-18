@@ -1,0 +1,65 @@
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onClick(form.value)">
+    <h1>Generate Statement</h1>
+
+    <h4>Please select the building, unit number, and time frame that you would like to generate a statement for:</h4>
+
+    <div class="control-div">
+        <label>Building Name:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Building</mat-label>
+            <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+                <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+            </mat-select>
+            <mat-hint align="end">Select the Building Name.</mat-hint>
+            <mat-error *ngIf="form.controls.selectedBuilding.invalid">{{getErrorMessage("building")}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>Unit Number:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Unit</mat-label>
+            <mat-select (selectionChange)="onUnitChange($event)" formControlName="selectedUnit">
+                <mat-option *ngIf="unitsList.length == 0">No Units</mat-option>
+                <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+            </mat-select>
+            <mat-hint align="end">Select the Unit Number.</mat-hint>
+            <mat-error *ngIf="form.controls.selectedUnit.invalid">{{getErrorMessage("unit")}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>Start Date:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-hint align="end">Select the Start Date.</mat-hint>
+            <mat-error *ngIf="form.controls.startDate.invalid">{{getErrorMessage("start")}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>End Date:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-hint align="end">Select the End Date.</mat-hint>
+            <mat-error *ngIf="form.controls.endDate.invalid">{{getErrorMessage("end")}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary">Cancel</button>
+        <button mat-flat-button type="submit" color="primary" [disabled]="!form.valid">Generate Statement</button>
+    </div>
+    </form>
+</div>

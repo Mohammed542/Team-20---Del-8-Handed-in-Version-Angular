@@ -1,0 +1,28 @@
+<div style="padding-left: 30%; padding-top: 5%;">
+  <form [formGroup]="createForm" (ngSubmit)="CreateVATPercentage($event)" class="example-form" style="text-align: center;">
+    <mat-card style="text-align: center; max-width: 50%;" >
+      <mat-card-content>
+        <h3>Enter VAT Percentage</h3>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>ENTER VAT PERCENTAGE</mat-label>
+          <input
+            formControlName="VATPercentage"
+            name="VATPercentage"
+            matInput
+            placeholder="Enter VAT PERCENTAGE"
+          />
+          <mat-error class="errors" *ngIf="createForm.controls.VATPercentage">
+            {{ getErrorMessage("VATPercentage") }}
+          </mat-error> </mat-form-field
+        ><br />
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="vat()">BACK</button>
+        <button mat-raised-button color="primary" [disabled]="createForm.invalid" type="submit">
+          ADD VAT PERCENTAGE
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

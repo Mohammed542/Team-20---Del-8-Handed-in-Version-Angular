@@ -1,0 +1,18 @@
+<div style="padding-left: 30%; padding-top: 5%;">
+  <form [formGroup]="updateForm" (ngSubmit)="EditVATPercentage($event)" class="example-form" style="text-align: center;">
+    <mat-card style="text-align: center; max-width: 50%;" >
+      <mat-card-content>
+        <h3>Update VAT Percentage</h3>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>ENTER VAT PERCENTAGE</mat-label>
+          <input formControlName="VATPercentage" name="percentage" matInput placeholder="Enter VAT PERCENTAGE">
+        </mat-form-field><br>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="vat()" >BACK</button>
+        <button mat-raised-button color="primary" type="submit" >UPDATE VAT PERCENTAGE</button>
+        </mat-card-actions>
+  </mat-card>
+  </form>
+</div>

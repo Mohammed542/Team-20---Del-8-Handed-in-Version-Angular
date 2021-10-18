@@ -1,0 +1,125 @@
+<div class="main-div">
+    <h1>Your receipt has been successfully generated!</h1>
+
+    <!-- <div class="pdf-div">
+        <embed src="http://infolab.stanford.edu/pub/papers/google.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" frameBorder="0" scrolling="auto" height="100%" width="100%">
+    </div> -->
+
+    <!-- <div class="pdf-div">
+        <object data='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf' type="application/pdf" width="500" height="678">
+            
+        </object>
+
+        <iframe src='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf'>
+            <p>This browser does not support PDF!</p>
+        </iframe>
+    </div> -->
+
+    <div class="container-fluid">
+        <div class="receiptDiv" id="receiptDiv" #receiptDiv>
+            <div class="receipt-inner-div">
+                <span class="imgspan"><img src="../../assets/HA_png.png" alt="Prime Properties"></span>
+                <span><h1><b>Payment Receipt</b></h1></span>
+    
+                <br><br>
+    
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 *ngIf="tenant">{{ tenant.FirstName }} {{ tenant.LastName }}</h3>
+                        <p></p>
+                        <p>Date Issued: <b>{{ date }}</b></p>
+                        <p *ngIf="payment">Building Name: <b>{{ payment.BuildingName }}</b></p>
+                        <p *ngIf="payment">Unit Number: <b>{{ payment.UnitNumber }}</b></p>
+                    </div>
+                    <div class="col-md-6" style="text-align: right;">
+                        <p>H&A Property Investments</p>
+                        <p>33 Gerald Sekoto Street</p>
+                        <p>Ferreirastown</p>
+                        <p>Johannesburg</p>
+                        <p>P O Box 11526</p>
+                    </div>
+                </div>
+    
+                <br><br>
+    
+                <div class="row">
+                    <table class="table">
+                        <!-- <tbody>
+                            <tr>
+                                <td>NAME</td>
+                                <td></td>
+                                <td>METHOD</td>
+                                <td>DATE</td>
+                                <td>AMOUNT</td>
+                            </tr>
+                        </tbody>
+                        <br> -->
+                        <tbody *ngIf="payment">
+                            <tr>
+                                <td>NAME</td>
+                                <td></td>
+                                <td>METHOD</td>
+                                <td>DATE</td>
+                                <td>AMOUNT</td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td><b>{{ payment.PaymentName }}</b></td>
+                                <td></td>
+                                <td><b>{{ payment.PaymentMethod }}</b></td>
+                                <td><b>{{ payment.PaymentDate }}</b></td>
+                                <td style="color: steelblue;"><b>{{ payment.PaymentAmount }}</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <!-- <span class="footer">
+                    <p>footer</p>
+                </span> -->
+    
+                <!-- <div id="footer">
+                    I am footer
+                </div> -->
+            </div>
+            <div>
+                <footer id="footer">
+                    <div id="footer-content">
+                        <br><br><br>
+                        <hr>
+                        <br>
+                        
+                        <div class="row" style="width: 80%; margin: auto;">
+                            <div class="col-md-6">
+                                <h2 style="margin: 0px; padding: 0px;">Balance Due:</h2>
+                                <p *ngIf="payment">(as of {{ payment.PaymentDate }})</p>
+                            </div>
+                            <div class="col-md-6" style="text-align: end; color: steelblue;">
+                                <h2>R{{ balance }}</h2>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <br>
+                        <br>
+
+                        <p class="footer-paragraph"><i>This receipt is proof that we at H&A Property Investments have received, accepted, and recorded your payment! Thank you for your support at our comapny. Feel free to contact us at <a href="mailto:primeproeprties114@gmail.com">primeproeprties114@gmail.com</a> for any enquiries</i></p>
+                        <p class="footer-paragraph"><i>T's & C's Apply.</i></p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- <div class="container-fluid" style="border: 1px solid;">
+            <footer class="py-5" style="border: 1px solid;">
+                <div class="row" style="border: 1px solid;">
+                    <p>footer</p>
+                </div>
+            </footer>
+        </div> -->
+    </div>
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="clickCancel()">Cancel</button>
+        <button mat-flat-button color="primary" (click)="downloadPaymentReceipt()">Download Payment Receipt</button>
+    </div>
+</div>

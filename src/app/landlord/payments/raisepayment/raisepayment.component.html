@@ -1,0 +1,15 @@
+<span style="display: flex;justify-content: end;">
+    <button mat-icon-button tabindex="-1" mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</span>
+<div class="main-div">
+    <h1>Raise Charge</h1>
+
+    <h3>Please select a method to raise a charge:</h3>
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="openDialog()" tabindex="-1">Automatic Monthly Rental Charge</button>
+        <button mat-flat-button color="primary" (click)="onClick()" tabindex="-1">Manual Monthly Rental Charge</button>
+    </div>
+</div>

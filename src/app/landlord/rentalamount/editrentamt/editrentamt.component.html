@@ -1,0 +1,61 @@
+<div class="main-div">
+    <h1>Edit Rental Amount:</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 left-div">
+                <mat-label>Rental Type ID:</mat-label>
+            </div>
+            <div class="col-md-6 right-div">
+                <mat-form-field appearance="fill">
+                <mat-label>Select Rental ID:</mat-label>
+                <mat-select>
+                        <mat-option value="one">First option</mat-option>
+                        <mat-option value="two">Second option</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 left-div">
+                <mat-label>Amount:</mat-label>
+            </div>
+            <div class="col-md-6 right-div">
+                <mat-form-field appearance="fill">
+                <mat-label matPrefix>R</mat-label>
+                <mat-select>
+                        <mat-option value="one">First option</mat-option>
+                        <mat-option value="two">Second option</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 left-div">
+                <mat-label>Building Name:</mat-label>
+            </div>
+            <div class="col-md-6 right-div">
+                <mat-form-field appearance="fill">
+                <mat-label>Select Building</mat-label>
+                <mat-select>
+                        <mat-option value="one">First option</mat-option>
+                        <mat-option value="two">Second option</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 left-div">
+                <mat-label>Unit Number:</mat-label>
+            </div>
+            <div class="col-md-6 right-div">
+                <mat-form-field appearance="fill">
+                <mat-label>Select Unit</mat-label>
+                <mat-select>
+                        <mat-option value="one">First option</mat-option>
+                        <mat-option value="two">Second option</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="clickCancel()">Cancel</button>
+        <button mat-flat-button color="primary" (click)="openDialog()">Update</button>
+    </div>
+</div>

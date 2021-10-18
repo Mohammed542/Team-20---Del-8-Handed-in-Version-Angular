@@ -1,0 +1,169 @@
+  <div class="container mt-5 mb-5" style="border-style: solid">
+    <h1 style="text-align: center">
+      <u><b>Upload Rental Agreement:</b></u><br>
+    </h1><br>
+    <form #forms="ngForm" autocomplete="off"  (submit)="addRental(forms, null, service.formData.TenantID)">
+
+
+      <input type="hidden" name="RentalAgreementID" #RentalAgreementID="ngModel"
+      [(ngModel)]="formData.RentalAgreementID">
+      <input type="hidden" name="TenantID" #TenantID="ngModel"
+      [(ngModel)]="formData.TenantID">
+      <input type="hidden" name="RentalAgreementstatusID" #RentalAgreementstatusID="ngModel"
+      [(ngModel)]="formData.RentalAgreementstatusID">
+      <input type="hidden" name="RentalAgreementTypeID" #RentalAgreementTypeID="ngModel"
+      [(ngModel)]="formData.RentalAgreementTypeID">
+
+
+    <div class="form-group row centre">
+
+    </div><br><br>
+    <div class="row">
+      <div class="col mb-5">
+        <div>
+
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Building Name:</label>
+            <div class="col-5">
+              <select class="form-control" (change)="getUnits($event.target.value)">
+                <option value="0">--Select Building--</option>
+                <option *ngFor="let building of buildingList" value="{{building.BuildingID}}">
+                  {{building.BuildingName}}</option>
+              </select>
+            </div>
+          </div><br>
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Unit Number:</label>
+            <div class="col-5">
+              <select class="form-select" (change)="getDetails($event)" name="UnitID" id="UnitID" #UnitID="ngModel"
+                [(ngModel)]="formData.UnitID">
+                <option selected>--Select Unit--</option>
+                <option *ngFor="let unit of unitList" value="{{unit.UnitID}}" (click)="setID(unit.UnitID)">{{unit.UnitNumber}}</option>
+              </select>
+            </div>
+          </div><br>
+
+          <div hidden class="form-group row centre">
+            <label class="col-3 col-form-label">Unit Number:</label>
+            <div class="col-5">
+              <select class="form-select" (change)="getDetails($event)" name="UnitID" id="UnitID" #UnitID="ngModel"
+                [(ngModel)]="formData.UnitID">
+                <option selected>--Select Unit--</option>
+                <option *ngFor="let unit of unitList" value="{{unit.UnitNumber}}" (click)="setID(unit.UnitID)">{{unit.UnitNumber}}</option>
+              </select>
+            </div>
+
+          </div><br>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+    <div class="form-group" style="padding: 20px;">
+
+      <button class="submit btn-sm btn-primary" style="float: right; width: 200px;" data-bs-toggle="modal" data-bs-target="#deleteModal">Save</button> <br>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Confirm</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          </div>
+          <div class="modal-body" style="color: black;">
+              <div class="row flex">
+                  <div class="column" style="margin-top: 20px; ">
+                      <h2 >Name</h2>
+                      <div >
+
+
+                      </div>
+                  </div>
+              </div>
+              <div class="flex">
+              <ul class="grid ">
+
+                 <li *ngFor="let rentals of service.rentals" class="ml-5 mt-5 row">
+
+                          <br>
+                          Position: {{rentals.FirstName}} <br>
+                          Job Type: {{rentals.LastName}} <br>
+
+
+
+                  </li>
+
+                  <!-- <li *ngFor="let designLine of service.designLine" class="ml-5 mt-5 row">
+
+                          <br>
+                          Position: {{designLine.Template_Position_ID}} <br>
+                          Job Type: {{designLine.Job_Type_ID}} <br>
+                          Text: {{designLine.Text}} <br>
+                          Width: {{designLine.Width}}<br>
+                          Height: {{designLine.height}} <br><br><br>
+
+
+                  </li> -->
+              </ul>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary"  data-dismiss="modal"
+                      (click)="onSubmit()">Confirm</button>
+                  <button type="button" class="btn btn-link" data-dismiss="modal">Return</button>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Confirm</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+            <div class="ml-5 mt-5 row">
+
+             Are you sure you want to save these details?
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"   data-bs-dismiss="modal" aria-label="Close"
+          (click)="onSubmit()">Confirm</button>        </div>
+      </div>
+    </div>
+  </div>
+

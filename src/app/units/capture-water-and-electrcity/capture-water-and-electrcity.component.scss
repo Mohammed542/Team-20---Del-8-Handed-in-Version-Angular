@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .one {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

@@ -1,0 +1,63 @@
+// table {
+// 	font-family: arial, sans-serif;
+// 	border-collapse: collapse;
+// 	width: 80%;
+// }
+// td {
+// 	border: 6px solid #6a3899;
+// 	text-align: left;
+// 	padding: 10px;
+// }
+// th {
+// 	border: 6px solid #6a3899;
+// 	text-align: left;
+// 	padding: 10px;
+// }
+// tr {
+// 	&:nth-child(even) {
+// 		background-color: #dddddd;
+// 	}
+// }
+
+
+.main-div{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+
+    padding: 20px;
+
+    .left-div{
+        text-align: start;
+
+        h1{
+            display: inline;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: start;
+
+            padding: 10px;
+        }
+    }
+
+    .right-div{
+        text-align: end;
+
+        #filterButton{
+            margin-top: -10px;
+            margin-left: 10px;
+
+            button{
+                border: 1px solid;
+            }
+        }
+    }
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+}

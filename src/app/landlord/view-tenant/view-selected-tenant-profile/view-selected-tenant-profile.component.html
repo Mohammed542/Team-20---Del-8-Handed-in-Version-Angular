@@ -1,0 +1,84 @@
+<div class="main-div">
+    <form [formGroup]="form">
+        <div class="container-fluid">
+            <div class="row">
+                <h1>View Tenant Profile</h1>
+            </div>
+    
+            
+    
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Name:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <textarea readonly style="resize: none; border: none;" type="text" matInput formControlName="FirstName"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Surname:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                        <textarea readonly style="resize: none; border: none;" type="text" matInput formControlName="LastName"></textarea>                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Cellphone Number:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <textarea readonly style="resize: none; border: none;" type="text" matInput formControlName="CellPhoneNumber"></textarea> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Email Address:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                      <textarea readonly style="resize: none; border: none;" type="text" matInput  formControlName="EmailAddress"></textarea> 
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>ID Number:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                        <textarea readonly style="resize: none; border: none;" type="text" matInput  formControlName="IDNumber"></textarea> 
+                    
+                </div>
+            </div>
+        </div>
+        
+    
+    
+        <div class="bottombuttons">
+            <button mat-flat-button color="primary" (click)="onCancel()">Return to Tenant List</button>
+        </div>
+        
+    </form>
+</div>
+
+<a mat-button href="https://i.imgur.com/MIERn4S.jpeg" target="_blank">
+Help?
+</a>
+
+<button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title" id="exampleModalLabel">Hint: View Selected Tenant's Profile</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">  
+<div class="ml-5 mt-5 row">    
+This screen allows you to view the selected Tenant's account information.
+<br><br>
+The Tenant's name, surname, email address, cellphone number, and ID number can be seen.
+<br><br>
+You can select the "Return to Tenant List" button located at the bottom to return to the list of Tenants registered onto the system.
+</div>
+</div>

@@ -1,0 +1,62 @@
+<h1 class='heading'>My Profile</h1>
+<div class="main-div">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="DN">     
+                <h2>Name: </h2>
+                <br>
+                <h2>Surname: </h2>
+                <br>
+                <h2>Email Address: </h2>
+                <input type="text" id="email" name="email">
+                <br>
+                <h2>Cellphone Number: </h2>
+                <input type="text" id="cellphone" name="cellphone">
+                <br>
+                <h2>ID Number: <button class="idtoggle"> {{ checked == true ? '' : '**************' }}</button> </h2>
+                <mat-slide-toggle [checked]="checked" (change)="handleChange($event)">{{toggle}}</mat-slide-toggle>
+
+
+            </div>
+        
+            
+        </div>
+    </div>
+
+<br>                 
+    
+<div class="optionbutton">
+        <button mat-raised-button color="primary" (click)="onProfileReturn()">Return to Profile</button>
+        &nbsp;
+        <button class="submit btn-sm btn-primary" mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#deleteModal">Save</button>
+    </div>
+
+    
+</div>
+<div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="onClick()">Return to Homepage</button>
+    </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Update Landlord Failed.</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+            <div class="ml-5 mt-5 row">
+                      
+            500 Internal Server Error. Failed to fetch Landlord information.
+           
+            </div>
+   
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>

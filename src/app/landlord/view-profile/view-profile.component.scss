@@ -1,0 +1,70 @@
+.heading{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-top: 1%;
+}
+.bottombuttons{
+        text-align: right !important;
+        padding: 10px;
+        button{
+            margin: 10px;
+            
+        }
+    }
+.idtoggle{
+    border: none;
+    background-color: white;
+}
+
+.optionbutton{
+    text-align: center;
+    font-size: 42pt;
+    size: 28px;
+    padding: 10px;
+}    
+
+.main-div{
+    border: 1px solid;
+    border-color: black;
+
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+    padding: 20px;
+
+    .DN{
+        text-align: center;
+        
+        h1{
+            display: inline;
+            text-align: start;
+            padding: 5px;
+            
+        }
+    }
+
+    #filepath{
+        margin-top: -10px;
+        margin-left: 10px;
+        border: 1px;
+
+        button{
+            border: 1px solid;
+        }
+    }
+    
+    .showFilePath{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 50vh;
+        
+    }
+    .filepath{
+        text-align: center;
+        display: inline
+    }
+    
+}

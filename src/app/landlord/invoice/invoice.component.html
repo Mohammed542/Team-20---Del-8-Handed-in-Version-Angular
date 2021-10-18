@@ -1,0 +1,199 @@
+<!-- <app-landlord></app-landlord>
+
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onClick(form.value)">
+    <h1>Generate Statement</h1>
+
+    <h4>Please select the building, unit number, and time frame that you would like to generate a statement for:</h4>
+
+    <div class="control-div">
+        <label>Building Name:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Building</mat-label>
+            <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+                <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>Unit Number:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Unit</mat-label>
+            <mat-select (selectionChange)="onUnitChange($event)" formControlName="selectedUnit">
+                <mat-option *ngIf="unitsList.length == 0">No Units</mat-option>
+                <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>Start Date:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="control-div">
+        <label>End Date:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary">Cancel</button>
+        <button mat-flat-button type="submit" color="primary" [disabled]="!form.valid">Generate Statement</button>
+    </div>
+    </form>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+<div class="main-div">
+    <!-- <form [formGroup]="form" (ngSubmit)="onClickGenInvoice(form.value)"> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="left-div col-md-4">
+                <h1>Charges</h1>
+            </div>
+        
+            <div class="right-div col-md-8">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix>search</mat-icon>
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field>
+        
+                <span id="filterButton"><button mat-flat-button>Filter Options</button></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Charge Name</th>
+                    <th>Tenant</th>
+                    <th>Amount</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let charges of allCharges">
+                    <td>{{ charges.Date }}</td>
+                    <td>{{ charges.ChargeName }}</td>
+                    <td>{{ charges.Tenant }}</td>
+                    <td>{{ charges.Amount }}</td>
+                    <td style="width: 5%;">
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a vertical three dot icon">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="onClickGenInvoice(charges)">
+                              <mat-icon>receipt</mat-icon>
+                              <span>Generate Invoice</span>
+                            </button>
+                            <button mat-menu-item (click)="onClickEdit(charges)">
+                              <mat-icon>edit</mat-icon>
+                              <span>Edit Charge</span>
+                            </button>
+                            <button mat-menu-item (click)="onClickDelete(charges)">
+                              <mat-icon>delete</mat-icon>
+                              <span>Delete Charge</span>
+                            </button>
+                        </mat-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+    <table aria-describedby="table" mat-table [dataSource]="dataSource" matSort matSortActive="Date" matSortDirection="desc" class="mat-elevation-z8 col-12 mb-5">
+        <ng-container matColumnDef="Date">
+          <th id="Date" mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+          <td mat-cell *matCellDef="let item">{{ item.Date| date: "yyyy-MM-dd" }}</td>
+        </ng-container>
+        <ng-container matColumnDef="ChargeName">
+          <th id="ChargeName" mat-header-cell *matHeaderCellDef mat-sort-header>Charge Name</th>
+          <td mat-cell *matCellDef="let item">{{ item.ChargeName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="BuildingName">
+          <th id="BuildingName" mat-header-cell *matHeaderCellDef mat-sort-header>Building Name</th>
+          <td mat-cell *matCellDef="let item">{{ item.BuildingName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="UnitNumber">
+          <th id="UnitNumber" mat-header-cell *matHeaderCellDef mat-sort-header>Unit Number</th>
+          <td mat-cell *matCellDef="let item">{{ item.UnitNumber }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Tenant">
+          <th id="Tenant" mat-header-cell *matHeaderCellDef mat-sort-header>Tenant</th>
+          <td mat-cell *matCellDef="let item">{{ item.Tenant }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Amount">
+          <th id="Amount" mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+          <td mat-cell *matCellDef="let item">{{ item.Amount }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Icon">
+          <th id="Icon" mat-header-cell *matHeaderCellDef mat-sort-header>
+            <!-- <button mat-icon-button aria-label="hidden" (click)="onCreate()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button mat-flat-button color="primary" (click)="onClickk()">Capture Payment</button> -->
+          </th>
+          <td mat-cell *matCellDef="let item">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="onClickGenInvoice(item)">
+                  <mat-icon>receipt</mat-icon>
+                  <span>Generate Invoice</span>
+                </button>
+                <!-- <button mat-menu-item (click)="onClickEdit(item)">
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit Charge</span>
+                </button>
+                <button mat-menu-item (click)="onClickDelete(item)">
+                  <mat-icon>delete</mat-icon>
+                  <span>Delete Charge</span>
+                </button> -->
+            </mat-menu>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20, 30, 50]" showFirstLastButtons aria-label="Select Page"></mat-paginator>
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="onClickRaise()">Raise Charge</button>
+    </div>
+    <!-- <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="onClick()">Raise Payment</button>
+        <button mat-flat-button color="primary" (click)="onClickk()">Capture Payment</button>
+    </div> -->
+    <!-- </form> -->
+</div>

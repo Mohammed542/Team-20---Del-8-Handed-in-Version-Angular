@@ -1,0 +1,97 @@
+<div>
+  <div class="m-5">
+    <div>
+      <a mat-raised-button href="inspection/view-inspections">
+        <mat-icon>arrow_back</mat-icon> Return
+      </a>
+    </div>
+    <div class="m-5" style="display: flex; justify-content: center">
+      <div>
+        <h1>Take On Inspection</h1>
+      </div>
+    </div>
+    <table aria-describedby="table" mat-table [dataSource]="takeOnDataSource" matSort matSortActive="Date"
+      matSortDirection="asc" class="mat-elevation-z8 col-12 mb-5">
+      <div *ngIf="takeOnDataSource?.data?.length === 0">
+        <tr class="mat-row" *matNoDataRow style="text-align: center">
+          <td class="mat-cell" colspan="9999">
+            There has not been any inspection items captured for this inspection
+          </td>
+        </tr>
+      </div>
+      <ng-container matColumnDef="Space">
+        <th id="Space" mat-header-cell *matHeaderCellDef mat-sort-header>
+          Space
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.Space }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Ok">
+        <th id="Ok" mat-header-cell *matHeaderCellDef mat-sort-header>Ok</th>
+        <td mat-cell *matCellDef="let item">
+          {{ item.Ok ? "Yes" : "No" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Problem">
+        <th id="Problem" mat-header-cell *matHeaderCellDef mat-sort-header>
+          Problem
+        </th>
+        <td mat-cell *matCellDef="let item">
+          {{ item.Problem }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Amount">
+        <th id="Amount" mat-header-cell *matHeaderCellDef mat-sort-header>
+          Amount
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.Amount }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <div *ngIf="inspection?.InspectionTypeID === 2" class="m-5">
+    <div class="m-5" style="display: flex; justify-content: center">
+      <div *ngIf="inspection">
+        <h1>Clear Out Inspection</h1>
+      </div>
+    </div>
+    <table aria-describedby="table" mat-table [dataSource]="clearOutDataSource" matSort matSortActive="Date"
+      matSortDirection="asc" class="mat-elevation-z8 col-12 mb-5">
+      <div *ngIf="clearOutDataSource?.data?.length === 0">
+        <tr class="mat-row" *matNoDataRow style="text-align: center">
+          <td class="mat-cell" colspan="9999">
+            There has not been any inspection items captured for this inspection
+          </td>
+        </tr>
+      </div>
+      <ng-container matColumnDef="Space">
+        <th id="Space" mat-header-cell *matHeaderCellDef mat-sort-header>
+          Space
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.Space }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Ok">
+        <th id="Ok" mat-header-cell *matHeaderCellDef mat-sort-header>Ok</th>
+        <td mat-cell *matCellDef="let item">
+          {{ item.Ok ? "Yes" : "No" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Problem">
+        <th id="Problem" mat-header-cell *matHeaderCellDef mat-sort-header>
+          Problem
+        </th>
+        <td mat-cell *matCellDef="let item">
+          {{ item.Problem }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Amount">
+        <th id="Amount" mat-header-cell *matHeaderCellDef mat-sort-header>
+          Amount
+        </th>
+        <td mat-cell *matCellDef="let item">{{ item.Amount }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<h1 class='heading'>My Profile</h1>
+<div class="main-div">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="DN">
+        <h2>Name: {{ LandlordProfile.FirstName }}</h2>
+        <br>
+        <h2>Surname: {{ LandlordProfile.LastName }}</h2>
+        <br>
+        <h2>Email Address: {{ LandlordProfile.EmailAddress }}</h2>
+        <br>
+        <h2>Cellphone Number: {{ LandlordProfile.CellphoneNumber }}</h2>
+        <br>
+        <h2>ID Number: <button class="idtoggle"> {{ checked == true ? LandlordProfile.IDNumber : '**************'
+            }}</button> </h2>
+        <mat-slide-toggle [checked]="checked" (change)="handleChange($event)">{{toggle}}</mat-slide-toggle>
+
+        <div class="optionbutton">
+          <button mat-raised-button color="primary" (click)="onEdit(LandlordProfile)">Edit Profile</button>
+          &nbsp;
+          <button mat-raised-button color="primary" (click)="onClickDelete(LandlordProfile)">Deactivate Account</button>
+        </div>
+
+        <br>
+        <button mat-flat-button color="primary" (click)="onClick()">Return to Homepage</button>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+<!-- <div class="bottombuttons">
+  <button mat-flat-button color="primary" (click)="onClick()">Return to Homepage</button>
+</div> -->
+
+
+<a mat-button href="https://i.imgur.com/3rMuWXZ.png" target="_blank">
+Help?
+</a>
+
+<button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title" id="exampleModalLabel">Hint: View Profile</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">  
+<div class="ml-5 mt-5 row">    
+This screen allows you to view your account information.
+<br><br>
+Your Name, Surname, Email Address, Cellphone Number, and ID number can be found on this page.
+<br><br>
+Select the toggle button labeled "Show ID Number" to reveal your ID number.         
+<br><br>
+Select the toggle again to hide your ID number.
+<br><br>
+You can select the "Edit Profile" button located below the "Show ID Number" toggle button to edit your account information. 
+<br><br>
+You can select the "Deactivate Account" button to deactivate your account on the system.
+<br><br>
+WARNING: Once deactivation is confirmed, your account will be fully deactivated and you will be logged out. You will need to speak with the Admin of the system to regain access to the system. 
+<br><br>
+You can select the "Return to Homepage" button located at the bottom right to return to the home screen.
+</div>
+</div>
+
+    

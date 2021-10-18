@@ -1,0 +1,130 @@
+<br>
+
+<h1>Please Upload Tenant ID Document:</h1>
+<br>
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onClick(form.value)">
+    <div class="container">
+        <div class="row"><br></div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Building Name:</h5>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Building</mat-label>
+                    <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+                        <!-- <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option> -->
+                        <mat-option *ngIf="form.controls.selectedBuilding.value != '' && form.controls.selectedBuilding.value != undefined" [value]="none">None</mat-option>
+                        <mat-option *ngIf="allBuildings.length == 0" disabled>No Buildings</mat-option>
+                        <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Click the dropdown to select</mat-hint>
+                    <mat-error *ngIf="form.controls.selectedBuilding.invalid">{{getErrorMessage("building")}}</mat-error>
+                </mat-form-field>
+            </div>
+        
+            <div class="col-md-6">
+                <h5>Unit Number:</h5>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Unit</mat-label>
+                    <mat-select (selectionChange)="onUnitChange($event)" formControlName="selectedUnit">
+                        <!-- <mat-option *ngIf="unitsList.length == 0">No Units</mat-option>
+                        <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option> -->
+                        <mat-option *ngIf="form.controls.selectedUnit.value != '' && form.controls.selectedUnit.value != undefined">None</mat-option>
+                        <mat-option *ngIf="form.controls.selectedBuilding.value == undefined || form.controls.selectedBuilding.value == ''" disabled>Please select a building first</mat-option>
+                        <mat-option *ngIf="unitsList.length == 0 && !(form.controls.selectedBuilding.value == undefined || form.controls.selectedBuilding.value == '')" disabled>No Units</mat-option>
+                        <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Click the dropdown to select</mat-hint>
+                    <mat-error *ngIf="form.controls.selectedUnit.invalid">{{getErrorMessage("unit")}}</mat-error>
+                <mat-error *ngIf="form.controls.selectedUnit.value == 'none'">Please select a unit</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="left-div col-lg-6">
+
+                <div class="control-div">
+                    <input type="text" hidden>
+                    <h4>File Name:</h4>
+                </div>
+            </div>
+
+            <div class="right-div col-lg-6">
+                <div class="control-div" *ngIf="theFile">
+                    <mat-form-field appearance="clear">
+                        <input matInput id="fileInput" type="text" value="{{theFile.name}}">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <button class="midbut" mat-flat-button color="primary" type="button" (click)="fileInput.click()">
+            SELECT FILE
+        </button>
+        <button class="midbut" mat-flat-button color="warn" type="button" (click)="removeFile()" [disabled]="!base64File && !url">
+            REMOVE FILE
+        </button>
+        <input #fileInput type="file" (change)="onFileChange($event)" style="display:none" />
+    </div>
+
+    <br><br>
+
+    <div *ngIf="base64File" class="main-div pdf-div">
+        <h3>Is this the correct file that you want to upload?</h3>
+        <iframe id="pdfiframe" src=""></iframe>
+    </div>
+
+    <div *ngIf="url" class="main-div pdf-div">
+        <h3>Is this the correct file that you want to upload?</h3>
+        <img id="imgselector" src="{{ url }}">
+    </div>
+
+    <br><br>
+
+    <button class="bottombuttons" type="button" mat-flat-button color="primary" (click)="onClickCancel()">Cancel</button>
+    <button class="bottombuttons" type="submit" mat-flat-button color="primary" (click)="openConfirmDialog()" [disabled]="!form.valid || !theFile">Submit</button>
+
+    </form>
+</div>
+
+<a mat-button href="https://i.imgur.com/Szp99jI.png" target="_blank">
+Help?
+</a>
+
+<button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title" id="exampleModalLabel">Hint: Upload Tenant's Identification Document</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">  
+<div class="ml-5 mt-5 row">    
+This screen allows you to select the building and unit that needs a Tenant's Identification document to be uploaded.
+<br><br>
+Select the "Buidling Name" dropdown box to reveal a list of buildings registered onto the system.
+<br><br>
+Select the required building from the "Building Name" dropdown box to reveal units in that building.
+<br><br>
+Select the "Unit Number" dropdown box to reveal a list of units registered onto the system for the selected building.
+<br><br>
+Select the "SELECT FILE" button to bring up your file explorer allowing you to select the document for uploading.
+<br><br>
+Select the "REMOVE FILE" should you have selected the wrong document. 
+<br><br>
+Select the "Submit" button to upload the Tenant's Identification document.
+<br><br>
+You can select the "Cancel" button to return to the home page. 
+</div>
+</div>

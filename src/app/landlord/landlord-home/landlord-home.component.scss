@@ -1,0 +1,43 @@
+.content{
+    padding: 15px;
+    height: 65vh;
+
+    .centredoc{
+        margin-top: 12%;
+    }
+}
+
+span{
+    display: inline-block;
+    // width: 30%;
+    padding: 20px;
+    text-align: center;
+}
+
+#footer {
+    background-color: aqua;
+
+    #footer-content {
+        // background-color: #f3e5f5;
+        background-color: bisque;
+        // border: 1px solid lightsalmon;
+        // height: 32px; /* height + top/bottom paddding + top/bottom border must add up to footer height */
+        height: 100%;
+        padding: 8px;
+
+        hr{
+            margin: auto;
+            // margin-top: 2cm;
+            // width: 80%;
+            height: 2px;
+        }
+
+        .footer-paragraph{
+            color: black;
+            // width: 80%;
+            text-align: center;
+            margin: auto;
+            font-size: 12px;
+        }
+    }
+}

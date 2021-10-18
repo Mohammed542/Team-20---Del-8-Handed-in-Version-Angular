@@ -1,0 +1,117 @@
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onEdit(form.value)">
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Edit Landlord</h1>
+            </div>
+    
+            <div class="row">
+                <h3>Please enter your updated details:</h3>
+            </div>
+    
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>* Name:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="FirstName">
+                        <mat-hint align="end">Please enter your name</mat-hint>
+                        <mat-error *ngIf="form.controls.FirstName.invalid">{{getErrorMessage("name")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>* Surname:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="LastName">
+                        <mat-hint align="end">Please enter your surname</mat-hint>
+                        <mat-error *ngIf="form.controls.LastName.invalid">{{getErrorMessage("surname")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>* Cellphone Number:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="CellphoneNumber">
+                        <mat-hint align="end">Provide your contact number</mat-hint>
+                        <mat-error *ngIf="form.controls.CellphoneNumber.invalid">{{getErrorMessage("cellphonenumber")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Email Address:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput readonly formControlName="EmailAddress">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>ID Number:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput readonly formControlName="IDNumber">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                
+                
+                
+            </div>
+        </div>
+       
+    
+    
+        <div class="bottombuttons">
+            <p><mark>Fields marked with * require input!</mark></p>
+            <button mat-flat-button color="primary" (click)="onCancel()">Cancel</button>
+            <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Confirm Changes</button>
+        </div>
+        
+    </form>
+
+    
+</div>
+
+<a mat-button href="https://i.imgur.com/Bi2X6mp.png" target="_blank">
+Help?
+</a>
+
+<button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title" id="exampleModalLabel">Hint: Edit Profile</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">  
+<div class="ml-5 mt-5 row">    
+This screen allows you to edit your account information.
+<br><br>
+Your Name, Surname, and Cellphone Number can be edited.
+<br><br>
+You cannot edit your Email Address or your ID Number as it is used throughout the system for various Landlord functionality.         
+<br><br>
+All fields demarcated with an asterisk (*) have to have a value for the account information to be allowed to update.
+<br><br>
+You can select the "Cancel" button located at the bottom of the editable fields to return to your profile page without making changes. 
+<br><br>
+Once the required fields are populated, you can select the "Confirm Changes" button to update your edited account information.
+ 
+
+</div>
+</div>

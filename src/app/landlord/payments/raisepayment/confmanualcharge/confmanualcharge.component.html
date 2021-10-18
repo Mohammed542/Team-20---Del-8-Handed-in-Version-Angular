@@ -1,0 +1,8 @@
+Confirm Manual Charge
+<mat-dialog-content>
+    Are you sure you want to charge an amount of R{{data.ManualCharge.ChargeAmount}}?
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button mat-dialog-close color="primary" (click)="doManualRaisePayment()">Confirm</button>
+</mat-dialog-actions>

@@ -1,0 +1,149 @@
+.main-div{
+    // border: 1px solid;
+    // border-color: black;
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 10%;
+
+    padding: 20px;
+
+    h1{
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+
+        padding: 3px;
+    }
+
+    // .receipt-div{
+    //     .imgspan{
+    //         display: inline;
+
+    //         img{
+    //             height: 109;
+    //             width: 200;
+    //         }
+    //     }
+    
+    //     h1{
+    //         display: inline;
+    //         font-weight: bold;
+    //         text-decoration: none;
+    //         // text-align: center;
+    
+    //         padding: 3px;
+    //         margin-left: 10px;
+    //     }
+    // }
+    
+
+    // .pdf-div{
+    //     width: 100%;
+    //     height: 800px;
+
+    //     iframe{
+    //         width: 100%;
+    //         height: 100%;
+    //     }
+    // }
+
+    .container-fluid{
+        display: flex;
+        justify-content: center;
+
+        .receiptDiv{
+            border: 1px solid;
+            border-color: antiquewhite;
+
+            height: 29.7cm;
+            width: 21cm;
+            .receipt-inner-div{
+                padding: 10%;
+
+                height: 22cm;
+                
+                // margin: 30mm 45mm 30mm 45mm;
+                // border: 1px solid;
+                // border-color: black;
+
+                .imgspan{
+                    display: inline;
+    
+                    img{
+                        height: 109;
+                        width: 200;
+                    }
+                }
+        
+                h1{
+                    display: inline;
+                    font-weight: bold;
+                    text-decoration: none;
+                    // text-align: center;
+        
+                    padding: 3px;
+                    margin-left: 10px;
+                }
+
+                th, td{
+                    text-align: center;
+                }
+            }
+
+            #footer {
+                height: 7.66cm; /* the footer's total height */
+                background-color: aqua;
+
+                #footer-content {
+                    // background-color: #f3e5f5;
+                    background-color: bisque;
+                    // border: 1px solid lightsalmon;
+                    // height: 32px; /* height + top/bottom paddding + top/bottom border must add up to footer height */
+                    height: 100%;
+                    padding: 8px;
+
+                    hr{
+                        margin: auto;
+                        // margin-top: 2cm;
+                        width: 80%;
+                        height: 2px;
+                    }
+
+                    .footer-paragraph{
+                        color: slategrey;
+                        width: 80%;
+                        text-align: center;
+                        margin: auto;
+                        font-size: 12px;
+                    }
+                }
+            }            
+        }
+    }
+
+    
+
+    // h4{
+    //     text-decoration: underline;
+    //     text-align: center;
+    // }
+
+    // .control-div{
+    //     text-align: center;
+        
+    //     mat-form-field{
+    //         padding: 6px;
+    //     }
+    // }
+
+    .bottombuttons{
+        text-align: end;
+
+        button{
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+    }
+}

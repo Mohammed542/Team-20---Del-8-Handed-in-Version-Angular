@@ -1,0 +1,92 @@
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  padding: 5px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.centre {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  height: 120px;
+  width: 200px;
+
+  text-align: center;
+  text-decoration: none;
+  float: right;
+  font-size: 24px;
+  margin: 16px 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 50px;
+}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+
+@font-face {
+  font-family: "Cambria Math";
+  panose-1: 2 4 5 3 5 4 6 3 2 4;
+}
+@font-face {
+  font-family: Calibri;
+  panose-1: 2 15 5 2 2 2 4 3 2 4;
+}
+@font-face {
+  font-family: "Calibri Light";
+  panose-1: 2 15 3 2 2 2 4 3 2 4;
+}
+/* Style Definitions */
+p.MsoNormal,
+li.MsoNormal,
+div.MsoNormal {
+  margin-top: 0in;
+  margin-right: 0in;
+  margin-bottom: 8pt;
+  margin-left: 0in;
+  line-height: 107%;
+  font-size: 11pt;
+  font-family: "Calibri", sans-serif;
+}
+.MsoChpDefault {
+  font-family: "Calibri", sans-serif;
+}
+.MsoPapDefault {
+  margin-bottom: 8pt;
+  line-height: 107%;
+}
+@page WordSection1 {
+  size: 8.5in 11in;
+  margin: 1in 1in 1in 1in;
+}
+div.WordSection1 {
+  page: WordSection1;
+}

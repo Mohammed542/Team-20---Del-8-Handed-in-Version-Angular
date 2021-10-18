@@ -1,0 +1,113 @@
+<div class="main-div">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="left-div col-md-4">
+                <h1>View Rental Agreement</h1>
+                <br><br>
+            </div>
+        
+            <div class="right-div col-md-8">
+                
+        
+            </div>
+        </div>
+    </div>
+
+    
+
+    <table aria-describedby="table" mat-table [dataSource]="dataSource" matSort matSortActive="Date" matSortDirection="desc" class="mat-elevation-z8 col-12 mb-5">
+        <ng-container matColumnDef="Tenant">
+          <th id="Tenant" mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let item">{{ item.Tenant }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Building">
+          <th id="Building" mat-header-cell *matHeaderCellDef mat-sort-header>Building</th>
+          <td mat-cell *matCellDef="let item">{{ item.Building }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Unit">
+          <th id="Unit" mat-header-cell *matHeaderCellDef mat-sort-header>Unit</th>
+          <td mat-cell *matCellDef="let item">{{ item.Unit }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Status">
+          <th id="Status" mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+          <td mat-cell *matCellDef="let item">{{ item.Status }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Type">
+          <th id="Type" mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+          <td mat-cell *matCellDef="let item">{{ item.Type }}</td>
+        </ng-container>
+        <ng-container matColumnDef="StartDate">
+          <th id="StartDate" mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
+          <td mat-cell *matCellDef="let item">{{ item.StartDate | date: "yyyy-MM-dd" }}</td>
+        </ng-container>
+        <ng-container matColumnDef="EndDate">
+          <th id="EndDate" mat-header-cell *matHeaderCellDef mat-sort-header>End Date</th>
+          <td mat-cell *matCellDef="let item">{{ item.EndDate | date: "yyyy-MM-dd" }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Options">
+          <th id="Options" mat-header-cell *matHeaderCellDef mat-sort-header>Options
+          </th>
+          <td mat-cell *matCellDef="let item">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="onViewRA(item)">
+                              <mat-icon>remove_red_eye</mat-icon>
+                              <span>View Rental Agreement</span>
+                            </button>
+                            <button mat-menu-item (click)="onDeactivateRA(item)">
+                              <mat-icon>delete</mat-icon>
+                              <span>Cancel Rental Agreement</span>
+                            </button>
+                        </mat-menu>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20, 30, 50]" showFirstLastButtons aria-label="Select Page"></mat-paginator>
+
+    <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="onClick()">Return to Homepage</button>
+    </div>
+</div>
+
+<a mat-button href="https://i.imgur.com/49W64yG.png" target="_blank">
+Help?
+</a>
+
+<button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title" id="exampleModalLabel">Hint: View Rental Agreement Documents</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">  
+<div class="ml-5 mt-5 row">    
+This screen allows you to view all Rental Agreement documents available on the system.
+<br><br>
+The Name, Building, Unit, the start and end date of the Rental Agreement, and the status of the Rental Agreement can be seen in the table.
+<br><br>
+You can select the various headings at the top of the table (Name, Building, etc.) to sort the table using the selected criteria.         
+<br><br>
+Select the three dots located underneath the "Options" column to find various options that can be selected for the chosen Rental Agreement.
+<br><br>
+You can select the "View Rental Agreement" in the options menu to display the Rental Agreement document that has been uploaded.
+<br><br>
+You can select the "Cancel Rental Agreement" in the options menu to deactivate the selected the Rental Agreement.
+<br><br>
+WARNING: Once a Rental Agreement has been cancelled, it can not be reactivated and you will need to create a new Rental Agreement instead.
+<br><br>
+You can select the "Items per page" dropdown to reveal a list of numbers. Select the number of how many Rental Agreements you would like to see on the table.
+<br><br>
+Alternatively, you can select the various arrows located next to the "Items per page" dropdown to skim through pages of Rental Agreements uploaded on the system.
+<br><br>
+You can select the "Return to Homepage" button located at the bottom to return to the home screen.
+</div>
+</div>

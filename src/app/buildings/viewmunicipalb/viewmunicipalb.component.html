@@ -1,0 +1,33 @@
+<div class="p-1">
+    <div class="m-5">
+      <div class="m-5" style="display: flex; justify-content: center">
+        <h1>Building Municipal Bills</h1>
+      </div>
+      <div class="col-12 d-flex" style="justify-content: flex-end;">
+        <div class="col-2">
+          <mat-form-field>
+            <input matInput placeholder="Filter">
+          </mat-form-field>
+        </div>
+      </div>
+      <table aria-describedby="table" mat-table [dataSource]="dataSource" matSort matSortActive="Date" matSortDirection="asc" class="mat-elevation-z8 col-12 mb-5">
+        <ng-container matColumnDef="BuildingName">
+          <th id="BuildingName" mat-header-cell *matHeaderCellDef mat-sort-header>Building Name</th>
+          <td mat-cell *matCellDef="let item">{{ item.BuildingName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Month">
+          <th id="Month" mat-header-cell *matHeaderCellDef mat-sort-header>Month</th>
+          <td mat-cell *matCellDef="let item">{{ item.Month }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Year">
+          <th id="Year" mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
+          <td mat-cell *matCellDef="let item">{{ item.Year }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onOpenMunicipal(row)"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 15, 20, 30, 50]" showFirstLastButtons aria-label="Select Page"></mat-paginator>
+    </div>
+  </div>
+  

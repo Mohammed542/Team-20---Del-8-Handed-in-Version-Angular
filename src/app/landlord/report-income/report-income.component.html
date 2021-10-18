@@ -1,0 +1,156 @@
+<!-- <div style="max-width: 60%; padding-left: 25%;  padding-top: 5%;">
+  <div style="padding-left: 50%;">
+    <mat-card>
+      <mat-card-header>
+      <mat-card-title>Select Start and End Date for Income & Expenses Generation</mat-card-title>
+      </mat-card-header>
+      <br>
+  <mat-card-content >
+      <form [formGroup]="form">
+
+     <mat-form-field appearance="fill">
+        <mat-label>Select Starting Date</mat-label>
+        <input matInput [matDatepicker]="s_picker" formControlName="startdate">
+        <mat-datepicker-toggle matSuffix [for]="s_picker"></mat-datepicker-toggle>
+        <mat-datepicker #s_picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Select Ending Date</mat-label>
+        <input matInput [matDatepicker]="e_picker" formControlName="enddate">
+        <mat-datepicker-toggle matSuffix [for]="e_picker"></mat-datepicker-toggle>
+        <mat-datepicker #e_picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+
+      
+
+      
+        <button class="submit btn-sm btn-primary" mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#deleteModal">Generate Report</button>
+      
+      </form>
+    </mat-card-content><br>
+    </mat-card>
+  </div>
+
+  <br>
+    <div #print>
+      <div *ngIf="htmlData" style="width: 200%; height: 200%;">
+      <canvas id="canvas"> {{htmlData}} </canvas>
+      </div> <br>
+
+      <div *ngIf="data2" align="center" >
+        <div *ngFor="let data of data2">
+              <table class="table" style="width: 100%; height: 100%;" id="table">
+                <thead class="thead-dark">
+                  <tr colspan="3">
+                    <th>
+                      <b>Product Name:</b> {{data.ProductName}} <br>
+                      <b>Average Ordered Quantity:</b> {{data.AverageQuantityOrdered}}
+                    </th>
+                  </tr>
+                </thead>
+                <thead class="thead-dark">
+                <tr>
+                  <th>Date of Order:</th>
+                  <th>Shipment Date:</th>
+                  <th>Quantity of Order:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of data.ProductOrders">
+                  <td>{{item.OrderDate}} </td>
+                  <td>{{item.ShippedDate}}</td>
+                  <td>{{item.OrderQuantity}}</td>
+                </tr>
+              </tbody>
+                <br>
+              </table>
+        </div>
+      </div>
+      
+    </div>
+</div> -->
+
+<!-- Modal -->
+  <!-- <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Report Generation Failed</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+            <div class="ml-5 mt-5 row">
+                      
+             500 Internal Server Error. Failed to retrieve information from Database.
+           
+            </div>
+   
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<div class="container-fluid">
+  <div class="row" style="margin-top: 3em; margin-bottom: 3em;">
+    <h1 style="text-align: center; color: black;"><b>Management Report</b></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="chart-wrapper">
+        <canvas baseChart 
+        [data]="pieChartData" 
+        [labels]="pieChartLabels" 
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [plugins]="pieChartPlugins"
+        [legend]="pieChartLegend">
+        </canvas>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="chart-wrapper">
+        <canvas baseChart 
+        [data]="pieChartData2" 
+        [labels]="pieChartLabels2" 
+        [chartType]="pieChartType2"
+        [options]="pieChartOptions2"
+        [plugins]="pieChartPlugins2"
+        [legend]="pieChartLegend2">
+        </canvas>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="chart-wrapper">
+        <canvas baseChart 
+            [datasets]="lineChartData" 
+            [labels]="lineChartLabels" 
+            [options]="lineChartOptions"
+            [colors]="lineChartColors" 
+            [legend]="lineChartLegend" 
+            [chartType]="lineChartType" 
+            [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="chart-wrapper">
+      <canvas baseChart 
+          [datasets]="lineChartData" 
+          [labels]="lineChartLabels" 
+          [options]="lineChartOptions"
+          [colors]="lineChartColors" 
+          [legend]="lineChartLegend" 
+          [chartType]="lineChartType" 
+          [plugins]="lineChartPlugins">
+      </canvas>
+    </div>
+  </div> -->
+</div>

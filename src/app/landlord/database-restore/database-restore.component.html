@@ -1,0 +1,52 @@
+<h1 class='heading'>Restore Database</h1>
+<div class="main-div">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="DN">     
+                <h1>Please select Backup file to Restore Database:</h1>
+                <span id="filepath">
+                    <button mat-flat-button (click)="openFile()">Select File
+                        <input type="file" style="display:none" (change)="handle($event)">
+                    </button>
+                </span>
+            </div>
+        
+            
+        </div>
+    </div>
+
+<div class="showFilePath">
+        <h1>Selected File: {{fp}}</h1>
+</div>                 
+    
+<div class="backupbutton">
+        <button class="submit btn-sm btn-primary" mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#backupModal">Restore Database</button>
+    </div>
+    
+</div>
+<div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="onClick()">Return to Homepage</button>
+    </div>
+
+    <div class="modal fade" id="backupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Database Restoration failed</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+            <div class="ml-5 mt-5 row">
+                      
+             Invalid database backup file. Please select a database backup file to restore database.
+           
+            </div>
+   
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>

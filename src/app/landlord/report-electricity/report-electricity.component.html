@@ -1,0 +1,116 @@
+<div class="main-div">
+    <h1>Generate Electricity Report</h1>
+
+    <div class="control-div">
+        <label>Please select a building:</label>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Building</mat-label>
+            <mat-select (selectionChange)="selectBuilding($event)">
+                <mat-option value="one" *ngFor="let building of buildingsList" value="{{ building.BuildingID }}">{{ building.BuildingName }}</mat-option>
+                <!-- <mat-option value="two">Building B</mat-option> -->
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Selected Buildings:</th>
+                    <th *ngFor="let selBuidings of selectedBuildings">
+                        {{ selBuidings.BuildingName }}
+
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a vertical three dot icon">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+            
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="onDeleteSelectedBuilding(selBuidings)">
+                              <mat-icon>delete</mat-icon>
+                              <span>Remove Building</span>
+                            </button>
+                        </mat-menu>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <h3>Please select monthly interval</h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="control-div col-md-6">
+                <label>Start Month:</label>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a Month</mat-label>
+                    <input matInput [matDatepicker]="picker" (dateChange)="changeStartMonth($event)">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div class="control-div col-md-6">
+                <label>End Month:</label>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a Month</mat-label>
+                    <input matInput [matDatepicker]="picker2" (dateChange)="changeEndMonth($event)">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="control-div col-md-6">
+                <label *ngIf="startDate"><b>Selected Start Month: {{startDate}}</b></label>
+            </div>
+
+            <div class="control-div col-md-6">
+                <label *ngIf="endDate"><b>Selected End Month: {{endDate}}</b></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="control-div col-sm-12">
+                <button mat-flat-button color="primary" (click)="onGenerateReport()">Generate Electricity Report</button>
+            </div>
+        </div>
+    </div>
+    <div class="reportClassDiv">
+        <br><br>
+        <div *ngIf="canvas">
+            <h2 *ngIf="clicked" style="text-align: center;">Electricity Report</h2>
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div *ngIf="repoData">
+            <div *ngFor="let tdata of repoData">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <!-- <h2>Building Name: </h2> -->
+                            <h2>Month: {{ tdata.Month }}</h2>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th><b>Building</b></th>
+                            <th><b>Amount Used</b></th>
+                            <!-- <th><b>Order Quantity</b></th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let orderData of tdata.waterdata">
+                            <td>{{ orderData.buildingName }}</td>
+                            <td>{{ orderData.consAmount }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="main-div">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="left-div col-md-4">
+        <h1>Payments</h1>
+      </div>
+
+      <div class="right-div col-md-8">
+        <!-- <mat-form-field appearance="outline">
+                    <mat-icon matPrefix>search</mat-icon>
+                    <mat-label>Search Payment Name</mat-label>
+                    <input matInput placeholder="Placeholder" (keyup)="searchChange($event)">
+                </mat-form-field> -->
+      </div>
+    </div>
+  </div>
+
+  <table aria-describedby="table" mat-table [dataSource]="dataSource" matSort matSortActive="Date"
+    matSortDirection="desc" class="mat-elevation-z8 col-12 mb-5">
+    <ng-container matColumnDef="Date">
+      <th id="Date" mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let item">{{ item.Date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="PaymentName">
+      <th id="PaymentName" mat-header-cell *matHeaderCellDef mat-sort-header>Payment Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.PaymentName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Method">
+      <th id="Method" mat-header-cell *matHeaderCellDef mat-sort-header>Method</th>
+      <td mat-cell *matCellDef="let item">{{ item.PaymentMethod }}</td>
+    </ng-container>
+    <ng-container matColumnDef="BuildingName">
+      <th id="BuildingName" mat-header-cell *matHeaderCellDef mat-sort-header>Building Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.BuildingName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="UnitNumber">
+      <th id="UnitNumber" mat-header-cell *matHeaderCellDef mat-sort-header>Unit Number</th>
+      <td mat-cell *matCellDef="let item">{{ item.UnitNumber }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Tenant">
+      <th id="Tenant" mat-header-cell *matHeaderCellDef mat-sort-header>Tenant</th>
+      <td mat-cell *matCellDef="let item">{{ item.Tenant }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Amount">
+      <th id="Amount" mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+      <td mat-cell *matCellDef="let item">{{ item.Amount }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 15, 20, 30, 50]" showFirstLastButtons aria-label="Select Page">
+  </mat-paginator>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="left-div col-md-4">
+        <h1>Charges</h1>
+      </div>
+
+      <div class="right-div col-md-8">
+        
+      </div>
+    </div>
+  </div>
+
+  <table aria-describedby="table" mat-table [dataSource]="dataSource1" #sort1="matSort" matSort matSortActive="Date"
+    matSortDirection="desc" class="mat-elevation-z8 col-12 mb-5">
+    <ng-container matColumnDef="Date">
+      <th id="Date" mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let item">{{ item.Date| date: "yyyy-MM-dd" }}</td>
+    </ng-container>
+    <ng-container matColumnDef="ChargeName">
+      <th id="ChargeName" mat-header-cell *matHeaderCellDef mat-sort-header>Charge Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.ChargeName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="BuildingName">
+      <th id="BuildingName" mat-header-cell *matHeaderCellDef mat-sort-header>Building Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.BuildingName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="UnitNumber">
+      <th id="UnitNumber" mat-header-cell *matHeaderCellDef mat-sort-header>Unit Number</th>
+      <td mat-cell *matCellDef="let item">{{ item.UnitNumber }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Tenant">
+      <th id="Tenant" mat-header-cell *matHeaderCellDef mat-sort-header>Tenant</th>
+      <td mat-cell *matCellDef="let item">{{ item.Tenant }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Amount">
+      <th id="Amount" mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+      <td mat-cell *matCellDef="let item">{{ item.Amount }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+  </table>
+
+  <mat-paginator #paginator1 [pageSizeOptions]="[5, 10, 15, 20, 30, 50]" showFirstLastButtons aria-label="Select Page">
+  </mat-paginator>
+</div>

@@ -1,0 +1,56 @@
+<body style="padding-top: 2%;">
+   
+    <button mat-raised-button color="primary" class="button3" type="button" (click)="add()">
+        <mat-icon class="icon" name="arrow-round-forward">add</mat-icon>
+        Add Building
+    </button>
+    <button mat-raised-button (click)="capture()">Capture Municipal Bill</button>
+
+        <form [formGroup]="SearchForm" >
+        <div class="Search">
+            <mat-form-field id="searchBar" class="demo-full-width">
+                <input type="text" size="50" (keyup)="SearhcUnits($event)" matTooltip="Search Building..." matInput placeholder="Search Building..." formControlName="SearchBuilding" name="SearchBuilding">
+            </mat-form-field> 
+            <button mat-icon-button aria-label="Search" type="submit">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+    </form>
+
+
+   <div style="margin: 10px;">
+        <div class="list-group units-list" *ngFor="let unit of units">
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="row">
+                    <div class="col col-md-2 image-col">
+                        <img class="image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthearchitecturedesigns.com%2Fwp-content%2Fuploads%2F2020%2F10%2FCondo-Unit-Floor-Plan-1-1024x936.jpeg&f=1&nofb=1">
+                    </div>
+                    <div class="col col-md-6 small" style="display: inline-block;width: 80%;">
+                        <table>
+                           <tr>
+                                <td>
+                                    <h2 style="margin-left:2em;width: 15em;" class="col col-md-8 text-col">{{unit.BuildingName}}: Unit {{unit.UnitNumber}}</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                 <h3 style="margin-left: 2em;width: 15em;">{{unit.StreetAddress}}, {{unit.Suburb}}, {{unit.City}}</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button mat-raised-button color="success" class="button3" type="button" (click)="edit(unit.UnitID)">
+                                        <mat-icon class="icon" name="arrow-round-forward">edit</mat-icon>
+                                    </button>
+                                    <button mat-raised-button color="warn" class="button3" type="button" (click)="openDialog(unit.UnitID)">
+                                        <mat-icon class="icon" name="arrow-round-forward">delete</mat-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

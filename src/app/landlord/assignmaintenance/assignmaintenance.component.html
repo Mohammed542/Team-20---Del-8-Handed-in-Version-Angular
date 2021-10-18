@@ -1,0 +1,173 @@
+<div class="container mt-3" style="position: absolute; margin-left: 15%;">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="container mt-5 mb-5">
+      <h1 style="text-align: center">
+        <u><b>Assign Maintenance:</b></u><br />
+      </h1>
+      <div class="row">
+        <div class="col mb-5">
+          <div>
+            <div class="form-group row centre">
+              <label class="col-3 col-form-label">Building Name:</label>
+              <div class="col-5">
+                <select class="form-select" formControlName="BuildingID">
+                  <option selected>--Select Building--</option>
+                  <option *ngFor="let building of buildingsList" value="{{ building.BuildingID }}">{{
+                    building.BuildingName }}</option>
+                  <!-- <option value="2">Two</option>
+                <option value="3">Three</option> -->
+                </select>
+              </div>
+            </div>
+            <br />
+            <div class="form-group row centre">
+              <label class="col-3 col-form-label">Maintenance Type:</label>
+              <div class="col-5">
+                <select class="form-select" formControlName="MaintenanceTypeID">
+                  <option selected>--Select Maintenance Type--</option>
+                  <option *ngFor="let mainttypes of maintenanceTypeList" value="{{ mainttypes.MaintenanceTypeID }}">{{
+                    mainttypes.Description }}</option>
+                </select>
+              </div>
+            </div>
+            <br />
+
+            <div class="form-group row centre">
+              <label class="col-5 col-form-label">Service Provider Email Address:</label>
+              <div class="col-5">
+                <select class="form-select" (change)="setName($event.target.value)" formControlName="ServiceProviderID">
+                  <option selected>--Select Service Provider Email--</option>
+                  <option *ngFor="let spemails of spEmailList" value="{{ spemails.ServiceProviderID }}">{{
+                    spemails.EmailAddress }}</option>
+                </select>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+
+        <div class="col mb-5 ">
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Amount Quoted:</label>
+            <div class="col-5">
+              <input class="form-control" type="text" name="" id="" placeholder="R" formControlName="AmountQuoted" />
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group row centre">
+            <label class="col-5 col-form-label">Date of Employment:</label>
+            <div class="col-5">
+              <input class="form-control" type="date" name="" id="" formControlName="DateOfEmployment" />
+            </div>
+          </div>
+          <br />
+
+          <div class="row centre">
+            <label class="col-5 col-form-label">Assigned Service Provider:</label>
+            <div class="col-5">
+              <input class="form-control" type="text" name="" id="" value="{{ spName }}" disabled />
+            </div>
+          </div>
+          <br />
+
+        </div>
+      </div>
+      <!-- Ayesha start -->
+
+
+      <a mat-button href="https://i.imgur.com/sDOCPQk.jpg" target="_blank">
+        Help?
+      </a>
+
+      <button class="submit btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalLabel">Hint: Assign Maintenance.</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="ml-5 mt-5 row">
+                !! This screen allows you to assign a maintenance to a service provider
+                <br>
+                !! There are different types of maintenace that a service provider can be assigned to.
+                <br>
+                Namely: Painting, Gardening, Carpentry, Plumbing, Electrical
+                <br>
+                The amount quoted and date of employment can be changed if necessary on the edit page
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ayesha end -->
+
+
+
+      <div class="text-end" style="margin-bottom: 5px;">
+        <button class="btn btn-secondary" style="margin-right: 5px;" data-bs-toggle="modal"
+          data-bs-target="#cancelModal">
+          Cancel
+        </button>
+        <button class="btn btn-primary" [disabled]="!form.valid" type="submit" data-bs-toggle="modal"
+          data-bs-target="#successEditModal">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Cancel Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Cancel</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <br /><br />
+        <h3>Are you sure you want to cancel?</h3>
+        <br /><br />
+      </div>
+      <div class="modal-footer">
+        <a href="landlord" type="button" class="btn btn-primary" style="width: 100px;">OK</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Edit Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="successEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">
+          Successful Maintenance Assigned
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <br /><br />
+        <h3>The maintenance has been assigned</h3>
+        <br /><br />
+      </div>
+      <div class="modal-footer">
+        <a (click)="viewMaintenance()" data-bs-dismiss="modal" type="button" class="btn btn-primary" style="width: 100px;">OK</a>
+      </div>
+    </div>
+  </div>
+</div>
+

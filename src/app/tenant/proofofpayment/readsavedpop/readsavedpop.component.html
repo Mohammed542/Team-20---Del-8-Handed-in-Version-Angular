@@ -1,0 +1,168 @@
+<!-- <div class="main-div">
+    <span class="heading-div">
+        <h1>Payments</h1>
+    </span>
+    <h1>Payments</h1>
+
+    <span class="right-div">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <i class="bi bi-search"></i>
+            <input type="email" matInput>
+        </mat-form-field>
+
+        <input type="text" class="form-control" />
+        <i class="glyphicon glyphicon-user"></i>
+
+        <span class="searchBar">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix>search</mat-icon>
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </span>
+
+        <span>
+            <button mat-flat-button id="filterButton">Filter Options</button>
+        </span>
+    </span>
+</div> -->
+
+<div class="main-div">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="left-div col-md-4">
+                <h1>Proof of Payments</h1>
+            </div>
+        
+            <div class="right-div col-md-8">
+                <!-- <mat-form-field appearance="outline">
+                    <mat-icon matPrefix>search</mat-icon>
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field> -->
+        
+                <!-- <span id="filterButton"><button mat-flat-button>Filter Options</button></span> -->
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Unit Number</th>
+                    <th>View File</th>
+                    <th>
+                        <button mat-icon-button aria-label="hidden" (click)="onClickCreate()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let payments of allProofOfPayments">
+                    <td>{{ payments.FileName }}</td>
+                    <td>{{ payments.Date }}</td>
+                    <td>{{ payments.Type }}</td>
+                    <td>{{ payments.UnitNumber }}</td>
+                    <td><a [routerLink]="" id="{{ payments.ProofOfPaymentID }}" (click)="ViewPDFClicked(payments)">View Proof of Payment</a></td>
+                    <td style="width: 5%;">
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a vertical three dot icon">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="onClickGenReceipt()">
+                              <mat-icon>receipt</mat-icon>
+                              <span>Generate Receipt</span>
+                            </button>
+                            <button mat-menu-item (click)="onClickEdit(payments)">
+                              <mat-icon>edit</mat-icon>
+                              <span>Edit Proof of Payment</span>
+                            </button>
+                            <button mat-menu-item (click)="onClickDelete(payments)">
+                              <mat-icon>delete</mat-icon>
+                              <span>Delete Proof of Payment</span>
+                            </button>
+                        </mat-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+    <!---->
+    <table aria-describedby="table" mat-table [dataSource]="dataSource" matSort matSortActive="Date" matSortDirection="desc" class="mat-elevation-z8 col-12 mb-5">
+        <ng-container matColumnDef="Date">
+          <th id="Date" mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+          <td mat-cell *matCellDef="let item">{{ item.Date }}</td>
+        </ng-container>
+        <ng-container matColumnDef="FileName">
+          <th id="FileName" mat-header-cell *matHeaderCellDef mat-sort-header>File Name</th>
+          <td mat-cell *matCellDef="let item">
+            {{ item.FileName }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="Type">
+          <th id="Type" mat-header-cell *matHeaderCellDef mat-sort-header>File Type</th>
+          <td mat-cell *matCellDef="let item">
+            {{ item.Type }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="BuildingName">
+          <th id="BuildingName" mat-header-cell *matHeaderCellDef mat-sort-header>Building Name</th>
+          <td mat-cell *matCellDef="let item">{{ item.BuildingName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="UnitNumber">
+          <th id="UnitNumber" mat-header-cell *matHeaderCellDef mat-sort-header>Unit Number</th>
+          <td mat-cell *matCellDef="let item">{{ item.UnitNumber }}</td>
+        </ng-container>=
+        <ng-container matColumnDef="ViewFile">
+          <th id="ViewFile" mat-header-cell *matHeaderCellDef mat-sort-header>Proof of Payment</th>
+          <td mat-cell *matCellDef="let item"><a [routerLink]="" id="{{ item.ProofOfPaymentID }}" (click)="ViewPDFClicked(item)">View Proof of Payment</a></td>
+        </ng-container>
+        <ng-container matColumnDef="Icon">
+          <th id="Icon" mat-header-cell *matHeaderCellDef mat-sort-header>
+            <button mat-icon-button aria-label="hidden" (click)="onClickCreate()">
+                <mat-icon>add</mat-icon>
+            </button>
+          </th>
+          <td mat-cell *matCellDef="let item">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+                <!-- <button mat-menu-item (click)="onClickGenReceipt()">
+                  <mat-icon>receipt</mat-icon>
+                  <span>Generate Receipt</span>
+                </button> -->
+                <button mat-menu-item (click)="onClickEdit(item)">
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit Proof of Payment</span>
+                </button>
+                <button mat-menu-item (click)="onClickDelete(item)">
+                  <mat-icon>delete</mat-icon>
+                  <span>Delete Proof of Payment</span>
+                </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20, 30, 50]" showFirstLastButtons aria-label="Select Page"></mat-paginator>
+    <!---->
+
+    <!-- <div class="bottombuttons">
+        <button mat-flat-button color="primary" (click)="onClick()">Raise Payment</button>
+        <button mat-flat-button color="primary" (click)="onClickk()">Capture Payment</button>
+    </div> -->
+</div>

@@ -1,0 +1,83 @@
+<div style="padding-left: 10%; padding-top: 5%;">
+  <form [formGroup]="updateForm" (ngSubmit)="UpdateUnit(updateForm.value)" class="example-form"
+    style="text-align: center;">
+    <mat-card style="text-align: center; max-width: 90%;">
+      <mat-card-content>
+        <div class="row">
+          <div class="column">
+            <div style="padding-left: 10%;">
+              <h2><b><u>Update Unit</u></b></h2>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Building Name</mat-label>
+                <!-- <input matInput formControlName="BuildingName" name="BuildingName"> -->
+                <mat-select formControlName="BuildingName" name="BuildingName">
+                  <mat-option *ngFor="let type of buildingsList" [value]="type.BuildingID">{{type.BuildingName}}
+                  </mat-option>
+                </mat-select>
+                <mat-hint align="end">Building Name</mat-hint>
+              </mat-form-field><br>
+
+              <mat-form-field appearance="fill" style="width:270px">
+                <mat-label>Unit Type</mat-label>
+                <mat-select formControlName="UnitType" name="UnitType">
+                  <mat-option *ngFor="let type of types" [value]="type.UnitTypeID" (click)="storeType(type.UnitTypeID)">
+                    {{type.Description}}</mat-option>
+                </mat-select>
+                <mat-hint align="end">Select a Unit Type</mat-hint>
+              </mat-form-field><br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Unit Number</mat-label>
+                <input matInput formControlName="UnitNumber" name="UnitNumber" type="number">
+                <mat-hint align="end">Unit Number</mat-hint>
+              </mat-form-field><br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Number of Bedrooms</mat-label>
+                <input matInput formControlName="NumberOfBedrooms" name="NumberOfBedrooms" type="number">
+                <mat-hint align="end">Number of Bedrooms</mat-hint>
+              </mat-form-field><br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Number of Bathrooms</mat-label>
+                <input matInput formControlName="NumberOfBathrooms" name="NumberOfBathrooms" type="number">
+                <mat-hint align="end">Number of Bathrooms</mat-hint>
+              </mat-form-field><br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Building Size</mat-label>
+                <input matInput placeholder="Size" formControlName="Size" name="Size" type="number">
+                <mat-hint align="end">Square Meters</mat-hint>
+              </mat-form-field><br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Rental Amount</mat-label>
+                <input matInput placeholder="RentalAmount" formControlName="RentalAmount" name="RentalAmount"
+                  type="number">
+                <mat-hint align="end">Amount</mat-hint>
+              </mat-form-field><br>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Effective Date</mat-label>
+                <input matInput placeholder="Effective Date" formControlName="Date" name="Date">
+                <mat-hint align="end">Effective Date</mat-hint>
+              </mat-form-field>
+
+            </div>
+          </div>
+          <div class="picture">
+            <!-- <h1>Upload Photos</h1> -->
+            <!-- <button mat-raised-button color="primary">Upload</button> -->
+            <br><br><br><br><br>
+            <br><br><br><br><br>
+            <br><br><br><br><br>
+            <br><br><br><br><br>
+            <button mat-raised-button color="danger" (click)="cancel()">CANCEL</button>
+            <button mat-raised-button color="primary" type="submit">UPDATE UNIT</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

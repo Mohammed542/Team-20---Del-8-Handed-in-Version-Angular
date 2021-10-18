@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body> -->
+  <div>
+    <a mat-button href="https://i.imgur.com/AjDF7xO.jpg" target="_blank">
+      Help?
+      </a>
+    
+      <button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel">Hint: Add Building</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">  
+              <div class="ml-5 mt-5 row">    
+               !! This screen allows you to view a maintenance report 
+               <br>
+               !! The report can be filtered by a start and end date 
+               <br>
+               !! All Maintenances that are COMPLETED will be shown in this report                     
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+        <!-- Aasif End -->
+    <div style="padding-left: 20%; padding-top: 1%; max-width: 80%;">
+        <form class="example-form" >
+          <mat-card >
+            <mat-card-content>
+                <div class="container" style="padding-top: 1%;" >
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th> VAT Percentage </th>
+                          <th> Effective Date </th>
+                          <th> Edit or Delete </th>
+                      </tr>
+                      </thead>
+                      <tbody *ngFor="let v of vat">
+                          <tr>
+                              <td>
+                                  {{v.VATPercentage}}%
+                             </td>
+                             <td>
+                                  {{v.VATEffectiveDate | date }}
+                            </td>
+                              <td>
+                                <button mat-raised-button color="success" class="button3" type="button" (click)="updatevat(v.VATID, v.VATPercentage)">
+                                  <mat-icon class="icon" name="arrow-round-forward">edit</mat-icon>
+                              </button>&nbsp;
+                                <button mat-raised-button color="warn" class="button3" type="button" (click)="openDialog(v.VATID)">
+                                  <mat-icon class="icon" name="arrow-round-forward">delete</mat-icon>
+                              </button>
+                              </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button [routerLink]="'/landlord/home'">BACK</button>
+                <button mat-raised-button color="primary" (click)="addvat()">Create VAT Percentage</button>
+            </mat-card-actions>
+        </mat-card>
+        </form>
+      </div>
+<!-- 
+</body>
+</html> -->

@@ -1,0 +1,143 @@
+<div class="container mt-3" style="border-style: solid">
+  <div class="container mt-5 mb-5" style="border-style: solid">
+    <h1 style="text-align: center">
+      <u><b>Fault Details:</b></u>
+    </h1>
+    <div class="row">
+      <div class="col mb-5">
+        <div>
+          <label for="">Fault Type:</label><br />
+          <label for="">Building Name:</label><br />
+          <label for="">Unit Number:</label><br />
+          <label for="">Fault Report Date:</label><br />
+          <label for="">Fault Details:</label><br />
+          <label for="">Assigned Service Provider:</label><br />
+          <label for="">Amount Quoted:</label><br />
+          <label for="">Service Provider Cellphone Number:</label><br />
+          <label for="">Service Provider Email Address:</label><br />
+          <label for="">Date of Employment:</label><br />
+          <label for="">Date of Completion:</label><br />
+        </div>
+      </div>
+
+      <div class="col mb-5 centre">
+        <h2 class="centre">Fault Status</h2>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width:50%">
+              <span class="sr-only">In Progress</span>
+            </div>
+          </div>
+          <br>
+        <div class="row">
+            <div class="column">
+              <img style="width: 300px; height: 300px" src="https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False">
+            </div>
+            <div class="column" style="margin-left: 100px;">
+              <img style="width: 300px; height: 300px" src="https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False">
+            </div>
+            
+          
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="button button5" >Cancel</a>
+  <a class="button button5 " style="margin-left: 60px" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
+  <a class="button button5" style="margin-left: 60px" href="editfault">Edit</a>
+  <a class="button button5" style="margin-left: 60px" data-bs-toggle="modal" data-bs-target="#finaliseModal">Finalise</a>
+  <a class="button button5" style="margin-left: 60px" href="escalatefault">Escalate</a>
+ 
+</div>
+
+<!-- Delete Modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Confirm Fault Deletion</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+          <h3>Are you sure you want to delete this fault?</h3>
+          <br><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#successDeleteModal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Delete Modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="successDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Successful Fault Deletion</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+          <h3>The fault has been successfully deleted</h3>
+          <br><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="width: 100px;">OK</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Finalise Modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="finaliseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Confirm Fault Finalisation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+          <h3>Are you sure you want to finalise this fault?</h3>
+          <br><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#successFinaliseModal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Finalise Modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="successFinaliseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Successful Fault Finalisation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+          <h3>The fault status has been changed to complete.</h3>
+          <br><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="width: 100px;">OK</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>

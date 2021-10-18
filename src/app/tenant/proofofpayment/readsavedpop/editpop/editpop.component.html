@@ -1,0 +1,117 @@
+<br>
+
+<h1>Edit Proof of Payment:</h1>
+
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onClick(form.value)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Month of Payment:</h5>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Month</mat-label>
+                    <mat-select (selectionChange)="onMonthChange($event)" formControlName="selectedMonth">
+                        <mat-option value="January">January</mat-option>
+                        <mat-option value="February">February</mat-option>
+                        <mat-option value="March">March</mat-option>
+                        <mat-option value="April">April</mat-option>
+                        <mat-option value="May">May</mat-option>
+                        <mat-option value="June">June</mat-option>
+                        <mat-option value="July">July</mat-option>
+                        <mat-option value="August">August</mat-option>
+                        <mat-option value="September">September</mat-option>
+                        <mat-option value="October">October</mat-option>
+                        <mat-option value="November">November</mat-option>
+                        <mat-option value="December">December</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <h5>Year of Payment:</h5>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Year</mat-label>
+                    <mat-select (selectionChange)="onYearChange($event)" formControlName="selectedYear">
+                        <mat-option *ngFor="let years of range" [value]="years.value">{{ years.label }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Building Name:</h5>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Building</mat-label>
+                    <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+                        <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        
+            <div class="col-md-6">
+                <h5>Unit Number:</h5>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Unit</mat-label>
+                    <mat-select (selectionChange)="onUnitChange($event)" formControlName="selectedUnit">
+                        <mat-option *ngIf="unitsList.length == 0">No Units</mat-option>
+                        <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="left-div col-lg-6">
+
+                <div class="control-div">
+                    <input type="text" hidden>
+                    <h4>File Name:</h4>
+                </div>
+            </div>
+
+            <div class="right-div col-lg-6">
+                <div class="control-div" *ngIf="theFile">
+                    <mat-form-field appearance="clear">
+                        <input matInput id="fileInput" type="text" value="{{theFile.name}}">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <button class="midbut" mat-flat-button color="primary" type="button" (click)="fileInput.click()">
+            SELECT FILE
+        </button>
+        <button class="midbut" mat-flat-button color="warn" type="button" (click)="removeFile()" [disabled]="!base64File && !url">
+            REMOVE FILE
+        </button>
+        <input #fileInput type="file" (change)="onFileChange($event)" style="display:none" />
+    </div>
+
+    <br><br>
+
+    <div *ngIf="base64File" class="main-div pdf-div">
+        <h3>Is this the correct file that you want to keep?</h3>
+        <iframe id="pdfiframe" src=""></iframe>
+    </div>
+
+    <div *ngIf="url" class="main-div pdf-div">
+        <h3>Is this the correct file that you want to keep?</h3>
+        <img src="{{ url }}">
+    </div>
+
+    <br><br>
+
+    <button class="bottombuttons" mat-flat-button color="primary" (click)="onClickCancel()">Cancel</button>
+    <button class="bottombuttons" type="submit" mat-flat-button color="primary" (click)="openConfirmDialog()" [disabled]="!theFile">Edit</button>
+
+    </form>
+</div>

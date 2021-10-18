@@ -1,0 +1,93 @@
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onClick(form.value)">
+    <h1>Generate Statement</h1>
+
+    <h4>Please select the building, unit number, and time frame that you would like to generate a statement for:</h4>
+
+    <div class="row">
+        <div class="col-md-6 left-div">
+            <label>Building Name:</label>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Building</mat-label>
+                <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+                    <mat-option *ngIf="form.controls.selectedBuilding.value != '' && form.controls.selectedBuilding.value != undefined" [value]="none">None</mat-option>
+                    <mat-option *ngIf="allBuildings.length == 0" disabled>No Buildings</mat-option>
+                    <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+                </mat-select>
+                <mat-hint align="end">Click the dropdown to select</mat-hint>
+                <mat-error *ngIf="form.controls.selectedBuilding.invalid">{{getErrorMessage("building")}}</mat-error>
+                <!-- <mat-error *ngIf="form.controls.selectedBuilding.value == 'none'">Please select a building</mat-error> -->
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 left-div">
+            <label>Unit Number:</label>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Unit</mat-label>
+                <mat-select (selectionChange)="onUnitChange($event)" formControlName="selectedUnit">
+                    <!-- <mat-option *ngIf="unitsList.length == 0">No Units</mat-option> -->
+                    <mat-option *ngIf="form.controls.selectedUnit.value != '' && form.controls.selectedUnit.value != undefined">None</mat-option>
+                    <mat-option *ngIf="form.controls.selectedBuilding.value == undefined || form.controls.selectedBuilding.value == ''" disabled>Please select a building first</mat-option>
+                    <mat-option *ngIf="unitsList.length == 0 && !(form.controls.selectedBuilding.value == undefined || form.controls.selectedBuilding.value == '')" disabled>No Units</mat-option>
+                    <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+                </mat-select>
+                <mat-hint align="end">Click the dropdown to select</mat-hint>
+                <mat-error *ngIf="form.controls.selectedUnit.invalid">{{getErrorMessage("unit")}}</mat-error>
+                <mat-error *ngIf="form.controls.selectedUnit.value == 'none'">Please select a unit</mat-error>
+            </mat-form-field>
+        </div>        
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 left-div">
+            <label>Start Date:</label>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" (dateChange)="onStartDateChange()" formControlName="startDate" disabled>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker disabled="false" (dateChange)="onStartDateChange()"></mat-datepicker>
+                <mat-hint align="end">Click the Calendar Icon to select a date</mat-hint>
+                <mat-error *ngIf="form.controls.startDate.invalid">{{getErrorMessage("start")}}</mat-error>
+                <mat-error *ngIf="form.controls.startDate.hasError && (selectedStartDate < minDate1)">The selected date is not valid within the period of the selected units' rental agreement</mat-error>
+                <mat-error *ngIf="form.controls.startDate.hasError && (selectedStartDate > maxDate2)">The selected date is not valid within the period of the selected units' rental agreement</mat-error>
+                <!-- <mat-error *ngIf="selectedStartDate > maxDate2">The selected date is not valid within the period of the selected units' rental agreement</mat-error> -->
+                <!-- <mat-error *ngIf="form.controls.startDate.hasError && (maxDate1 < selectedStartDate)">The selected date is not valid within the period of the selected units' rental agreement</mat-error> -->
+                <!-- <mat-error *ngIf="(selectedStartDate > selectedEndDate)">Start date cannot be after end date</mat-error> -->
+            </mat-form-field>
+        </div>        
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 left-div">
+            <label>End Date:</label>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker2" (dateChange)="onEndDateChange()" formControlName="endDate" disabled>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+                <mat-hint align="end">Click the Calendar Icon to select a date</mat-hint>
+                <mat-error *ngIf="form.controls.endDate.invalid">{{getErrorMessage("end")}}</mat-error>
+                <mat-error *ngIf="form.controls.endDate.hasError && (selectedEndDate > maxDate2)">The selected date is not valid within the period of the selected units' rental agreement</mat-error>
+                <mat-error *ngIf="form.controls.endDate.hasError && (selectedEndDate < minDate1)">The selected date is not valid within the period of the selected units' rental agreement</mat-error>
+                <!-- <mat-error *ngIf="selectedEndDate > minDate1">The selected date is not valid within the period of the selected units' rental agreement</mat-error> -->
+                <!-- <mat-error *ngIf="selectedEndDate < selectedStartDate">End date cannot be after start date</mat-error> -->
+            </mat-form-field>
+        </div>        
+    </div>
+
+    <div class="bottombuttons">
+        <button mat-flat-button type="button" color="primary" (click)="onClickCancel()">Cancel</button>
+        <button mat-flat-button type="submit" color="primary" [disabled]="!form.valid">Generate Statement</button>
+    </div>
+    </form>
+</div>

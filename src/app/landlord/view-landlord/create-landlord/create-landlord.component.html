@@ -1,0 +1,116 @@
+<div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onCreate(form.value)">
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Create Landlord Account</h1>
+            </div>
+    
+            <div class="row">
+                <h3>Please enter new Landlord details:</h3>
+            </div>
+    
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Name:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="FirstName" placeholder="e.g. John">
+                        <mat-hint align="end">Please enter landlord's name</mat-hint>
+                        <mat-error *ngIf="form.controls.FirstName.invalid">{{getErrorMessage("name")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Surname:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="LastName" placeholder="e.g. Doe">
+                        <mat-hint align="end">Please enter landlord's surname</mat-hint>
+                        <mat-error *ngIf="form.controls.LastName.invalid">{{getErrorMessage("surname")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Cellphone Number:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="CellphoneNumber" placeholder="e.g. 0652223333">
+                        <mat-hint align="end">Provide a contact number</mat-hint>
+                        <mat-error *ngIf="form.controls.CellphoneNumber.invalid">{{getErrorMessage("cellphonenumber")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>ID Number:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="IDNumber" placeholder="e.g. 0104879888254">
+                        <mat-hint align="end">Provide an ID Number</mat-hint>
+                        <mat-error *ngIf="form.controls.IDNumber.invalid">{{getErrorMessage("idnumber")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-div">
+                    <p>Email Address:</p>
+                </div>
+                <div class="col-lg-6 right-div">
+                    <mat-form-field appearance="fill">
+                        <input type="text" matInput formControlName="EmailAddress" placeholder="e.g. john@doe.com">
+                        <mat-hint align="end">Provide email address</mat-hint>
+                        <mat-error *ngIf="form.controls.EmailAddress.invalid">{{getErrorMessage("emailaddress")}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+        <div class="bottombuttons">
+            <button mat-flat-button color="primary" (click)="onCancel()">Cancel</button>
+            <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Create</button>
+        </div>
+    </form>
+</div>
+
+
+
+<button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title" id="exampleModalLabel">Hint: Create Landlord Account</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">  
+<div class="ml-5 mt-5 row">    
+This screen allows you to create a Landlord account using the information entered in the required fields.
+<br><br>
+There are 5 fields that need to be filled out in order to create a Landlord account.
+<br><br>
+The first field to enter is the First Name of the person for whomst you want to create a Landlord account for.
+<br><br>
+The second field to enter is the Surname of the person for whomst you want to create a Landlord account for.     
+<br><br>
+The third field to enter is the cellphone number of the person for whomst you want to create a Landlord account for.
+<br><br>
+The fourth field to enter is the ID number of the person for whomst you want to create a Landlord account for.
+<br><br>
+The fifth field to enter is the Email Address of the person for whomst you want to create a Landlord account for.
+<br><br>
+WARNING: Make sure the email address you entered is 100% correct as an Email will be sent to the address containing information allowing the person to login to the system.
+<br><br>
+You can select the "Cancel" button located at the bottom to return to the list of Landlords without saving any information entered.
+<br><br>
+You can select the "Create" button located at the bottom to create a Landlord account using the entered details.
+</div>
+</div>

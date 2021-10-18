@@ -1,0 +1,106 @@
+<div>
+  <a mat-button href="https://imgur.com/gallery/MoWVXIA" target="_blank">
+    Help?
+    </a>
+  
+    <button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Hint: Add Building</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+            <div class="ml-5 mt-5 row">    
+              This screen allows the user to add a unit to the system. 
+             <br>
+              The user can specify which Building the Unit belongs to.
+             <br>
+              The user can specify the Unit type, the Unit number, number of bedrooms and bathrooms.
+              <br>
+              The user can also specify the rental amount of the unit.                     
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+      <!-- Aasif End -->
+<div style="padding-left: 10%; padding-top: 5%;">
+  <form [formGroup]="createForm" (ngSubmit)="AddUnits($event)" class="example-form" style="text-align: center;">
+    <mat-card style="text-align: center; max-width: 90%;" >
+      <mat-card-content>
+          <div class="row">
+            <div class="column">
+                <div style="padding-left: 10%;">
+                  <h2><b><u>Add Unit</u></b></h2>
+    
+
+                    <mat-form-field appearance="fill" style="width:270px">
+                      <mat-label>Building Name</mat-label>
+                      <mat-select formControlName="BuildingName">
+                        <mat-option *ngFor="let building of buildings" [value]="building.BuildingName" (click)="storeBuilding(building.BuildingID)">{{building.BuildingName}}</mat-option>
+                      </mat-select>
+                      <mat-hint align="end">Select a Building Name</mat-hint>
+                    </mat-form-field><br>
+            
+                    <mat-form-field appearance="fill" style="width:270px">
+                      <mat-label>Unit Type</mat-label>
+                      <mat-select formControlName="UnitType">
+                        <mat-option *ngFor="let type of types" [value]="type.Description" (click)="storeType(type.UnitTypeID)">{{type.Description}}</mat-option>
+                      </mat-select>
+                      <mat-hint align="end">Select a Unit Type</mat-hint>
+                    </mat-form-field><br>
+      
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Unit Number</mat-label>
+                    <input matInput placeholder="205" formControlName="UnitNumber" name="UnitNumber">
+                    <mat-hint align="end">Unit Number</mat-hint>
+                  </mat-form-field><br>
+      
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Number of Bedrooms</mat-label>
+                      <input matInput placeholder="3" formControlName="NumberOfBedrooms" name="NumberOfBedrooms" type="number">
+                      <mat-hint align="end">Number of Bedrooms</mat-hint>
+                    </mat-form-field><br>
+            
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Number of Bathrooms</mat-label>
+                      <input matInput placeholder="2" formControlName="NumberOfBathrooms" name="NumberOfBathrooms" type="number">
+                      <mat-hint align="end">Number of Bathrooms</mat-hint>
+                    </mat-form-field><br>
+            
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Unit Size</mat-label>
+                    <input matInput placeholder="72 sqm" formControlName="Size" name="Size">
+                    <mat-hint align="end">Square Meters</mat-hint>
+                  </mat-form-field><br>
+
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Rental Amount</mat-label>
+                    <input matInput placeholder="500" formControlName="RentalAmount" name="RentalAmount" type="number">
+                    <mat-hint align="end">Amount</mat-hint>
+                  </mat-form-field>
+                </div>    
+              </div>
+            <div class="picture">
+                <h1>Upload Photos</h1>
+                <button mat-raised-button color="primary">Upload</button>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <button mat-raised-button color="warn" (click)="cancel()">CANCEL</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!createForm.valid">ADD UNIT</button>    
+            </div>
+          </div>
+        </mat-card-content>
+  </mat-card>    
+  </form>      
+</div>

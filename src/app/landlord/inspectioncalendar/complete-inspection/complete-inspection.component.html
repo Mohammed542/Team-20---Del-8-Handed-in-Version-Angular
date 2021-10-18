@@ -1,0 +1,175 @@
+<div class="p-1">
+  <div class="m-5">
+    <div>
+      <form [formGroup]="formGroupDetail">
+        <div class="d-flex">
+          <div class="col-6">
+            <div class="col-12" style="vertical-align: text-top; display: flex;">
+              <label class="col-5 mt-4">Street Address:</label>
+              <mat-form-field appearance="fill" class="col-5">
+                <textarea matInput rows="7" matAutosizeMinRows="7" matAutosizeMaxRows="7"
+                  formControlName="streetAddress" readonly></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12">
+              <label class="col-5">Building Name:</label>
+              <mat-form-field appearance="fill" class="col-5">
+                <input matInput formControlName="buildingName" readonly />
+              </mat-form-field>
+            </div>
+
+            <div class="col-12">
+              <label class="col-5">Unit Number:</label>
+              <mat-form-field appearance="fill" class="col-5">
+                <input matInput formControlName="unitNumber" readonly />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="col-12">
+              <label class="col-5">Tenant Name:</label>
+              <mat-form-field appearance="fill" class="col-5">
+                <input matInput formControlName="tenantName" readonly />
+              </mat-form-field>
+            </div>
+
+            <div class="col-12">
+              <label class="col-5">Take On Inspection Date:</label>
+              <mat-form-field appearance="fill" class="col-5">
+                <input matInput formControlName="takeOnInspectionDate" readonly />
+              </mat-form-field>
+            </div>
+
+            <div class="col-12">
+              <label class="col-5">Clear Out Inspection Date:</label>
+              <mat-form-field appearance="fill" class="col-5">
+                <input matInput formControlName="clearOutInspectionDate" readonly />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="inspection?.InspectionTypeID === 2">
+      <h1>Take On Inspection</h1>
+    </div>
+    <div style="margin-bottom: 5rem;" *ngIf="inspection?.InspectionTypeID === 2">
+      <table class="table" style="text-align: center">
+        <thead>
+          <tr>
+            <th>Space</th>
+            <th>Ok</th>
+            <th>If not ok, describe the problem</th>
+            <th>Amount Due</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of takeOnInspectionItems">
+            <td>{{ item.Space }}</td>
+            <td>{{ item.Ok ? "Ok" : "Not Ok" }}</td>
+            <td>{{ item.Problem }}</td>
+            <td>{{ item.Amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="justify-content: center; display: flex;" *ngIf="takeOnInspectionItems?.length === 0">
+        <tr class="mat-row">
+          <td class="mat-cell">
+            <mat-error>There has not been any take on inspection items captured for this unit. Please ensure you capture
+              take on
+              items before capturing clear out inspection items</mat-error>
+          </td>
+        </tr>
+      </div>
+    </div>
+    <div *ngIf="inspection">
+      <h1>
+        {{
+        inspection?.InspectionTypeID === 1
+        ? "Take On Inspection"
+        : "Clear Out Inspection"
+        }}
+      </h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Space</th>
+          <th>Ok</th>
+          <th>If not ok, describe the problem</th>
+          <th>Amount Due</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr [formGroup]="form">
+          <td style="width: 15%">
+            <mat-form-field appearance="fill">
+              <input matInput placeholder="Space" formControlName="space" />
+            </mat-form-field>
+          </td>
+          <td style="width: 5%; padding-top: 25px;">
+            <mat-checkbox class="example-margin" formControlName="ok" (change)="onChangeOk($event)"></mat-checkbox>
+          </td>
+          <td style="width: 65%;">
+            <mat-form-field appearance="fill" style="width: 100%">
+              <input matInput placeholder="If not ok, describe the problem" formControlName="problem" />
+            </mat-form-field>
+          </td>
+          <td style="width: 10%">
+            <mat-form-field appearance="fill">
+              <mat-icon matPrefix>R</mat-icon>
+              <input matInput placeholder="Amount Due" formControlName="amountDue" />
+            </mat-form-field>
+          </td>
+          <td style="width: 5%">
+            <button mat-icon-button color="primary" (click)="add()"
+              [disabled]="form.invalid || (inspection?.InspectionTypeID === 2 && takeOnInspectionItems?.length === 0)">
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </td>
+        </tr>
+        <tr *ngFor="let item of inspectionItems">
+          <td>{{ item.Space }}</td>
+          <td>{{ item.Ok ? "Ok" : "Not Ok" }}</td>
+          <td>{{ item.Problem }}</td>
+          <td>{{ item.Amount| number:'1.0-2' }}</td>
+          <td style="width: 5%">
+            <button mat-icon-button color="warn" (click)="remove(item)"
+              [disabled]="(inspection?.InspectionTypeID === 2 && takeOnInspectionItems?.length === 0)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div [formGroup]="formGroup">
+      <div class="col-12 d-flex" style="justify-content: flex-end;">
+        <label class="col-1" style="margin-top: auto; margin-bottom: auto">Comment:</label>
+
+        <mat-form-field appearance="fill" class="col-4" style="margin-top: auto; margin-bottom: auto">
+          <mat-select formControlName="comment">
+            <mat-option *ngFor="let comment of comments" [value]="comment">{{ comment }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-12" style="
+        display: flex;
+        justify-content: flex-end;
+        margin-top: auto;
+        margin-bottom: auto;
+      ">
+      <div class="col-2" style="display: flex; justify-content: space-between">
+        <a mat-raised-button href="inspection/book">Return</a>
+        <button mat-raised-button color="primary" style="height: max-content" (click)="save()"
+          [disabled]="(inspection?.InspectionTypeID === 2 && this.inspectionItems.length === 0) || formGroup.invalid || (inspection?.InspectionTypeID === 2 && takeOnInspectionItems?.length === 0)">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

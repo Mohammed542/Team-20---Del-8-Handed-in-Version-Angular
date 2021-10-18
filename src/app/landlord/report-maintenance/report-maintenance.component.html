@@ -1,0 +1,171 @@
+<form [formGroup]="reportMaintenanceForm">
+  <div class="container mt-3" style="height: 60%;">
+    <div class="container mt-5 mb-5 centre">
+      <h1 class="mt-3" style="text-align: center">
+        <u><b>Generate Maintenance Report:</b></u
+        ><br />
+      </h1>
+      <br />
+      <p>
+        <u
+          >Please select the building, unit number and time frame that you would
+          like to generate the Maintenance report for.</u
+        >
+      </p>
+      <br />
+
+      <div class="form-group row centre">
+        <label class="col-3 col-form-label">Building Name:</label>
+        <div class="col-3">
+          <select class="form-select" formControlName="BuildingID">
+            <option
+              *ngFor="let building of Buildings$ | async"
+              [value]="building.BuildingID"
+              >{{ building.BuildingName }}</option
+            >
+          </select>
+        </div>
+        <br />
+      </div>
+      <br />
+      <div class="form-group row centre">
+        <label class="col-3 col-form-label">Begin Date:</label>
+        <div class="col-3">
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="text"
+              navigation="select"
+              ngbDatepicker
+              #d="ngbDatepicker"
+              formControlName="StartDate"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary fas fa-calendar"
+                (click)="d.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+          <div
+            *ngIf="StartDate.invalid && (StartDate.dirty || StartDate.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="StartDate.errors?.required">
+              Start Date is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row centre">
+        <label class="col-3 col-form-label">End Date:</label>
+        <div class="col-3">
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="text"
+              navigation="select"
+              ngbDatepicker
+              #de="ngbDatepicker"
+              formControlName="EndDate"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary fas fa-calendar"
+                (click)="de.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+          <div
+            *ngIf="EndDate.invalid && (EndDate.dirty || EndDate.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="EndDate.errors?.required">
+              End Date is required
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+      </div>
+    </div>
+
+    <!-- <button
+      class="button button5"
+      [disabled]="!reportMaintenanceForm.valid"
+      (click)="getReport()"
+    >
+      Generate
+    </button> -->
+
+    <div style="text-align: end;">
+      <button mat-flat-button color="primary" [disabled]="!reportMaintenanceForm.valid" (click)="getReport()">Generate</button>
+    </div>
+  </div>
+</form>
+
+<ng-template #reportModal let-modal>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modal.dismiss()"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div
+    style="text-align: center"
+    class="modal-body"
+    *ngIf="MaintenanceList.length > 0"
+  >
+    <br /><br />
+    <img
+      src="../../assets/HA_png.png"
+      alt="H&A Property Investment Logo"
+      style="height: 86px; width: 158px;"
+    />
+    <h1>Maintenance Report</h1>
+    <h4>Date: {{ StartDateString }} - {{ EndDateString }}</h4>
+    <h4>Building: {{ MaintenanceList[0].BuildingName }}</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Maintenance Type</th>
+          <th scope="col">Assigned Service Provider</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">Completion Date</th>
+          <th scope="col">Amounnt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let maintenance of MaintenanceList">
+          <th scope="row">{{ maintenance.MaintenanceType }}</th>
+          <td>{{ maintenance.ServiceProvider }}</td>
+          <td>{{ maintenance.DateOfEmployment }}</td>
+          <td>{{ maintenance.DateOfCompletion }}</td>
+          <td>{{ maintenance.AmountQuoted }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br /><br />
+  </div>
+  <div
+    style="text-align: center"
+    class="modal-body"
+    *ngIf="MaintenanceList.length == 0"
+  >
+    No Results available for the selected options
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-dismiss="modal"
+      style="width: 100px;"
+      (click)="modal.dismiss()"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>

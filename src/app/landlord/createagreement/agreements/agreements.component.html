@@ -1,0 +1,1666 @@
+<div class="container" style="margin-top: 3%;">
+<table class="table">
+    <thead>
+      <th>Building Name</th>
+      <th>Unit Number</th>
+      <th>Tenant</th>
+      <th>Status</th>
+      <th>Rental Type</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let line of tenantData">
+        <td>{{line.Building}}</td>
+        <td>{{line.Unit}}</td>
+        <td>{{line.Tenant}}</td>
+        <td>{{line.Status}}</td>        
+        <td>{{line.Type}}</td>
+        <td><button (click)="requestdetails(line.RentalAgreementID)" data-bs-toggle="modal" data-bs-target="#detailsModal">View</button></td>
+        <td><a class="btn btn-sm btn-danger text-white" (click)="deleteAgreement(line.RentalAgreementID)"><i class="fa fa-trash"></i>Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Rental Agreement</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+            <button (click)="makePDF()">Download PDF</button>
+            <div *ngFor="let detail of tenantDetails" class="ml-5 mt-5 row" id="content" #content>
+                     
+              <br>
+              <html>
+
+                <head>
+                <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+                <meta name=Generator content="Microsoft Word 15 (filtered)">
+                <style>
+                <!--
+                 /* Font Definitions */
+                 @font-face
+                    {font-family:"Cambria Math";
+                    panose-1:2 4 5 3 5 4 6 3 2 4;}
+                @font-face
+                    {font-family:Calibri;
+                    panose-1:2 15 5 2 2 2 4 3 2 4;}
+                @font-face
+                    {font-family:"Calibri Light";
+                    panose-1:2 15 3 2 2 2 4 3 2 4;}
+                 /* Style Definitions */
+                 p.MsoNormal, li.MsoNormal, div.MsoNormal
+                    {margin-top:0cm;
+                    margin-right:0cm;
+                    margin-bottom:8.0pt;
+                    margin-left:0cm;
+                    line-height:107%;
+                    font-size:11.0pt;
+                    font-family:"Calibri",sans-serif;}
+                h1
+                    {mso-style-link:"Heading 1 Char";
+                    margin-top:12.0pt;
+                    margin-right:0cm;
+                    margin-bottom:0cm;
+                    margin-left:0cm;
+                    line-height:107%;
+                    page-break-after:avoid;
+                    font-size:16.0pt;
+                    font-family:"Calibri Light",sans-serif;
+                    color:#2F5496;
+                    font-weight:normal;}
+                p.MsoToc1, li.MsoToc1, div.MsoToc1
+                    {margin-top:0cm;
+                    margin-right:0cm;
+                    margin-bottom:5.0pt;
+                    margin-left:0cm;
+                    line-height:107%;
+                    font-size:11.0pt;
+                    font-family:"Calibri",sans-serif;}
+                a:link, span.MsoHyperlink
+                    {color:#0563C1;
+                    text-decoration:underline;}
+                a:visited, span.MsoHyperlinkFollowed
+                    {color:#954F72;
+                    text-decoration:underline;}
+                p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+                    {margin-top:12.0pt;
+                    margin-right:0cm;
+                    margin-bottom:0cm;
+                    margin-left:0cm;
+                    line-height:107%;
+                    page-break-after:avoid;
+                    font-size:16.0pt;
+                    font-family:"Calibri Light",sans-serif;
+                    color:#2F5496;}
+                span.Heading1Char
+                    {mso-style-name:"Heading 1 Char";
+                    mso-style-link:"Heading 1";
+                    font-family:"Calibri Light",sans-serif;
+                    color:#2F5496;}
+                .MsoChpDefault
+                    {font-family:"Calibri",sans-serif;}
+                .MsoPapDefault
+                    {margin-bottom:8.0pt;
+                    line-height:107%;}
+                @page WordSection1
+                    {size:21.0cm 841.95pt;
+                    margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+                div.WordSection1
+                    {page:WordSection1;}
+                -->
+                </style>
+                
+                </head>
+                
+                <body lang=EN-ZA link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+                
+                <div class=WordSection1>
+                
+                <p class=MsoNormal align=center style='text-align:center'><b><span
+                style='font-size:22.0pt;line-height:107%'>AGREEMENT OF LEASE OF RESIDENTIAL PREMISES</span></b></p>
+                
+                <p class=MsoTocHeading><span lang=EN-US>Table of Contents</span></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136249">A. THE PARTIES<span style='color:windowtext;
+                display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136250">B. IINTEPRETATION<span
+                style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136251">1. THE PREMISES<span style='color:
+                windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136252">2. ACKNOWLEDGMENT<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136253">3. L EASE PERIOD AND RENEWAL<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136254">4. RENTAL, DEPOSIT &amp; FINANCIAL
+                GUARANTEES<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136255">5. RENTAL ESCALATION<span
+                style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136256">6. VAT REGISTRATION<span
+                style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136257">7. PURPOSE OF BUSINESS LEASE AND
+                LIMITATION<span style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136258">8. UTILITIES<span style='color:windowtext;
+                display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136259">9. RATES AND TAXES<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136260">10. ENVIRONMENTAL / BY-LAWS
+                COMPLIANCES<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136261">11. DELAY IN COMMENCEMENT<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136262">12. SUB-LETTING<span style='color:
+                windowtext;display:none;text-decoration:none'>.. </span><span style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136263">13. LESSEES UNDERTAKINGS<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136264">14. REPAIRS AND MAINTENANCE<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136265">15. DESTRUCTION OF PREMISES<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136266">16. PREVENTION OF FIRE<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136267">17. ENTRY AND INSPECTION<span
+                style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136268">18. INSURANCE<span style='color:windowtext;
+                display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136269">19. FORCED ENTRY, THEFT OR BURGLARY<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136270">20. LESSOR’S LIABILITY<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136271">21. FAILURE OF SERVICES<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136272">22. DISHONOURING OF CHEQUES<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136273">23. BREACH OF CONTRACT<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136274">24. JURISDICTION AND GOVERNING LAWS<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136275">25. LESSOR’S LATITUDE, INDULGENCE OF
+                TIME AND EXCLUSION OF ESTOPPEL<span style='color:windowtext;display:none;
+                text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136276">26. LEGAL COSTS<span style='color:
+                windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136277">27. COMMON USE<span style='color:windowtext;
+                display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136278">28. VARIATION<span style='color:windowtext;
+                display:none;text-decoration:none'>.. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136279">29. AUTHORITY OF PERSON ACTING ON
+                BEHALF OF THE LESSEE<span style='color:windowtext;display:none;text-decoration:
+                none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136280">30. SEVERANCE<span style='color:windowtext;
+                display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136281">31. CESSION AND ASSIGNMENT<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136282">32. GENERAL<span style='color:windowtext;
+                display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136283">33. RECONSTITUTION OF MEMBER’S
+                INTEREST HOLDING IN THE LESSOR<span style='color:windowtext;display:none;
+                text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136284">34. SURETY<span style='color:windowtext;
+                display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136285">35. UNDERTAKING<span style='color:
+                windowtext;display:none;text-decoration:none'>.. </span><span style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136286">36. LESSEES ACCEPTANCE<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+                
+                <p class=MsoToc1><a href="#_Toc80136287">37. LESSORS ACCEPTANCE<span
+                style='color:windowtext;display:none;text-decoration:none'>. </span><span
+                style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <h1><a name="_Toc80136249">A. THE PARTIES</a></h1>
+                
+                <p class=MsoNormal align=center style='text-align:center'>MADE AND ENTERED INTO
+                BY AND BETWEEN</p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>H &amp; A Property
+                Investments (Pty) Ltd Reg No: 2015/202039/07</p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>Vat No:4330271281</p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>Duly represented by
+                its authorised representative,</p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>MOHAMMED HANIF
+                SULIMAN ID No: 651013 5052 084</p>
+                
+                <p class=MsoNormal align=center style='text-align:center'><i>(Full Names of
+                Lessor’s Representative)</i></p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>(Hereinafter referred
+                to as the “LESSOR”)</p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>AND</p>
+                
+                <p class=MsoNormal >Tenant Name: <span style="margin-left: 20px;"><u>{{detail.FirstName}} </u></span></p>
+                
+                <p class=MsoNormal>Surname: <span style="margin-left: 20px;"><u>{{detail.LastName}}</u></span></p>
+                
+                <p class=MsoNormal>Cell Number: <span style="margin-left: 20px;"><u>{{detail.CellPhoneNumber}}</u></span></p>
+                
+                <p class=MsoNormal>Email: <span style="margin-left: 20px;"><u>{{detail.EmailAddress}}</u></span></p>
+                
+                <p class=MsoNormal>Id no: <span style="margin-left: 20px;"><u>{{detail.IDNumber}}</u></span></p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>(Attach Copy of ID
+                Documents)</p>
+                
+                <p class=MsoNormal align=center style='text-align:center'>(Hereinafter referred
+                to as the “<b>LESSEE</b>”)</p>
+                
+                <h1><a name="_Toc80136250">B. IINTEPRETATION</a></h1>
+                
+                <p class=MsoNormal>Wherever appropriate in this Lease:</p>
+                
+                <p class=MsoNormal><i>i. </i>Words signifying the singular number shall be
+                deemed to include the plural and <i>vice</i></p>
+                
+                <p class=MsoNormal><i>versa;</i></p>
+                
+                <p class=MsoNormal>ii. a reference to natural persons shall include persons of
+                gender, firms, associations,</p>
+                
+                <p class=MsoNormal>companies, partnerships and corporate bodies, created
+                entities (corporate or</p>
+                
+                <p class=MsoNormal>unincorporated) and <i>vice versa</i>;</p>
+                
+                <p class=MsoNormal>iii. In this Agreement, unless the context requires
+                otherwise:</p>
+                
+                <p class=MsoNormal>a) words importing any one gender shall include the other
+                two genders;</p>
+                
+                <p class=MsoNormal>b) the singular shall include the plural and <i>vice versa</i>;</p>
+                
+                <p class=MsoNormal>c) The impersonal pronoun shall include the masculine or
+                feminine pronoun;</p>
+                
+                <p class=MsoNormal>iv. In this agreement, the headings have been inserted for
+                convenience only and shall not</p>
+                
+                <p class=MsoNormal>be used for nor assist or affect its interpretation;</p>
+                
+                <p class=MsoNormal>v. Any reference in this agreement to an enactment is to
+                that enactment as at the</p>
+                
+                <p class=MsoNormal>Signature Date and as amended or re-enacted from time to
+                time.</p>
+                
+                <p class=MsoNormal>vi. When any number of days is prescribed in this agreement,
+                same shall be reckoned</p>
+                
+                <p class=MsoNormal>exclusively of the first and inclusively of the last day
+                unless the last day falls on a day</p>
+                
+                <p class=MsoNormal>which is not a Business Day, in which case the last day
+                shall be the next succeeding</p>
+                
+                <p class=MsoNormal>Business Day.</p>
+                
+                <p class=MsoNormal>vii. Where figures are referred to in numerals and in words,
+                if there is any conflict between</p>
+                
+                <p class=MsoNormal>the two, the words shall prevail in this agreement.</p>
+                
+                <p class=MsoNormal>viii. Words and/or expressions defined in any particular
+                clause in the body of this</p>
+                
+                <p class=MsoNormal>agreement shall, unless the application of such words and/or
+                expressions is specifically</p>
+                
+                <p class=MsoNormal>limited to that clause, bear the meaning so assigned to it
+                throughout this agreement.</p>
+                
+                <p class=MsoNormal>ix. The terms “<b>holding</b>”, “<b>subsidiary</b>” and “<b>group
+                of companies</b>” in relation to any</p>
+                
+                <p class=MsoNormal>company shall bear the meanings assigned to them in the
+                Companies Act 71 of 2008;</p>
+                
+                <p class=MsoNormal>x. The <i>contra proferentem </i>rule shall not apply and
+                accordingly, none of the provisions</p>
+                
+                <p class=MsoNormal>hereof shall be construed against or interpreted to the
+                disadvantage of the Party</p>
+                
+                <p class=MsoNormal>responsible for the drafting or preparation of such
+                provisions.</p>
+                
+                <p class=MsoNormal>xi. The <i>eiusdem generis </i>rule shall not apply and
+                accordingly, whenever a provision is</p>
+                
+                <p class=MsoNormal>followed by the word “including” followed by specific
+                examples, such examples shall not</p>
+                
+                <p class=MsoNormal>be construed so as to limit the ambit of the provision
+                concerned.</p>
+                
+                <p class=MsoNormal>xii. A reference to any statutory body or court shall be
+                construed as a reference to that</p>
+                
+                <p class=MsoNormal>statutory body or court as at the Signature Date and as
+                substituted from time to time</p>
+                
+                <p class=MsoNormal>thereafter by such successor statutory bodies and/or courts,
+                as the case may be.</p>
+                
+                <p class=MsoNormal>xiii. Unless specifically provided to the contrary, all
+                amounts referred to in this agreement</p>
+                
+                <p class=MsoNormal>are inclusive of VAT.</p>
+                
+                <p class=MsoNormal>xiv. Any reference to the period, currency, unexpired
+                period, termination or date of</p>
+                
+                <p class=MsoNormal>termination of this lease shall include any renewal or
+                extension thereof;</p>
+                
+                <p class=MsoNormal>xv. Any reference to the LESSOR shall include the LESSOR and
+                its successors in title and</p>
+                
+                <p class=MsoNormal>their respective agents, employees, workers, contractors and
+                workmen;</p>
+                
+                <p class=MsoNormal>xvi. Any reference to the LESSEE shall include the LESSEE’S
+                agents, employees, workers,</p>
+                
+                <p class=MsoNormal>customers, clients, licensees, contractors, investees,
+                visitors and guests;</p>
+                
+                <p class=MsoNormal>xvii. The headings and/or captions appearing in this lease
+                are for the reference purposes</p>
+                
+                <p class=MsoNormal>only and shall not be taken into account in interpreting any
+                provisions of this lease;</p>
+                
+                <p class=MsoNormal>xviii. “days”, shall mean business days and months shall
+                mean a calendar month;</p>
+                
+                <p class=MsoNormal>xix. <i>“lex domicilium citandi et executandi”, </i>shall
+                mean the place of service of legal notices</p>
+                
+                <p class=MsoNormal>and processes;</p>
+                
+                <p class=MsoNormal>xx. <i>“vis majore</i>” shall mean an overwhelming,
+                unanticipated, and unpreventable event</p>
+                
+                <p class=MsoNormal>usually caused by a natural force, the occurrence of which
+                may exempt a party from</p>
+                
+                <p class=MsoNormal>performing the obligations of the lease agreement;</p>
+                
+                <p class=MsoNormal>xxi. <i>“casus fortuitous”, </i>shall mean a fortuitous or uncontrollable
+                event, an act of God;</p>
+                
+                <p class=MsoNormal>xxii. <i>“CID Levy”, </i>means a <i>Central Improvement
+                District Levy </i>where applicable, whereby</p>
+                
+                <p class=MsoNormal>property owners agree to pay a levy for supplementary and
+                complimentary services set</p>
+                
+                <p class=MsoNormal>to enhance the physical and social environment of the area,
+                and</p>
+                
+                <p class=MsoNormal><i>xxiii. “the GLA”, shall mean the Gross Leasable Area.</i></p>
+                
+                <h1><a name="_Toc80136251">1. THE PREMISES</a></h1>
+                
+                <p class=MsoNormal>The LESSOR hereby lets to the LESSEE who hereby hires the
+                following PREMISES, which</p>
+                
+                <p class=MsoNormal>property is:</p>
+                
+                <p class=MsoNormal>situated at: <u><span style='background:yellow'>{{detail.Address}}</span></u></p>
+                
+                <p class=MsoNormal>Building Name<u>: <span style='background:yellow'>{{detail.BuildingName}}</span></u></p>
+                
+                <p class=MsoNormal>(hereinafter referred to as the “PREMISES”)</p>
+                
+                <h1><a name="_Toc80136252">2. ACKNOWLEDGMENT</a></h1>
+                
+                <p class=MsoNormal>The LESSOR hereby agrees to lease the PREMISES in its
+                present condition to the LESSEE in</p>
+                
+                <p class=MsoNormal>accordance with the terms and conditions contained
+                hereunder.</p>
+                
+                <h1><a name="_Toc80136253">3. L EASE PERIOD AND RENEWAL</a></h1>
+                
+                <p class=MsoNormal>3.1 The lease is to commence on the 30th of May 2020 and
+                will terminate on 30th of May</p>
+                
+                <p class=MsoNormal>2021.</p>
+                
+                <p class=MsoNormal>3.2 The LESSEE shall have an option to renew the lease of
+                the PREMISES for an additional</p>
+                
+                <p class=MsoNormal>period of 1 <b>(</b><i>in words </i>one<b>) </b>year/s,
+                unless such period is abridged or extended by the express</p>
+                
+                <p class=MsoNormal>consent of the LESSOR at a rental amount to be agreed
+                thereto by the parties.</p>
+                
+                <p class=MsoNormal>3.3 Notice to exercise the option in 3.2 must be given in
+                writing by the LESSEE to the LESSOR</p>
+                
+                <p class=MsoNormal>at least <b>3 (Three) months </b>prior to the termination of
+                this agreement of lease.</p>
+                
+                <p class=MsoNormal>3.4 The LESSOR shall within a reasonable time of having
+                received the said notice in <i>clause 3.3</i></p>
+                
+                <p class=MsoNormal>provide its consent and/or refusal pertaining to the
+                LESSEE’S right of first option to renew</p>
+                
+                <p class=MsoNormal>the lease in <i>clause 3.2 </i>above.</p>
+                
+                <h1><a name="_Toc80136254">4. RENTAL, DEPOSIT &amp; FINANCIAL GUARANTEES</a></h1>
+                
+                <p class=MsoNormal>4.1 On the date that the tenant signs this lease, the tenant
+                shall furnish the landlord with</p>
+                
+                <p class=MsoNormal>security referred to hereunder, which security shall remain
+                in full force and effect until 3</p>
+                
+                <p class=MsoNormal>(three) months after the expiry of this lease or any renewal
+                period (if applicable) thereof a</p>
+                
+                <p class=MsoNormal>cash deposit; for the amount of ONE MONTHS RENTAL <u><span
+                style='background:yellow'>(R12000_________________________</span></u></p>
+                
+                <p class=MsoNormal>Only as per 4.3 ) as security for the due compliance by</p>
+                
+                <p class=MsoNormal>the tenant of the terms and conditions of this lease.</p>
+                
+                <p class=MsoNormal>4.2. The landlord shall have the right to apply the whole or
+                any portion of the deposit towards</p>
+                
+                <p class=MsoNormal>payment of the rent, operating costs, other charges or any
+                liability of the tenant in terms of</p>
+                
+                <p class=MsoNormal>this lease. If any portion or the whole of the deposit is so
+                applied, the tenant shall forthwith</p>
+                
+                <p class=MsoNormal>reinstate the deposit to its original amount.</p>
+                
+                <p class=MsoNormal>4.3. The monthly gross rental for the lease period shall be
+                payable by the LESSEE to the</p>
+                
+                <p class=MsoNormal>LESSOR:</p>
+                
+                <p class=MsoNormal>As from <span style='background:yellow'>30Th May 2020</span>
+                to <span style='background:yellow'>30th May 2021</span> that is a period of <span
+                style='background:yellow'>12 (Twelve) months</span>, a gross</p>
+                
+                <p class=MsoNormal>monthly rental of <b><span style='background:yellow'>R12
+                000.00 (Tweleve Thousand Rands On)</span> <i>excluding Vat and</i></b></p>
+                
+                <p class=MsoNormal><b><i>Municipal charges.</i></b></p>
+                
+                <p class=MsoNormal>4.3 The term gross rental shall include basic rental and
+                associated rental costs hereto</p>
+                
+                <p class=MsoNormal>excluding such other specifiable levies provided in this agreement.</p>
+                
+                <p class=MsoNormal>4.4 The gross rental shall be payable by the LESSEE free of
+                deduction, set off and/or related</p>
+                
+                <p class=MsoNormal>charges via EFT into the LESSOR/s nominated bank account
+                which details are provided</p>
+                
+                <p class=MsoNormal>hereunder:</p>
+                
+                <p class=MsoNormal><b>Account Holder: H&amp;A Property Investments (Pty) Ltd
+                Bank: FIRST NATIONAL</b></p>
+                
+                <p class=MsoNormal><b>BANK (FNB), FORDSBURG</b></p>
+                
+                <p class=MsoNormal><b>Branch Code: 789523</b></p>
+                
+                <p class=MsoNormal><b>Account No: 6868792485</b></p>
+                
+                <p class=MsoNormal>4.5 The gross rental shall be paid by the LESSEE on/or
+                before the <b>07th (SEVENTH) </b>business</p>
+                
+                <p class=MsoNormal>day of each month</p>
+                
+                <h1><a name="_Toc80136255">5. RENTAL ESCALATION</a></h1>
+                
+                <p class=MsoNormal>The gross rental (excluding rates and taxes and CID Levies)
+                will escalate at <b>7.5% (SEVEN AND A</b></p>
+                
+                <p class=MsoNormal><b>HALF PERCENT) </b>per annum, compounded on the
+                anniversary of the commencement date.</p>
+                
+                <h1><a name="_Toc80136256">6. VAT REGISTRATION</a></h1>
+                
+                <p class=MsoNormal>6.1 The parties shall exchange VAT registration
+                certificates.</p>
+                
+                <p class=MsoNormal>6.2 Should the LESSOR not present a VAT registration
+                certificate then Vat may be withheld by</p>
+                
+                <p class=MsoNormal>the LESSEE until such time as a valid Vat certificate is
+                furnished by the LESSOR.</p>
+                
+                <p class=MsoNormal>6.3 The LESSEE shall be liable for arrears VAT withheld for
+                the period concerned, upon the</p>
+                
+                <p class=MsoNormal>LESSOR presenting a valid VAT registration certificate and
+                after an assessment is</p>
+                
+                <p class=MsoNormal>conducted of when the LESSOR became a VAT vendor.</p>
+                
+                <h1><a name="_Toc80136257">7. PURPOSE OF BUSINESS LEASE AND LIMITATION</a></h1>
+                
+                <p class=MsoNormal><i>7.1 </i>The LESSEE wants to lease the PREMISES in order
+                to carry on its trade activities</p>
+                
+                <p class=MsoNormal>described as <i>(provide brief description of the trade
+                activities at the leased premises)</i></p>
+                
+                <p class=MsoNormal>7.2 The LESSEE is not allowed to utilise the PREMISES for
+                any other purpose whatsoever</p>
+                
+                <p class=MsoNormal>other than what is stated in 7.1 above without the prior
+                written consent of the LESSOR.</p>
+                
+                <h1><a name="_Toc80136258">8. UTILITIES</a></h1>
+                
+                <p class=MsoNormal>8.1 The LESSEE shall become liable for and shall be obliged
+                to pay for all electricity</p>
+                
+                <p class=MsoNormal>and water charges, leviable in respect of the LESSEES
+                letting of the PREMISES, including</p>
+                
+                <p class=MsoNormal>charges for electricity actually consumed and other charges
+                payable in terms of the local</p>
+                
+                <p class=MsoNormal>authority’s electricity tariffs and By-Laws as amended from
+                time to time.</p>
+                
+                <p class=MsoNormal>8.2 The LESSEE shall also be liable for and shall pay all
+                fees levied by or payable to the local</p>
+                
+                <p class=MsoNormal>authority for sanitary, refuse removal, sewerage and vacuum
+                tank services and/or removals</p>
+                
+                <p class=MsoNormal>connected therewith, and for all increases in respect of
+                these municipal utilities from time to</p>
+                
+                <p class=MsoNormal>time.</p>
+                
+                <p class=MsoNormal>8.3 Should the local authority not render accounts directly
+                to the LESSEE, the LESSEE shall</p>
+                
+                <p class=MsoNormal>pay to the LESSOR such charges which are due and payable on
+                such accounts to the local</p>
+                
+                <p class=MsoNormal>authority immediately upon being called upon to do so.</p>
+                
+                <p class=MsoNormal>8.4 The LESSOR may in its sole and absolute discretion apply
+                rentals received, to be thereby</p>
+                
+                <p class=MsoNormal>allocated against the LESSEE for any amounts owing by the
+                LESSEE in respect of</p>
+                
+                <p class=MsoNormal>electricity, water charges and other related utility
+                charges.</p>
+                
+                <p class=MsoNormal>8.5 Where it is not possible to assess the specific cost of
+                use by tenants of any of the utilities</p>
+                
+                <p class=MsoNormal>stated above, the LESSEE undertakes to pay and shall be
+                obliged to pay to the LESSOR</p>
+                
+                <p class=MsoNormal>as additional rental to the rental specified in <i>clause 4 </i>above
+                for such services which shall</p>
+                
+                <p class=MsoNormal>be calculated <i>‘pro-rata’ </i>to the rental the LESSEE
+                pays, to the rental received by the</p>
+                
+                <p class=MsoNormal>LESSOR from the whole of the LESSORS property.</p>
+                
+                <h1><a name="_Toc80136259">9. RATES AND TAXES</a></h1>
+                
+                <p class=MsoNormal>The Tenant will be liable for increases in municipal rates
+                or municipal charges as and when</p>
+                
+                <p class=MsoNormal>the local authority levies such increases in accordance with
+                the Tenants pro rata share of</p>
+                
+                <p class=MsoNormal>rentable area of the building.</p>
+                
+                <h1><a name="_Toc80136260">10. ENVIRONMENTAL / BY-LAWS COMPLIANCES</a></h1>
+                
+                <p class=MsoNormal>10.1 The LESSEE shall bear the onus of ensuring that all
+                appropriate environmental and waste</p>
+                
+                <p class=MsoNormal>management laws and its regulations are complied with, but
+                not limited to <i>inter alia</i>, the</p>
+                
+                <p class=MsoNormal><i>National Environmental Management (NEM) Act 107 of 1998,
+                the NEM: Waste</i></p>
+                
+                <p class=MsoNormal><i>Management 59 of 2008, NEM; Air Quality Act 39 of 2004 </i>whilst
+                the LESSEE is in</p>
+                
+                <p class=MsoNormal>occupation and trading from the PREMISES.</p>
+                
+                <p class=MsoNormal>10.2 The LESSEE shall be responsible at the LESSEE’S own
+                costs for fulfilling all of the</p>
+                
+                <p class=MsoNormal>requirements of the local authority By-laws and regulations
+                including environmental waste</p>
+                
+                <p class=MsoNormal>management relating to the LESSEE’S business conducted at
+                the PREMISES and the</p>
+                
+                <p class=MsoNormal>LESSEE shall also bear all costs incidental thereto.</p>
+                
+                <h1><a name="_Toc80136261">11. DELAY IN COMMENCEMENT</a></h1>
+                
+                <p class=MsoNormal>11.1 Notwithstanding the said commencement date, if for any
+                reason whatsoever, the LESSOR</p>
+                
+                <p class=MsoNormal>cannot deliver possession of the PREMISES to the LESSEE on
+                the said date, then the</p>
+                
+                <p class=MsoNormal>LESSEE undertakes to accept such possession from such later
+                date on which it will</p>
+                
+                <p class=MsoNormal>become available.</p>
+                
+                <p class=MsoNormal>11.2 In such case the LESSEE shall have no claim for damages
+                or any right of action</p>
+                
+                <p class=MsoNormal>whatsoever against the LESSOR nor be entitled to terminate
+                this lease by reason of the</p>
+                
+                <p class=MsoNormal>fact that the LESSEE will be unable to obtain possession of
+                the PREMISES on the said</p>
+                
+                <p class=MsoNormal>date, provided however, in such an event, the LESSEE shall
+                be entitled to a proportional</p>
+                
+                <p class=MsoNormal>remission of rent for the period from the commencement date
+                to the date upon which</p>
+                
+                <p class=MsoNormal>occupation of the PREMISES is tendered.</p>
+                
+                <h1><a name="_Toc80136262">12. SUB-LETTING</a></h1>
+                
+                <p class=MsoNormal>The LESSEE shall not be entitled to sub-let the PREMISES or
+                any part thereof or cede or assign</p>
+                
+                <p class=MsoNormal>this lease or part with possession of the PREMISES, without
+                the consent in writing of the LESSOR.</p>
+                
+                <h1><a name="_Toc80136263">13. LESSEES UNDERTAKINGS</a></h1>
+                
+                <p class=MsoNormal>13.1 The LESSEE shall not do or allow anything to be done
+                upon the PREMISES which shall</p>
+                
+                <p class=MsoNormal>cause structural damage to the PREMISES; and shall ensure
+                that the PREMISES shall not</p>
+                
+                <p class=MsoNormal>be overloaded by electrical current and that no machinery,
+                apparatus or other appliances</p>
+                
+                <p class=MsoNormal>shall be used or operated in or upon the PREMISES or the
+                Building.</p>
+                
+                <p class=MsoNormal>13.2 If the LESSEE should desire electrical current beyond
+                that is available at the PREMISES at</p>
+                
+                <p class=MsoNormal>the time of the execution of this lease, the LESSEE shall
+                pay the cost of installing</p>
+                
+                <p class=MsoNormal>equipment required for that purpose, whereby the LESSEE
+                shall first notify the LESSOR</p>
+                
+                <p class=MsoNormal>and receive its written approval before such equipment shall
+                be installed.</p>
+                
+                <p class=MsoNormal>13.3 The LESSEE shall not do or permit any act or allow any
+                occupier of the PREMISES not</p>
+                
+                <p class=MsoNormal>allowed under the lease agreement in the conduct of its
+                business or otherwise on the</p>
+                
+                <p class=MsoNormal>PREMISES which shall be or may become a nuisance.</p>
+                
+                <p class=MsoNormal>13.4 The LESSEE shall not make any alterations or additions
+                to the PREMISES without the</p>
+                
+                <p class=MsoNormal>written consent of the LESSOR first being obtained, which
+                consent shall not be</p>
+                
+                <p class=MsoNormal>unreasonably withheld, and, unless otherwise agreed upon in
+                writing, any alterations or</p>
+                
+                <p class=MsoNormal>additions made shall be the property of the LESSOR and the
+                LESSEE shall not be entitled</p>
+                
+                <p class=MsoNormal>to any compensation thereto. A list of alterations,
+                additions or improvements which the</p>
+                
+                <p class=MsoNormal>LESSEE might contemplate or propose during the currency of
+                this lease, shall be submitted</p>
+                
+                <p class=MsoNormal>in writing to the LESSOR for the LESSOR’S approval, which
+                shall be a prerequisite to the</p>
+                
+                <p class=MsoNormal>LESSEE making any such alterations, additions or
+                improvements.</p>
+                
+                <p class=MsoNormal>13.5 At the termination of this lease, whether by affluxion
+                of time or otherwise, the LESSOR shall,</p>
+                
+                <p class=MsoNormal>at its own option, be entitled to call upon the LESSEE to
+                restore the PREMISES to the same</p>
+                
+                <p class=MsoNormal>condition as it were before the alteration or additions were
+                effected, or to accept the</p>
+                
+                <p class=MsoNormal>PREMISES with such alterations or additions, in which event
+                the LESSOR shall not be</p>
+                
+                <p class=MsoNormal>obliged to compensate the LESSEE in respect thereof.</p>
+                
+                <p class=MsoNormal>13.6 Notwithstanding anything to the contrary herein
+                contained, the LESSEE shall have the right,</p>
+                
+                <p class=MsoNormal>simultaneously with the expiration of the lease, to remove
+                any fixtures and/or fittings and/or</p>
+                
+                <p class=MsoNormal>signs and/or partitions installed by it in or upon the
+                PREMISES, provided that it shall make</p>
+                
+                <p class=MsoNormal>good any damage to the PREMISES caused as a result of the
+                removal of such fixtures</p>
+                
+                <p class=MsoNormal>and/or fittings and/or signs and/or partitions. All fitted
+                carpets and/or installed flooring are to</p>
+                
+                <p class=MsoNormal>remain the property of the LESSOR.</p>
+                
+                <p class=MsoNormal>13.7 The LESSEE shall not be entitled to affix any signs,
+                written or otherwise, anywhere on or</p>
+                
+                <p class=MsoNormal>about the PREMISES hereby let without the permission and approval
+                of the LESSOR or</p>
+                
+                <p class=MsoNormal>the LESSOR’S architects first being obtained, and subject to
+                such conditions as may be</p>
+                
+                <p class=MsoNormal>imposed by either of them respectively. All signs shall, at
+                the termination of this lease,</p>
+                
+                <p class=MsoNormal>whether by affluxion of time or otherwise, be removed by the
+                LESSEE at its own expense,</p>
+                
+                <p class=MsoNormal>failing which the LESSOR shall be entitled to do so and
+                recover the costs thereof from the</p>
+                
+                <p class=MsoNormal>LESSEE.</p>
+                
+                <p class=MsoNormal>13.8 The LESSEE shall keep the PREMISES clean and in a tidy
+                condition save for waste</p>
+                
+                <p class=MsoNormal>produced in the ordinary cause of production and/or the
+                LESSEE’s trade activities.</p>
+                
+                <p class=MsoNormal>13.9 The LESSEE shall implement an environmentally conscious
+                waste management system</p>
+                
+                <p class=MsoNormal>with regard to the disposal and/or recycling of its waste
+                from the LESSEE’s business</p>
+                
+                <p class=MsoNormal>operations including, but not limited to the way it manages
+                the accumulation of any</p>
+                
+                <p class=MsoNormal>objectionable matter, including but not limited to packing
+                cases, cartons or containers or</p>
+                
+                <p class=MsoNormal>refuse, in or about the PREMISES, or on any part of the
+                LESSOR’S PREMISES.</p>
+                
+                <p class=MsoNormal>13.10 The LESSEE shall not contravene or permit any
+                contravention of any law, regulation,</p>
+                
+                <p class=MsoNormal>ordinance, proclamation of any provincial, local or
+                municipal or other authority, but shall at</p>
+                
+                <p class=MsoNormal>all times conform to the same.</p>
+                
+                <h1><a name="_Toc80136264">14. REPAIRS AND MAINTENANCE</a></h1>
+                
+                <p class=MsoNormal>14.1 The LESSEE hereby promises and undertakes to care for
+                at the LESSEE’S own expense</p>
+                
+                <p class=MsoNormal>and ensure that the PREMISES and all installations, fittings
+                and appurtenances therein</p>
+                
+                <p class=MsoNormal>generally, including keys, locks, glass windows, sewerage
+                and sanitary, installations,</p>
+                
+                <p class=MsoNormal>including sewerage pans and pipes, water pipes, taps, geyser
+                elements and basins and</p>
+                
+                <p class=MsoNormal>electrical fittings, are in good working condition during
+                the continuance of this Lease, or at</p>
+                
+                <p class=MsoNormal>any renewal thereof, and at the termination of this lease
+                whether by affluxion of time or</p>
+                
+                <p class=MsoNormal>otherwise, to return and redeliver the same to the LESSOR in
+                like good order and</p>
+                
+                <p class=MsoNormal>condition.</p>
+                
+                <p class=MsoNormal>14.2 Throughout this lease or any renewal thereof, the
+                LESSEE shall immediately make good</p>
+                
+                <p class=MsoNormal>and repair, at his own expense, all damages or breakages to
+                the PREMISES and shal l be</p>
+                
+                <p class=MsoNormal>responsible for all replacements to the LESSORS PREMISES.
+                Should the LESSEE fail to</p>
+                
+                <p class=MsoNormal>do so, the LESSOR shall be entitled, but not be obliged to
+                do so and to recover the cost</p>
+                
+                <p class=MsoNormal>thereof from the LESSEE without prejudice to the LESSOR’S
+                rights under this lease.</p>
+                
+                <p class=MsoNormal>14.3 The LESSEE shall use its best endeavours to prevent any
+                obstruction or blockage to any</p>
+                
+                <p class=MsoNormal>sewerage or water pipes or drains in or used in connection
+                with the PREMISES, and shall</p>
+                
+                <p class=MsoNormal>remove, at its own cost, any obstruction or blockage which
+                may occur or which emanates in</p>
+                
+                <p class=MsoNormal>or from the PREMISES.</p>
+                
+                <h1><a name="_Toc80136265">15. DESTRUCTION OF PREMISES</a></h1>
+                
+                <p class=MsoNormal>Should the building PREMISES be destroyed or substantially
+                damaged by fire or by any</p>
+                
+                <p class=MsoNormal>other cause, or should the PREMISES be so destroyed or
+                damaged to an extent which</p>
+                
+                <p class=MsoNormal>prevents the LESSEE from having beneficial occupation of the
+                PREMISES, then:-</p>
+                
+                <p class=MsoNormal>15.1.1 The LESSEE shall have no claim of any nature
+                whatsoever against the LESSOR</p>
+                
+                <p class=MsoNormal>as a result thereof;</p>
+                
+                <p class=MsoNormal>15.1.2 The LESSOR shall be entitled to determine whether or
+                not this lease shall be</p>
+                
+                <p class=MsoNormal>cancelled and shall notify the LESSEE of its decision in
+                writing; and</p>
+                
+                <p class=MsoNormal>15.1.3 Should the LESSOR not notify the LESSEE of the
+                decision within <b><i>1 (ONE</i>) </b>month</p>
+                
+                <p class=MsoNormal>after such destruction or damage, then it shall be deemed
+                that the LESSOR has</p>
+                
+                <p class=MsoNormal>elected to cancel this lease.</p>
+                
+                <p class=MsoNormal>15.2 Should the LESSOR elect or be deemed to have elected to
+                cancel this lease then the</p>
+                
+                <p class=MsoNormal>LESSEE shall have no claim of any nature whatsoever against
+                the LESSOR as a</p>
+                
+                <p class=MsoNormal>result of the cancellation of the Lease.</p>
+                
+                <p class=MsoNormal>15.3 Should the LESSOR elect not to cancel this lease then:-</p>
+                
+                <p class=MsoNormal>15.3.1 The LESSOR shall re-instate the PREMISES at its own
+                cost as expeditiously as</p>
+                
+                <p class=MsoNormal>is reasonably possible in the circumstances, making any
+                reasonable alteration in</p>
+                
+                <p class=MsoNormal>the design and structure thereof as may be necessary or
+                desirable;</p>
+                
+                <p class=MsoNormal>15.3.2 The LESSEE shall not be liable for any rental for so
+                long as it is deprived of beneficial</p>
+                
+                <p class=MsoNormal>occupation of the PREMISES; and</p>
+                
+                <p class=MsoNormal>15.3.3 Should the LESSEE take beneficial occupation from
+                time to time of any part of the</p>
+                
+                <p class=MsoNormal>PREMISES, then the LESSEE shall pay rental thereof on a pro-
+                rata basis, as may be</p>
+                
+                <p class=MsoNormal>determined by the LESSOR.</p>
+                
+                <p class=MsoNormal>15.4 Should any part, but not the whole of the PREMISES, be
+                destroyed or damaged by fire or</p>
+                
+                <p class=MsoNormal>any other cause then:-</p>
+                
+                <p class=MsoNormal>15.4.1 This lease shall not be cancelled;</p>
+                
+                <p class=MsoNormal>15.4.2 The rental then payable by the LESSEE shall be
+                reduced <i>pro-rata </i>having regard to the</p>
+                
+                <p class=MsoNormal>extent to which, and the period for which, it is deprived of
+                beneficial occupation of the</p>
+                
+                <p class=MsoNormal>PREMISES; and </p>
+                
+                <p class=MsoNormal>15.4.3 The LESSOR shall repair at its own cost damaged or
+                destroyed portions of the</p>
+                
+                <p class=MsoNormal>PREMISES as expeditiously as is reasonably possible in the
+                circumstances.</p>
+                
+                <p class=MsoNormal>15.5 Any dispute between the LESSOR and the LESSEE in regard
+                to the amount of remission of</p>
+                
+                <p class=MsoNormal>rental and the date on which, or period for which the
+                PREMISES are available or</p>
+                
+                <p class=MsoNormal>unavailable for occupation by the LESSEE shall be decided
+                either by the LESSOR’S</p>
+                
+                <p class=MsoNormal>attorneys and/or auditors/accounting officers.</p>
+                
+                <h1><a name="_Toc80136266">16. PREVENTION OF FIRE</a></h1>
+                
+                <p class=MsoNormal>The LESSEE shall be obliged throughout the period of this
+                lease, or any renewal thereof, to install</p>
+                
+                <p class=MsoNormal>fire extinguishers to the specification of the Fire
+                Department of the relevant Local Authority, and to</p>
+                
+                <p class=MsoNormal>maintain same at his own cost.</p>
+                
+                <h1><a name="_Toc80136267">17. ENTRY AND INSPECTION</a></h1>
+                
+                <p class=MsoNormal>17.1 The LESSOR or its duly authorised agent, caretaker or
+                workmen shall be at liberty at all</p>
+                
+                <p class=MsoNormal>reasonable times to enter into or upon the PREMISES for
+                purposes of inspection and</p>
+                
+                <p class=MsoNormal>repairs.</p>
+                
+                <p class=MsoNormal>17.2 The LESSOR shall have the right during the tenure of
+                the lease to affix <i>“TO LET” </i>or <i>“FOR</i></p>
+                
+                <p class=MsoNormal><i>SALE” </i>notices to the PREMISES and the LESSEE shall
+                permit prospective tenants or</p>
+                
+                <p class=MsoNormal>buyers to view the interior or the PREMISES at all reasonable
+                times.</p>
+                
+                <h1><a name="_Toc80136268">18. INSURANCE</a></h1>
+                
+                <p class=MsoNormal>18.1 The LESSOR shall have adequate building insurance cover
+                during the tenure of the lease.</p>
+                
+                <p class=MsoNormal>18.2 The LESSEE shall not at any time do or carry on or
+                allow to be done or carried on the</p>
+                
+                <p class=MsoNormal>PREMISES any matter or thing whereby the insurance effected
+                by the LESSOR against</p>
+                
+                <p class=MsoNormal>damage by fire on the PREMISES may become void or voidable.</p>
+                
+                <p class=MsoNormal>18.3 The LESSEE further binds itself not to use any
+                apparatus or to carry on any trade or</p>
+                
+                <p class=MsoNormal>process, nor to keep any combustibles or hazardous goods
+                and/or materials on the</p>
+                
+                <p class=MsoNormal>PREMISES which would in any way vitiate the LESSOR’s
+                insurance policy and/or such</p>
+                
+                <p class=MsoNormal>policy effected by the LESSEE.</p>
+                
+                <p class=MsoNormal>18.4 Should the premium of the LESSOR’S present policy be
+                increased by reason of the nature</p>
+                
+                <p class=MsoNormal>of the LESSEE’S business, the LESSEE undertakes to pay the
+                LESSOR the amount of</p>
+                
+                <p class=MsoNormal>such increase upon demand.</p>
+                
+                <p class=MsoNormal>18.5 The LESSEE shall be obliged at its cost to take out and
+                keep in force during this lease a</p>
+                
+                <p class=MsoNormal>public liability insurance policy for such amount as will
+                provide indemnity in respect of all</p>
+                
+                <p class=MsoNormal>claims which may be made against the LESSEE arising out of
+                its trading activities at the</p>
+                
+                <p class=MsoNormal>PREMISES.</p>
+                
+                <h1><a name="_Toc80136269">19. FORCED ENTRY, THEFT OR BURGLARY</a></h1>
+                
+                <p class=MsoNormal>The LESSEE shall be responsible for repairing at its own
+                cost all damage to the PREMISES</p>
+                
+                <p class=MsoNormal>caused by or arising from any actual or attempted forced
+                entry, theft or burglary to the extent that</p>
+                
+                <p class=MsoNormal>the LESSOR’S insurers, subject to the conditions contained
+                herein, do not repair such damage,</p>
+                
+                <p class=MsoNormal>such repairs in that event shall be for the LESSEE’S cost.
+                The LESSEE is responsible for taking out</p>
+                
+                <p class=MsoNormal>adequate insurance to cover theft or burglary of tradable
+                stock and goods.</p>
+                
+                <h1><a name="_Toc80136270">20. LESSOR’S LIABILITY</a></h1>
+                
+                <p class=MsoNormal>20.1 The LESSEE shall have no claim against the LESSOR in
+                regard to any accident, injury,</p>
+                
+                <p class=MsoNormal>loss or damage arising out of <i>“vis major”, “casus
+                fortuitus</i>” or any other cause wholly or</p>
+                
+                <p class=MsoNormal>partially outside the LESSOR’S control or arising from any
+                change in the name of the</p>
+                
+                <p class=MsoNormal>building complex in which the PREMISES are situated, or in
+                the description or address of</p>
+                
+                <p class=MsoNormal>the PREMISES or Building.</p>
+                
+                <p class=MsoNormal>20.2 The LESSEE shall furthermore not have any claim of any
+                nature whatsoever against the</p>
+                
+                <p class=MsoNormal>LESSOR for any accident, injury, loss or damage caused
+                through any negligence</p>
+                
+                <p class=MsoNormal>whatsoever on the part of the LESSOR, its principal,
+                members, servants or agents.</p>
+                
+                <p class=MsoNormal>20.3 The LESSEE may not withhold or delay payment of any
+                amounts due to the LESSOR in</p>
+                
+                <p class=MsoNormal>terms of this Lease by reason of the PREMISES or the
+                Building being in a defective</p>
+                
+                <p class=MsoNormal>condition or in a state of disrepair or any particular
+                repair not being effected by the</p>
+                
+                <p class=MsoNormal>LESSOR.</p>
+                
+                <p class=MsoNormal>20.4 The LESSOR shall similarly not be responsible for any
+                damage done to the LESSEE’s</p>
+                
+                <p class=MsoNormal>stock, IT Systems, books, papers, fixtures, fittings, and/or
+                any other assets on the</p>
+                
+                <p class=MsoNormal>PREMISES by leakage or by rain, hail, wind, lightening,
+                flood, explosion, fire, or by reason</p>
+                
+                <p class=MsoNormal>of strikes, riots, nuclear holocaust, enemies of the
+                Republic.</p>
+                
+                <h1><a name="_Hlk80135733"></a><a name="_Toc80136271">21. FAILURE OF SERVICES</a></h1>
+                
+                <p class=MsoNormal>21.1 The LESSOR shall not be liable for the failure or
+                breakdown of lifts, escalators, hoists or</p>
+                
+                <p class=MsoNormal>electricity or water supply, or air conditioning, or by
+                reason of any defect in any equipment</p>
+                
+                <p class=MsoNormal>of the LESSOR servicing the PREMISES and/or the building
+                from any cause whatsoever.</p>
+                
+                <p class=MsoNormal>21.2 The LESSEE shall not have any claim for damages nor be
+                entitled to cancel this lease or to</p>
+                
+                <p class=MsoNormal>receive any diminution or abatement or remission of rental
+                by reason of the fact that any of</p>
+                
+                <p class=MsoNormal>the services have failed or been interrupted, nor shall the
+                LESSOR be held responsible for</p>
+                
+                <p class=MsoNormal>any delays occasioned by the breakdown of any escalators,
+                lifts, hoists or other services</p>
+                
+                <p class=MsoNormal>mentioned.</p>
+                
+                <h1><a name="_Toc80136272">22. DISHONOURING OF CHEQUES</a></h1>
+                
+                <p class=MsoNormal>No indulgence, waiver or concession to the LESSEE in regard
+                to the payment of rental or</p>
+                
+                <p class=MsoNormal>otherwise, shall be regarded as binding on the LESSOR, nor
+                preclude the LESSOR from relying on</p>
+                
+                <p class=MsoNormal>the full rights and recourse available in terms hereof, it
+                being specifically agreed that the payment of</p>
+                
+                <p class=MsoNormal>rental by way of cheque is an indulgence to the LESSEE and
+                in the event of such cheques being</p>
+                
+                <p class=MsoNormal>dishonoured for any reason whatsoever, the LESSEE shall be
+                obliged to effect payment of any</p>
+                
+                <p class=MsoNormal>amount due in cash or by way of EFT, and the LESSEE shall
+                thereafter be obliged to likewise effect</p>
+                
+                <p class=MsoNormal>all further payments of any amounts due in terms hereof in
+                cash and the LESSOR shall be entitled,</p>
+                
+                <p class=MsoNormal>in addition, to recover from the LESSEE, the costs involved
+                in depositing or clearing such cheques.</p>
+                
+                <h1><a name="_Toc80136273">23. BREACH OF CONTRACT</a></h1>
+                
+                <p class=MsoNormal>23. Should the LESSEE:</p>
+                
+                <p class=MsoNormal>23.1 fail to pay any amount due by it in terms of this lease
+                on due date or;</p>
+                
+                <p class=MsoNormal>23.2 commit any other breach of any condition of this lease,
+                whether such breach constitutes a</p>
+                
+                <p class=MsoNormal>material breach or not, and fails to remedy that breach
+                within a period of <b><i>14 (FOURTEEN)</i></b></p>
+                
+                <p class=MsoNormal>days after giving written notice to that effect to it by the
+                LESSOR (provided that such</p>
+                
+                <p class=MsoNormal>breach be one which is not reasonably capable of being
+                remedied within the said period of</p>
+                
+                <p class=MsoNormal><b><i>14 (FOURTEEN) </i></b>days or breach any of the
+                conditions of the lease and thereafter again</p>
+                
+                <p class=MsoNormal>commit a breach of any condition of the lease (whether the
+                same condition or not) within a</p>
+                
+                <p class=MsoNormal>period of <b><i>2 (TWO) </i></b>months after the earlier
+                breach aforesaid; or</p>
+                
+                <p class=MsoNormal>23.3 commit any act of insolvency then and in any of such
+                events the LESSOR shall, without</p>
+                
+                <p class=MsoNormal>prejudice to its right to damages or to its right to eject
+                the LESSEE from the PREMISES or</p>
+                
+                <p class=MsoNormal>to any other claim of any nature whatever that the LESSOR
+                may have against the LESSEE</p>
+                
+                <p class=MsoNormal>as a result thereof </p>
+                
+                <p class=MsoNormal>23.3.1 be entitled to cancel this lease; or</p>
+                
+                <p class=MsoNormal>23.3.2 be entitled to remedy such breach and immediately
+                recover the total cost incurred by</p>
+                
+                <p class=MsoNormal>the LESSOR in so doing from the LESSEE and the LESSEE hereby
+                undertakes to pay</p>
+                
+                <p class=MsoNormal>and shall be obliged to pay to the LESSOR the total cost
+                incurred.</p>
+                
+                <p class=MsoNormal>23.4 While the LESSEE remains in occupation of the PREMISES
+                and irrespective of any</p>
+                
+                <p class=MsoNormal>dispute between the parties, including but not being
+                restricted to a dispute as to the</p>
+                
+                <p class=MsoNormal>LESSOR’S right to cancel this Lease, then –</p>
+                
+                <p class=MsoNormal>23.4.1 the LESSEE shall continue to pay all amounts due to
+                the LESSOR in terms of this</p>
+                
+                <p class=MsoNormal>Lease on the due dates;</p>
+                
+                <p class=MsoNormal>23.4.2 the LESSOR shall be entitled to recover and accept
+                those payments; and</p>
+                
+                <p class=MsoNormal>23.4.3 the acceptance by the LESSOR of those payments shall
+                be without prejudice to and</p>
+                
+                <p class=MsoNormal>shall not in any manner whatsoever affect the LESSOR’S claim
+                to cancellation of this</p>
+                
+                <p class=MsoNormal>lease or for damages of any other nature whatsoever.</p>
+                
+                <p class=MsoNormal>23.5 Should the dispute between the LESSOR and the LESSEE be
+                determined in favour of the</p>
+                
+                <p class=MsoNormal>LESSOR, then the payments made to the LESSOR in terms of
+                this sub-paragraph shall be</p>
+                
+                <p class=MsoNormal>regarded as amounts paid by the LESSEE on account of the
+                loss/or damages sustained by</p>
+                
+                <p class=MsoNormal>the LESSOR as a result of the holding-over by the LESSEE of
+                the PREMISES.</p>
+                
+                <h1><a name="_Toc80136274">24. JURISDICTION AND GOVERNING LAWS</a></h1>
+                
+                <p class=MsoNormal>24.1 The parties hereby consent in terms of <i>section 45 of
+                the Magistrates Court Act 32 of 1944</i></p>
+                
+                <p class=MsoNormal><i>as amended </i>to the jurisdiction of the Magistrates
+                Court of the Republic of South Africa in</p>
+                
+                <p class=MsoNormal>respect of any action or proceedings which may be instituted
+                arising out of this agreement</p>
+                
+                <p class=MsoNormal>or from any renewal of the lease thereof.</p>
+                
+                <p class=MsoNormal>24.2 Notwithstanding the aforesaid, LESSOR shall not be
+                restricted to proceed in the high court</p>
+                
+                <p class=MsoNormal>of competent jurisdiction in respect of any claim or breach
+                arising hereto and/or</p>
+                
+                <p class=MsoNormal>for any urgent interim relief sought.</p>
+                
+                <p class=MsoNormal>24.3 This agreement shall be governed in accordance with the
+                laws of the Republic of South</p>
+                
+                <p class=MsoNormal>Africa.</p>
+                
+                <h1><a name="_Toc80136275">25. LESSOR’S LATITUDE, INDULGENCE OF TIME AND
+                EXCLUSION OF ESTOPPEL</a></h1>
+                
+                <p class=MsoNormal>25.1 No relaxation or indulgence which the LESSOR may
+                represent to the LESSEE, nor any</p>
+                
+                <p class=MsoNormal>failure or neglect upon the part of the LESSOR in enforcing
+                compliance with any of the</p>
+                
+                <p class=MsoNormal>terms and conditions of this Lease or any extensions granted
+                by the LESSOR to the</p>
+                
+                <p class=MsoNormal>LESSEE for due observance of any of the terms and conditions
+                hereof shall be tantamount</p>
+                
+                <p class=MsoNormal>to a waiver thereof, and in particular, no acceptance by the
+                LESSOR of rent after due date</p>
+                
+                <p class=MsoNormal>(whether on one or more occasions) shall preclude or stop
+                the LESSOR from exercising</p>
+                
+                <p class=MsoNormal>any of his rights by reason of any subsequent payment not
+                being made by the LESSEE</p>
+                
+                <p class=MsoNormal>strictly by the due date.</p>
+                
+                <p class=MsoNormal>25.2 Further, receipt of rental or any other payment by the
+                LESSOR or his agents of rental</p>
+                
+                <p class=MsoNormal>shall in no way whatsoever prejudice or operate as a waiver,
+                rescission or abandonment of</p>
+                
+                <p class=MsoNormal>any cancellation or right of cancellation effected or
+                acquired prior to such receipt.</p>
+                
+                <p class=MsoNormal>25.3 Should the LESSEE fail to comply with any of its
+                obligations hereunder, the</p>
+                
+                <p class=MsoNormal>LESSOR may carry out such obligations on behalf of the
+                LESSEE and recover the costs</p>
+                
+                <p class=MsoNormal>thereof from the LESSEE without prejudice to any of the LESSOR’S
+                other rights hereunder.</p>
+                
+                <h1><a name="_Toc80136276">26. LEGAL COSTS</a></h1>
+                
+                <p class=MsoNormal>26.1 The legal costs incidental to and associated in the
+                drafting of this agreement shall be borne</p>
+                
+                <p class=MsoNormal>by the LESSOR.</p>
+                
+                <p class=MsoNormal>26.2 In the event that the LESSOR hires the services of an
+                attorney in order to collect arrears</p>
+                
+                <p class=MsoNormal>rental either non litigiously and/or litigiously, the LESSEE
+                shall be responsible for the</p>
+                
+                <p class=MsoNormal>payment of collection commission on such amounts collected
+                at the rate of <b>10 % (TEN</b></p>
+                
+                <p class=MsoNormal><b>PERCENT) </b>and tender the legal costs of the LESSOR on
+                the attorney and own client scale.</p>
+                
+                <h1><a name="_Toc80136277">27. COMMON USE</a></h1>
+                
+                <p class=MsoNormal>The LESSOR and the LESSEE record and agree that all the
+                terms and conditions of this Lease</p>
+                
+                <p class=MsoNormal>relating to the PREMISES shall relate <i>mutates mutandis </i>to
+                all portions of the building / property of</p>
+                
+                <p class=MsoNormal>which the LESSEE has the common use together with other
+                tenants</p>
+                
+                <h1><a name="_Toc80136278">28. VARIATION</a></h1>
+                
+                <p class=MsoNormal>No variation of this agreement shall be of any force or
+                effect unless reduced to writing and duly</p>
+                
+                <p class=MsoNormal>signed by the LESSOR and the LESSEE.</p>
+                
+                <h1><a name="_Toc80136279">29. AUTHORITY OF PERSON ACTING ON BEHALF OF THE
+                LESSEE</a></h1>
+                
+                <p class=MsoNormal>29.1 Where the lease is executed in a representative
+                capacity, the person signing duly</p>
+                
+                <p class=MsoNormal>represents that he is duly authorised to do so.</p>
+                
+                <p class=MsoNormal>29.2 Where parties misrepresent their scope and authority they
+                shall become jointly and</p>
+                
+                <p class=MsoNormal>severally liable with the Company/ Close Corporation or
+                business entity for fulfilment of</p>
+                
+                <p class=MsoNormal>their duties hereto.</p>
+                
+                <h1><a name="_Toc80136280">30. SEVERANCE</a></h1>
+                
+                <p class=MsoNormal>If a clause in this agreement is determined by any court or
+                other competent authority to be</p>
+                
+                <p class=MsoNormal>unlawful and/or unenforceable, the other clauses of this
+                agreement will continue in force and effect.</p>
+                
+                <h1><a name="_Toc80136281">31. CESSION AND ASSIGNMENT</a></h1>
+                
+                <p class=MsoNormal>The LESSEE shall not be entitled to cede, assign or delegate
+                any of its rights and/or obligations in</p>
+                
+                <p class=MsoNormal>terms of or arising from this Agreement to any third party
+                without the prior written consent of the</p>
+                
+                <p class=MsoNormal>LESSOR.</p>
+                
+                <h1><a name="_Toc80136282">32. GENERAL</a></h1>
+                
+                <p class=MsoNormal>32.1 This agreement contains the entire agreement between
+                the Parties as to the subject matter</p>
+                
+                <p class=MsoNormal>hereof.</p>
+                
+                <p class=MsoNormal>32.2 No party shall have any claim or right of action
+                arising from any undertaking, representation</p>
+                
+                <p class=MsoNormal>or warranty not included in this agreement.</p>
+                
+                <p class=MsoNormal>32.3 No failure by any party to enforce any provision of
+                this agreement shall constitute a waiver</p>
+                
+                <p class=MsoNormal>of such provision or affect in any way that Party’s right to
+                require performance of any such</p>
+                
+                <p class=MsoNormal>provision at any time in the future, nor shall the waiver of
+                any subsequent breach nullify the</p>
+                
+                <p class=MsoNormal>effectiveness of the provision itself.</p>
+                
+                <p class=MsoNormal>32.4 No agreement to vary, add to or cancel this agreement
+                shall be of any force or effect unless</p>
+                
+                <p class=MsoNormal>reduced to writing and signed by or on behalf of all the
+                Parties.</p>
+                
+                <p class=MsoNormal>32.5 Any unlawful or unenforceable provision of this
+                agreement may be severed, and the</p>
+                
+                <p class=MsoNormal>remaining provisions of this agreement continue to be in
+                force.</p>
+                
+                <p class=MsoNormal>32.6 This agreement shall be binding on and enforceable by
+                and against the estates, heirs,</p>
+                
+                <p class=MsoNormal>executors, administrators, trustees, assigns, liquidators,
+                curators, business rescue</p>
+                
+                <p class=MsoNormal>practitioners or other legal representatives, as the case
+                may be, of the Parties.</p>
+                
+                <h1><a name="_Toc80136283">33. RECONSTITUTION OF MEMBER’S INTEREST HOLDING IN
+                THE LESSOR</a></h1>
+                
+                <p class=MsoNormal>In the event that the member’s interest in the LESSOR is
+                reconstituted or should there be a new</p>
+                
+                <p class=MsoNormal>owner of the LESSOR through member’s interest holding, the
+                terms and conditions contained in</p>
+                
+                <p class=MsoNormal>this agreement shall continue uninterrupted under the same
+                rights and obligations created hereto,</p>
+                
+                <p class=MsoNormal>unless otherwise amended by agreement between the parties or
+                terminated as aforesaid or upon</p>
+                
+                <p class=MsoNormal>expiry hereof.</p>
+                
+                <h1><a name="_Toc80136284">34. SURETY</a></h1>
+                
+                <p class=MsoNormal>In the event of the LESSEE being a Company, Close
+                Corporation or Trust, it warrants that its</p>
+                
+                <p class=MsoNormal>directors, members or trustees shall bind themselves as
+                sureties and co-principal debtors for the</p>
+                
+                <p class=MsoNormal>due and proper fulfilment by the Company, Close Corporation
+                or Trust of all its obligations in terms</p>
+                
+                <p class=MsoNormal>of this agreement of lease</p>
+                
+                <h1><a name="_Toc80136285">35. UNDERTAKING</a></h1>
+                
+                <p class=MsoNormal>The parties do hereby acknowledge that in order to give
+                effect to the terms and conditions of this</p>
+                
+                <p class=MsoNormal>agreement, the parties hereby undertake to fulfil all their
+                obligations created herein <i>bona fides</i>, in</p>
+                
+                <p class=MsoNormal>good faith.</p>
+                
+                <h1><a name="_Toc80136286">36. LESSEES ACCEPTANCE</a></h1>
+                
+                <p class=MsoNormal>THUS DONE AND SIGNED AT _________________________ on this
+                the ________ day</p>
+                
+                <p class=MsoNormal>of_____________________________ 2020</p>
+                
+                <p class=MsoNormal>AS WITNESSES:</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>1.
+                ________________________                                                         
+                __________________________</p>
+                
+                <p class=MsoNormal>                                                                    
+                                                               For and on behalf of the LESSEE</p>
+                
+                <p class=MsoNormal>NAME:</p>
+                
+                <p class=MsoNormal>2. _________________________</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <h1><a name="_Toc80136287">37. LESSORS ACCEPTANCE</a></h1>
+                
+                <p class=MsoNormal>THUS DONE AND SIGNED AT _________________________ on this
+                the ________ day</p>
+                
+                <p class=MsoNormal>of_____________________________2020</p>
+                
+                <p class=MsoNormal>AS WITNESSES:</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                <p class=MsoNormal>1.
+                _____________________                                                                 
+                _____________________________</p>
+                
+                <p class=MsoNormal>                                                                                                                  
+                For and on behalf of the LESSOR</p>
+                
+                <p class=MsoNormal>2. _____________________</p>
+                
+                <p class=MsoNormal>&nbsp;</p>
+                
+                </div>
+                
+                </body>
+                
+                </html>
+                
+            </div>
+   
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"  data-dismiss="modal"
+          >Confirm</button>        </div>
+      </div>
+    </div>
+  </div>

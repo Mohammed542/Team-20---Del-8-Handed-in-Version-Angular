@@ -1,0 +1,321 @@
+<!-- <app-navbar-landlord></app-navbar-landlord> -->
+<div>
+  <a mat-button href="https://imgur.com/gallery/iupIKJh" target="_blank">
+    Help?
+    </a>
+  
+    <button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Hint: Capture Municipal Bill</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+            <div class="ml-5 mt-5 row">    
+              This screen allows the user to capture a municipal bill for a building.
+             <br>
+              The user will enter the values found on the physical bill onto the system.  
+             <br>
+              The user will select inputs for the fields which provide options.                     
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+      <!-- Aasif End -->
+<div class="position-form">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="Save($event)"
+    class="example-form"
+    style="text-align: center"
+  >
+    <mat-card style="text-align: left; max-width: 70%">
+      <mat-card-content>
+        <h2>
+          <b><u>Capture Municipal Bill</u></b>
+        </h2>
+
+        <mat-form-field class="input-size" appearance="fill">
+          <mat-label>Building Name</mat-label>
+          <mat-select matInput formControlName="Building">
+            <mat-option
+              *ngFor="let building of buildings"
+              [value]="building.BuildingID"
+            >
+              {{ building.BuildingName }}
+            </mat-option>
+          </mat-select>
+          <mat-error class="errors" *ngIf="form.controls.Building">
+            {{ getErrorMessage("Building") }}
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <br />
+
+        <mat-form-field class="input-size" appearance="fill">
+          <mat-label>Month</mat-label>
+          <mat-select matInput formControlName="Month" name="Month">
+            <mat-option *ngFor="let month of months" [value]="month">
+              {{ month }}
+            </mat-option>
+          </mat-select>
+          <mat-error class="errors" *ngIf="form.controls.Month">
+            {{ getErrorMessage("Month") }}
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <br />
+       
+
+        <h2>
+          <b><u>Rates And Taxes</u></b>
+        </h2>
+        <div class="bg-gray">
+          R
+          <mat-form-field class="input-size" appearance="fill">
+            <mat-label>Amount </mat-label>
+            <input
+              matInput
+              type="number"
+              min="1"
+              placeholder="e.g 135"
+              formControlName="Rate"
+              name="Rate"
+            />
+            <mat-error class="errors" *ngIf="form.controls.Rate">
+              {{ getErrorMessage("Rate") }}
+            </mat-error>
+          </mat-form-field>
+          <br />
+        </div>
+
+        <br /><br /><br />
+        <h2 class="sub-title">
+          <b><u>Water and Sanitation</u></b>
+        </h2>
+
+        <div class="row">
+          <div class="one" style="text-align: left">
+            <h3>
+              <b><u>Previous Water Reading</u></b>
+            </h3>
+
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Previous Date</mat-label>
+              <input
+                formControlName="PreviousDate"
+                name="PreviousDate"
+                matInput
+                [max]="maxDate"
+                [matDatepicker]="picker"
+              />
+              <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error class="errors" *ngIf="form.controls.PreviousDate">
+                {{ getErrorMessage("PreviousDate") }}
+              </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Previous Reading</mat-label>
+              <input
+                matInput
+                type="number"
+                min="1"
+                placeholder="e.g 135KL"
+                formControlName="PreviousReading"
+                name="PreviousReading"
+              />
+              <mat-error class="errors" *ngIf="form.controls.PreviousReading">
+                {{ getErrorMessage("PreviousReading") }}
+              </mat-error>
+            </mat-form-field>
+            KL
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+            <h3>
+              <b><u>Sewage</u></b>
+            </h3>
+            &nbsp;&nbsp;
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Disposal Charge Percentage</mat-label>
+              <input
+                matInput
+                placeholder="65%"
+                type="number"
+                formControlName="DisposalChargePercentage"
+                name="DisposalChargePercentage"
+              />
+              <mat-error
+                class="errors"
+                *ngIf="form.controls.DisposalChargePercentage"
+              >
+                {{ getErrorMessage("DisposalChargePercentage") }}
+              </mat-error>
+            </mat-form-field>
+            %<br /><br />
+
+            R
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Disposal Charge Rate</mat-label>
+              <input
+                matInput
+                placeholder="155"
+                type="number"
+                formControlName="DisposalChargeRate"
+                name="DisposalChargeRate"
+              />
+              <mat-error
+                class="errors"
+                *ngIf="form.controls.DisposalChargeRate"
+              >
+                {{ getErrorMessage("DisposalChargeRate") }}
+              </mat-error>
+            </mat-form-field>
+            <br /><br />
+
+            R
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Sewage Fixed Charge Rate</mat-label>
+              <input
+                matInput
+                placeholder="155"
+                type="number"
+                formControlName="SewageFixedChargeRate"
+                name="SewageFixedChargeRate"
+              />
+              <mat-error
+                class="errors"
+                *ngIf="form.controls.SewageFixedChargeRate"
+              >
+                {{ getErrorMessage("SewageFixedChargeRate") }}
+              </mat-error>
+            </mat-form-field>
+            Per Day<br /><br />
+          </div>
+
+          <div class="column" style="text-align: left">
+            <h3>
+              <b><u>Current Water Reading</u></b>
+            </h3>
+            &nbsp;&nbsp;&nbsp;
+
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Current Date</mat-label>
+              <input
+                formControlName="CurrentDate"
+                name="CurrentDate"
+                [min]="maxDate"
+                (dateChange)="calculateDayDifference()"
+                matInput
+                [matDatepicker]="picker2"
+              />
+              <mat-datepicker-toggle matSuffix [for]="picker2">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error class="errors" *ngIf="form.controls.CurrentDate">
+                {{ getErrorMessage("CurrentDate") }}
+              </mat-error> </mat-form-field
+            >&nbsp;<br />
+
+            &nbsp;&nbsp;&nbsp;
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Current Reading</mat-label>
+              <input
+                type="number"
+                matInput
+                placeholder="154"
+                formControlName="CurrentReading"
+                name="CurrentReading"
+                (change)="calculateConsumptionDifference()"
+              />
+              <mat-error class="errors" *ngIf="form.controls.CurrentReading">
+                {{ getErrorMessage("CurrentReading") }}
+              </mat-error>
+            </mat-form-field>
+            KL
+            <br />
+
+            R
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Consumption Charge Rate</mat-label>
+              <input
+                matInput
+                placeholder="215"
+                type="number"
+                formControlName="ConsumptionChargeRate"
+                name="ConsumptionChargeRate"
+                (change)="calculateConsumptionCharge()"
+              />
+              <mat-error
+                class="errors"
+                *ngIf="form.controls.ConsumptionChargeRate"
+              >
+                {{ getErrorMessage("ConsumptionChargeRate") }}
+              </mat-error>
+            </mat-form-field>
+            Per KL<br /><br />
+
+            R
+            <mat-form-field class="input-size" appearance="fill">
+              <mat-label>Fixed Charge Rate</mat-label>
+              <input
+                type="number"
+                matInput
+                placeholder="Ex. 95KL"
+                formControlName="FixedChargeRate"
+                name="FixedChargeRate"
+                (change)="calculateFixedChargeDifference()"
+              />
+              <mat-error
+                class="errors"
+                *ngIf="form.controls.ConsumptionChargeRate"
+              >
+                {{ getErrorMessage("ConsumptionChargeRate") }}
+              </mat-error>
+            </mat-form-field>
+            Per day<br /><br />
+          </div>
+
+          <div style="text-align: left">
+            <h3>
+              Amount of Days: <b>{{ amountOfDays }}</b>
+            </h3>
+            <h3>
+              Consumption Amount: <b>{{ consumptionAmount }}</b>
+            </h3>
+            <h3>
+              Consumption Charge Amount: R<b>{{ consumptionChargeAmount }}</b>
+            </h3>
+            <h3>
+              Fixed Charge Amount: R<b>{{ fixedChargeAmount }}</b>
+            </h3>
+            <h3>
+              Total: R<b>{{ total }}</b>
+            </h3>
+          </div>
+
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-raised-button type="submit">SAVE</button> -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">NEXT</button>
+        <button mat-raised-button color="danger">CANCEL</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+

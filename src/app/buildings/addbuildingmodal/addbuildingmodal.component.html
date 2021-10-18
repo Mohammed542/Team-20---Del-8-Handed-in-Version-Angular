@@ -1,0 +1,75 @@
+<div style="padding: 10%">
+    <form [formGroup]="createForm" (ngSubmit)="AddUnits($event)" class="example-form" style="text-align: center;">
+        <mat-card style="text-align: center; max-width: 100%;">
+            <mat-card-content>
+                <div class="row">
+                    <div class="column">
+                        <div>
+                            <h2><b><u>Add Unit to {{ globalBID }}</u></b></h2>
+
+                            <!-- <mat-form-field appearance="fill" style="width:270px">
+                                <mat-label>Building Name</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let building of buildings" [value]="building.BuildingName" (click)="storeBuilding(building.BuildingID)">{{building.BuildingName}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-hint align="end">Select a Building Name</mat-hint>
+                            </mat-form-field><br> -->
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>Unit Type</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let type of types" [value]="type.Description" (click)="storeType(type.UnitTypeID)">{{type.Description}}</mat-option>
+                                </mat-select>
+                                <mat-hint align="end">Select a Unit Type</mat-hint>
+                            </mat-form-field><br>
+
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Unit Number</mat-label>
+                                <input matInput placeholder="205" formControlName="UnitNumber" name="UnitNumber">
+                                <mat-hint align="end">Unit Number</mat-hint>
+                            </mat-form-field><br>
+
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Number of Bedrooms</mat-label>
+                                <input matInput placeholder="3" formControlName="NumberOfBedrooms"
+                                    name="NumberOfBedrooms">
+                                <mat-hint align="end">Number of Bedrooms</mat-hint>
+                            </mat-form-field><br>
+
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Number of Bathrooms</mat-label>
+                                <input matInput placeholder="2" formControlName="NumberOfBathrooms"
+                                    name="NumberOfBathrooms">
+                                <mat-hint align="end">Number of Bathrooms</mat-hint>
+                            </mat-form-field><br>
+
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Unit Size</mat-label>
+                                <input matInput placeholder="72 sqm" formControlName="Size" name="Size">
+                                <mat-hint align="end">Square Meters</mat-hint>
+                            </mat-form-field><br>
+
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Rental Amount</mat-label>
+                                <input matInput placeholder="500" formControlName="RentalAmount" name="RentalAmount">
+                                <mat-hint align="end">Amount</mat-hint>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- <h1>Upload Photos</h1>
+                        <button mat-raised-button color="primary">Upload</button> -->
+                        <!-- <br><br><br><br><br>
+                        <br><br><br><br><br>
+                        <br><br><br><br><br>
+                        <br><br><br><br><br> -->
+                        <!-- <br> -->
+                        <button class="btns" mat-raised-button color="warn" type="button" (click)="cancel()">CANCEL</button>
+                        <button class="btns" mat-raised-button color="primary" type="submit">ADD UNIT</button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

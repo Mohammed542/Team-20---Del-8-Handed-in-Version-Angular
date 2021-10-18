@@ -1,0 +1,132 @@
+<div class="container mt-3" style="border-style: solid; height: 72%;">
+  <div class="container mt-5 mb-5" style="border-style: solid">
+    <h1 style="text-align: center">
+      <u><b>Fault Details:</b></u><br>
+    </h1>
+    <div class="row">
+      <div class="col mb-5">
+        <div>
+       
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Building Name:</label>
+            <div class="col-5">
+              <input class="form-control" type="text" name="" id="">
+            </div>
+          </div><br>
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Unit Number:</label>
+            <div class="col-5">
+              <input class="form-control" type="text" name="" id="">
+            </div>
+          </div><br>
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Fault Report Date:</label>
+            <div class="col-5">
+              <input class="form-control" type="date" name="" id="">
+            </div>
+          </div><br>
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Service Provider ID Number:</label>
+            <div class="col-5">
+              <input class="form-control" type="text" name="" id="">
+            </div>
+          </div><br>
+          <div class="form-group row centre">
+            <label class="col-3 col-form-label">Amount Quoted:</label>
+            <div class="col-5">
+              <input class="form-control" type="text" name="" id="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col mb-5 ">
+      
+        <div class="form-group row ">
+            <label class="col-3 col-form-label">Assigned Service Provider:</label>
+            <div class="col-5">
+              <!-- Populated Information -->
+            </div>
+          </div><br />
+          <div class="form-group row ">
+            <label class="col-3 col-form-label">Service Provider Cellphone Number:</label>
+            <div class="col-5">
+               <!-- Populated Information -->
+            </div>
+          </div><br />
+          <div class="form-group row ">
+            <label class="col-3 col-form-label">Service Provider Email Address:</label>
+            <div class="col-5">
+               <!-- Populated Information -->
+            </div>
+          </div><br />
+            
+          <div class="form-group row ">
+            <label class="col-3 col-form-label">Date of Employment:</label>
+            <div class="col-5">
+              <input class="form-control" type="date" name="" id="">
+            </div>
+          </div><br />
+          <div class="form-group row ">
+            <label class="col-3 col-form-label">Fault Details:</label>
+            <div class="col-5">
+              <textarea class="form-control" name="" id="" cols="30" rows="8"></textarea>
+            </div>
+          </div><br />
+    
+      </div>
+    </div>
+    <button class="button button5" data-bs-toggle="modal" data-bs-target="#successEditModal" >Save</button>
+    <button class="button button5" style="margin-left: 60px" data-bs-toggle="modal" data-bs-target="#cancelModal">Cancel</button>
+  
+   
+  </div>
+
+
+</div>
+
+<!-- Cancel Modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Unsuccessful Fault Edit</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+          <h3>Your changes have not been saved. Please try again</h3>
+          <br><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="width: 100px;">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Edit Modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="successEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Successful Fault Edit</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <br><br>
+          <h3>Your changes have been successfully saved</h3>
+          <br><br>
+        </div>
+        <div class="modal-footer">
+          <a href="viewfault" type="button" class="btn btn-primary"  style="width: 100px;">OK</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>

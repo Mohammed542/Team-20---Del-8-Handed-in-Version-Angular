@@ -1,0 +1,50 @@
+.main-div{
+    // border: 1px solid;
+    // border-color: black;
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+
+    padding: 20px;
+
+    .row{
+        padding: 2px;
+    }
+
+    h1{
+        display: inline;
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+
+        padding: 1px;
+    }
+
+    h3{
+        display: inline;
+        font-weight: bold;
+        text-align: center;
+
+        padding: 10px;
+    }
+
+    .left-div{
+        // text-align: end;
+        margin-top: 1.2em;;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .right-div{
+        text-align: start;
+    }
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+<div class="container mt-3" style="border-style: solid">
+  <div class="row">
+    <div class="col mt-5 mb-5">
+      <div *ngIf="isShown">
+        <mat-card>
+          <div style="background-color: lightgray"><a href="viewfault">
+            <h3>Unit 1 Fault</h3>
+          </a>
+          
+          </div>
+
+          <mat-card-content >
+           
+              <p>
+               
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse tincidunt condimentum arcu in tincidunt. Vivamus
+                euismod bibendum ex, eget dapibus nisi. Curabitur vel rhoncus
+                massa. Donec posuere efficitur risus, a tristique tortor venenatis
+                id. Etiam eget risus consequat, sollicitudin orci sed, viverra
+                ligula. Sed molestie, augue non ultricies luctus, nisl nisi
+                dignissim metus, a porta ante nunc ac est. Morbi euismod nisl et
+                turpis pretium commodo. Proin at dolor quam. Duis in nisl erat.
+                Vestibulum non justo molestie, sodales lorem at, sagittis metus.
+                Cras tellus lacus, lacinia eget massa ut, euismod eleifend augue.
+               
+              </p>
+          
+          </mat-card-content> 
+        </mat-card>
+        <br /><br />
+        <mat-card>
+          <div style="background-color: lightgray"><a href="viewfault">
+            <h3>Unit 2 Fault</h3>
+          </a>
+          
+          </div>
+
+          <mat-card-content>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse tincidunt condimentum arcu in tincidunt. Vivamus
+              euismod bibendum ex, eget dapibus nisi. Curabitur vel rhoncus
+              massa. Donec posuere efficitur risus, a tristique tortor venenatis
+              id. Etiam eget risus consequat, sollicitudin orci sed, viverra
+              ligula. Sed molestie, augue non ultricies luctus, nisl nisi
+              dignissim metus, a porta ante nunc ac est. Morbi euismod nisl et
+              turpis pretium commodo. Proin at dolor quam. Duis in nisl erat.
+              Vestibulum non justo molestie, sodales lorem at, sagittis metus.
+              Cras tellus lacus, lacinia eget massa ut, euismod eleifend augue.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+
+    <div class="col mt-5 mb-5 centre">
+      <h1 style="text-align: center"><u><b>Search For Fault:</b></u></h1>
+      <br />
+      <div class="form-group row centre">
+        <label class="col-3 col-form-label">Building Name:</label>
+        <div class="col-5">
+          <select class="form-select">
+            <option selected>--Select Building--</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+<br>
+      <div class="form-group row centre">
+        <label class="col-3 col-form-label">Unit Number:</label>
+        <div class="col-5">
+          <select class="form-select">
+            <option selected>--Select Unit Number--</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div> <br><br>
+      <button class="button button5" (click)="toggleShow()">Search Fault</button>
+    </div>
+  </div>
+</div>

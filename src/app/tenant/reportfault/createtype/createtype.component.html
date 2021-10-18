@@ -1,0 +1,26 @@
+
+        <div class="container">
+
+            <h1 class="centre">Add Fault Type</h1> <br>
+                <div class="row">
+                    <div class="form-group flex" style="margin: 0 auto; width: 300px;">
+                        <label >Description:</label>
+                        <input class="form-control"  [(ngModel)]="service.faultTypes.Description" name="Description"
+                            #Description="ngModel"
+                            >
+                    </div>
+    
+                </div>
+            
+           <div class="flex centre" style="margin-top: 50px;">
+    
+          
+                <button mat-raised-button color="accent" style="border-radius: 30px; width: 80px;" (click)="onSubmit()" mat-dialog-close>Send</button>
+                <a style="margin-left: 10px;" type="button" style="border-radius: 30px; margin-left: 10px; width: 80px;"  mat-raised-button color="basic" mat-dialog-close>Cancel</a>
+            </div>  
+       
+      
+    
+    
+    
+            </div>

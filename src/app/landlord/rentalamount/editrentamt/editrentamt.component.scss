@@ -1,0 +1,43 @@
+.main-div{
+    border: 1px solid;
+    border-color: black;
+
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 2%;
+
+    padding: 20px;
+
+    .control-div{
+        text-align: center;
+        
+        mat-form-field{
+            padding: 6px;
+        }
+    }
+
+    h1{
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+
+        padding: 10px;
+    }
+
+    .left-div{
+        text-align: end;
+        padding-top: 1.3%;
+    }
+
+    .right-div{
+        text-align: start;
+    }
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+}

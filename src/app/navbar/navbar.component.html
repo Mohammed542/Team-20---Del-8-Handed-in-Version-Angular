@@ -1,0 +1,335 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-xxl navbar-light sticky-top">
+  <div class="container-fluid" (window:resize)="windowAlterClasses()">
+    <a *ngIf="returnUserTypeId() === 1" class="navbar-brand" [routerLink]="'/landlord/home'"><img src="../../assets/Banner_png.png" alt="Prime Properties Logo Here"></a>
+    <a *ngIf="returnUserTypeId() === 2" class="navbar-brand" [routerLink]="'/tenant/home'"><img src="../../assets/Banner_png.png" alt="Prime Properties Logo Here"></a>
+    <a *ngIf="returnUserTypeId() === 4" class="navbar-brand" [routerLink]="'/landlord/home'"><img src="../../assets/Banner_png.png" alt="Prime Properties Logo Here"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Landlord -->
+    <div *ngIf="returnUserTypeId() === 1" class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Account</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/landlord/viewProfile'">My Profile</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/help-page'">Help</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+          </ul>
+        </li> -->
+
+        <li class="nav-item dropdown logout1-div" [ngClass]="alterClass()">
+          <a class="nav-link" [routerLink]="'landlord/viewProfile'" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Profile</span></a>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Property Management</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" tabindex="-1" [routerLink]="'/buildings'">Building</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="'/add-building'">Add Building</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/buildings'">Search Building</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/buildings'">Update Building</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/buildings'">Delete Building</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" tabindex="-1" [routerLink]="'/units'">Unit</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="'/add-unit'">Add Unit</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/units'">Search Unit</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/units'">Update Unit</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/units'">Delete Unit</a></li>
+              </ul>
+            </li>
+
+            <li><a class="dropdown-item" [routerLink]="'/landlord/viewTenant'">Tenant</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/serviceproviders'">Service Providers</a></li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" tabindex="-1" [routerLink]="'/searchmaintenance'">Maintenance</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="'/searchmaintenance'">View Maintenance</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/assignmaintenance'">Assign Maintenance</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Inspections</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/inspection/book'">Inspection Booking Slot Calendar</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/inspection/view-inspections'">Inspection List</a></li>
+            <!-- <li><a class="dropdown-item" [routerLink]="'/inspection/report-inspection'">Generate Inspection Report</a></li> -->
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Financial Matters</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+
+            <li><a class="dropdown-item" [routerLink]="'/landlord/payments'">Payments</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/invoice'">Charges/Accounts</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/statements'">Statements</a></li>
+
+            <!-- <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" tabindex="-1" [routerLink]="'/landlord/generateIncomeExpensesReport'">Reports</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="'/landlord/generateIncomeExpensesReport'">Generate Income & Expenses Report</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/report-maintenance'">Generate Maintenance Report</a>
+                <li><a class="dropdown-item" [routerLink]="'/landlord/financialmatters/generatewaterreport'">Generate Inspection Report</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/landlord/financialmatters/generatewaterreport'">Generate Water & Sanitation Report</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/landlord/financialmatters/generateelectricityreport'">Generate Electricity Report</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/landlord/generateoverduepaymentsreport'">Generate Overdue Payments Report</a></li>
+              </ul>
+            </li> -->
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item dropdown-toggle" tabindex="-1" [routerLink]="'/municipal-bill'">Municipality Bills</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="'/municipal-bill'">Capture Building Municipality Bill</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/water-and-electricity'">Capture Unit Municipality Bill</a></li>
+                <li><a class="dropdown-item" [routerLink]="'/landlord//view-municipal-bills'">View Municipality Bills</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/landlord/generateIncomeExpensesReport'">Generate Management Report</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/report-maintenance'">Generate Maintenance Report</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/inspection/report-inspection'">Generate Inspection Report</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/financialmatters/generatewaterreport'">Generate Water & Sanitation Report</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/financialmatters/generateelectricityreport'">Generate Electricity Report</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/generateoverduepaymentsreport'">Generate Overdue Payments Report</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rental Agreement</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/createagreement'">Create Rental Agreement</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/viewRentalAgreement'">View Rental Agreement</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/landlord/uploadRentalAgreement'">Upload Rental Agreement</a> </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown logout1-div" [ngClass]="alterClass()">
+          <a class="nav-link" (click)="logout()"><span>Logout</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tenant -->
+    <div *ngIf="returnUserTypeId() === 2" class="collapse navbar-collapse" id="navbarResponsive" style="justify-content: flex-start !important;">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/tenant/viewprofile'">My Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+          </ul>
+        </li> -->
+
+        <li class="nav-item dropdown logout1-div" [ngClass]="alterClass()">
+          <a class="nav-link" [routerLink]="'tenant/viewprofile'" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Profile</span></a>
+        </li>
+
+        <!-- <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" target="_blank" [routerLink]="'/viewfaulttenant'">About Page</a></li>
+          </ul>
+        </li> -->
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statements</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/tenant/generatestatement'">Generate Statement</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Proof of Payment</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/tenant/proofofpayment'">Upload Proof of Payment</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/tenant/readproofofpayment'">View Uploaded Proof of Payments</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rental Agreement</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/tenant/viewrentalagreement'">View Rental Agreement</a></li>
+          </ul>
+        </li>
+
+        <!-- <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Financials</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/tenant/vpayments'">View Payments</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/tenant/viewrentalagreement'">View Charges</a></li>
+          </ul>
+        </li> -->
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link" [routerLink]="'/tenant/financials'" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Financials</a>
+        </li>
+
+        <li class="nav-item dropdown logout1-div" [ngClass]="alterClass()">
+          <a class="nav-link" (click)="logout()"><span>Logout</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Admin -->
+    <div *ngIf="returnUserTypeId() === 4" class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/landlord/viewProfile'">My Profile</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/help-page'">Help</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+          </ul>
+        </li> -->
+
+        <!-- <li class="nav-item dropdown logout1-div" [ngClass]="alterClass()">
+          <a class="nav-link" [routerLink]="'landlord/home'" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Profile</span></a>
+        </li> -->
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrator</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'admin/audit-trail'">Audit Trail</a></li>
+            <!-- <li><a class="dropdown-item" [routerLink]="'admin/backupDatabase'">Backup Database</a></li>
+            <li><a class="dropdown-item" [routerLink]="'admin/restoreDatabase'">Restore Database</a></li> -->
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false'">Lookup Management</a>
+
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown'">
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/inspection-status'">Inspection Status</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/inspection-type'">Inspection Type</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/maintenance-status'">Maintenance Status</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/maintenance-type'">Maintenance Type</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/rental-agreement-status'">Rental Agreement Status</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/rental-agreement-type'">Rental Agreement Type</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/service-provider-category'">Service Provider Category</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/service-provider-status'">Service Provider Status</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/status'">Status</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/unit-status'">Unit Status</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/unit-type'">Unit Type</a>
+            </li>
+
+            <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/user-type'">User Type</a>
+            </li>
+
+            <!-- <li class="dropdown-submenu dropend">
+              <a class="dropdown-item" [routerLink]="'/admin/vat'">VAT</a>
+            </li> -->
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link" [routerLink]="'/admin/vat'" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">VAT</a>
+        </li>
+
+        <li class="nav-item dropdown" [ngClass]="alterClass()">
+          <a class="nav-link" [routerLink]="'landlord/viewLandlords'" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Landlords</a>
+
+          <!-- <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'landlord/viewLandlords'">View Landlords</a></li>
+          </ul> -->
+        </li>
+
+        <li class="nav-item dropdown logout1-div" [ngClass]="alterClass()">
+          <a class="nav-link" (click)="logout()"><span>Logout</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div style="justify-content: flex-end !important;" class="logout2-div">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown" [ngClass]="alterClass()" style="max-height: 72px;">
+          <a style="vertical-align: middle; display: flex;" class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="margin-top: 0.1em;">{{returnName()}}</span>&nbsp;<mat-icon>account_circle</mat-icon></a>
+          <ul class="dropdown-menu" [ngClass]="alterClass2()" aria-labelledby="navbarDropdown">
+            <li>
+              <a *ngIf="returnUserTypeId() === 1" class="dropdown-item" [routerLink]="'/landlord/viewProfile'">My Profile</a>
+              <a *ngIf="returnUserTypeId() === 2" class="dropdown-item" [routerLink]="'/tenant/viewprofile'">My Profile</a>
+            </li>
+            <li><a *ngIf="returnUserTypeId() === 1" class="dropdown-item" [routerLink]="'/help-page'">Help</a></li>
+            <li><a *ngIf="returnUserTypeId() === 2" class="dropdown-item" [routerLink]="'/tenant/help-tenant'">Help</a></li>
+            <li><a *ngIf="returnUserTypeId() === 4" class="dropdown-item" [routerLink]="'/admin/help-admin'">Help</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" [routerLink]="'/changepassword'">Change Password</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

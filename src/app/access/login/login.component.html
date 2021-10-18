@@ -1,0 +1,101 @@
+<div class="background">
+  <form *ngIf="!response" [formGroup]="createForm" class="example-form"
+    style="text-align: center">
+    <mat-card style="text-align: center; max-width: 40%">
+      <h1>Prime Properties Login</h1>
+
+      <mat-card-content>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="Email" name="Email" />
+          <button mat-icon-button matSuffix>
+            <mat-icon>person</mat-icon>
+          </button>
+          <mat-error class="errors" *ngIf="createForm.controls.Email">
+            {{ getErrorMessage("Email") }}
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="Password" name="Password"
+            [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="createForm.controls.Password">
+            {{ getErrorMessage("Password") }}
+          </mat-error>
+        </mat-form-field>
+
+        <br>
+
+        <a mat-flat-button (click)="reset()">Reset Password</a><br />
+        <a mat-flat-button [routerLink]="'/about'">About</a><br />
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [class.spinner]="loading" [disabled]="createForm.invalid || loading" (click)="login()">Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  <form *ngIf="response" [formGroup]="form" (ngSubmit)="validateOTP($event)" class="example-form"
+    style="text-align: center">
+    <mat-card style="text-align: center; max-width: 40%">
+      <h1>Prime Properties OTP</h1>
+
+      <mat-card-content>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>OTP</mat-label>
+          <input matInput placeholder="OTP" formControlName="OTP" name="OTP" />
+          <button mat-icon-button matSuffix>
+            <mat-icon>lock</mat-icon>
+          </button>
+          <mat-error class="errors" *ngIf="form.invalid">
+            This is a required field
+          </mat-error>
+        </mat-form-field>
+        <br />
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="form.invalid" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+
+<!-- aasifs code -->
+
+<div>
+  <a mat-button href="https://imgur.com/gallery/EnQnDPr" target="_blank">
+    Help?
+  </a>
+
+  <button class="submit btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Hint: Login !</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ml-5 mt-5 row">
+            This screen allows you to Login
+            <br>
+            The user can reset their passowrd as well
+            <br>
+            Click on the eye icon in the password field to reveal password
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Aasif End -->

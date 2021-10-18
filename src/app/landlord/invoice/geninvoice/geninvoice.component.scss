@@ -1,0 +1,45 @@
+.main-div{
+    // border: 1px solid;
+    // border-color: black;
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 10%;
+
+    padding: 20px;
+
+    h1{
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+
+        padding: 3px;
+    }
+
+    .container{
+        // border: 1px solid;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .template-div{
+        // width: 208px;
+        padding: 2%;
+        width: 21cm;
+        height: 29.7cm;
+        // margin: 30mm 45mm 30mm 45mm;
+
+        border: 1px solid;
+    }
+
+    .bottombuttons{
+        text-align: end;
+
+        button{
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+    }
+}

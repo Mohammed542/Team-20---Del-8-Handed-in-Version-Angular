@@ -1,0 +1,176 @@
+<br>
+
+<h1>Please Select which files you would like to upload:</h1>
+<br>
+<!-- <div class="main-div">
+    <form [formGroup]="form" (ngSubmit)="onClick(form.value)">
+    <div class="container">
+        <div class="row"><br></div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Building Name:</h5>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Building</mat-label>
+                    <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+                        <!-- <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option> -->
+                    <!--    <mat-option *ngIf="form.controls.selectedBuilding.value != '' && form.controls.selectedBuilding.value != undefined" [value]="none">None</mat-option>
+                        <mat-option *ngIf="allBuildings.length == 0" disabled>No Buildings</mat-option>
+                        <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{ buildings.Building.BuildingName }}</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Click the dropdown to select</mat-hint>
+                    <mat-error *ngIf="form.controls.selectedBuilding.invalid">{{getErrorMessage("building")}}</mat-error>
+                </mat-form-field>
+            </div> 
+        
+            <div class="col-md-6">
+                <h5>Unit Number:</h5>
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Unit</mat-label>
+                    <mat-select (selectionChange)="onUnitChange($event)" formControlName="selectedUnit">
+                        <!-- <mat-option *ngIf="unitsList.length == 0">No Units</mat-option>
+                        <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option> -->
+                     <!--  <mat-option *ngIf="form.controls.selectedUnit.value != '' && form.controls.selectedUnit.value != undefined">None</mat-option>
+                        <mat-option *ngIf="form.controls.selectedBuilding.value == undefined || form.controls.selectedBuilding.value == ''" disabled>Please select a building first</mat-option>
+                        <mat-option *ngIf="unitsList.length == 0 && !(form.controls.selectedBuilding.value == undefined || form.controls.selectedBuilding.value == '')" disabled>No Units</mat-option>
+                        <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Click the dropdown to select</mat-hint>
+                    <mat-error *ngIf="form.controls.selectedUnit.invalid">{{getErrorMessage("unit")}}</mat-error>
+                <mat-error *ngIf="form.controls.selectedUnit.value == 'none'">Please select a unit</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="left-div col-lg-6">
+
+                <div class="control-div">
+                    <input type="text" hidden>
+                    <h4>File Name:</h4>
+                </div>
+            </div>
+
+            <div class="right-div col-lg-6">
+                <div class="control-div" *ngIf="theFile">
+                    <mat-form-field appearance="clear">
+                        <input matInput id="fileInput" type="text" value="{{theFile.name}}">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <button class="midbut" mat-flat-button color="primary" type="button" (click)="fileInput.click()">
+            SELECT FILE
+        </button>
+        <button class="midbut" mat-flat-button color="warn" type="button" (click)="removeFile()" [disabled]="!base64File && !url">
+            REMOVE FILE
+        </button>
+        <input #fileInput type="file" (change)="onFileChange($event)" style="display:none" />
+    </div>
+
+    <br><br>
+
+    <div *ngIf="base64File" class="main-div pdf-div">
+        <h3>Is this the correct file that you want to upload?</h3>
+        <iframe id="pdfiframe" src=""></iframe>
+    </div>
+
+    <div *ngIf="url" class="main-div pdf-div">
+        <h3>Is this the correct file that you want to upload?</h3>
+        <img id="imgselector" src="{{ url }}">
+    </div>
+
+    <br><br>
+
+    <button class="bottombuttons" type="button" mat-flat-button color="primary" (click)="onClickCancel()">Cancel</button>
+    <button class="bottombuttons" type="submit" mat-flat-button color="primary" (click)="openConfirmDialog()" [disabled]="!form.valid || !theFile">Submit</button>
+
+    </form> 
+</div> -->
+
+<div class="main-div">
+        <div class="row control-div">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" mat-flat-button color="primary" (click)="onClickRA()">Upload Rental Agreement Document</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+               
+                <div class="row">
+                    <div class="col-md-12">
+                      <button type="button" mat-flat-button color="primary" (click)="onClickTenantID()">Upload Tenant ID Document</button>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row control-div">
+           
+            <div class="col-lg-6">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                    <br><br>
+                       <button type="button" mat-flat-button color="primary" (click)="onClickCompanyCIPC()">Upload Company's CIPC Document</button>   
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                    <br><br>
+                       <button type="button" mat-flat-button color="primary" (click)="onClickCompanyID()">Upload Company's ID Document</button>  
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="bottombuttons">
+            <button mat-flat-button color="primary" (click)="onCancel()">Return to Homepage</button>
+        </div>
+
+</div>
+
+
+
+
+
+<button class="submit btn-sm btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Hint</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title" id="exampleModalLabel">Hint: Upload Various Rental Agreement Documents</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">  
+<div class="ml-5 mt-5 row">    
+This screen allows you to select what document you would like to upload for a specific building and unit.
+<br><br>
+There are four buttons which take you to the necessary page that allows you to upload the required document.
+<br><br>
+Select the "Upload Rental Agreement Document" button to navigate to the page that allows you to upload a Rental Agreement document.
+<br><br>
+Select the "Upload Tenant ID Document" button to navigate to the page that allows you to upload a Tenant's Identification document.
+<br><br>
+Select the "Upload Company's CIPC Document" button to navigate to the page that allows you to upload a company's Companies and Intellectual Property Commission document.
+<br><br>
+Select the "Upload Company's ID Document" button to navigate to the page that allows you to upload a company's Identification document.
+<br><br>
+You can select the "Return to Homepage" button located at the bottom to return to the home screen.
+</div>
+</div>

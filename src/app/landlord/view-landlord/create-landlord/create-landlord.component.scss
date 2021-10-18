@@ -1,0 +1,44 @@
+.main-div{
+    border: 1px solid;
+    border-color: black;
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+
+    padding: 20px;
+
+    h1{
+        display: inline;
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+
+        padding: 10px;
+    }
+
+    h3{
+        display: inline;
+        font-weight: bold;
+        text-align: center;
+
+        padding: 10px;
+    }
+
+    .left-div{
+        text-align: end;
+        margin-top: 2%;;
+    }
+
+    .right-div{
+        text-align: start;
+    }
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<app-tenant></app-tenant>
+<div class="container mt-3">
+    <div class="container mt-5 mb-5" style="border-style: solid; width: 50%;">
+        <h1 style="text-align: center">
+            <u><b>Report a Fault:</b></u><br>
+        </h1><br>
+        <div class="form-group row ">
+            <label class="col-6 col-form-label">Fault Type:</label>
+            <div class="col-5" >
+              <select class="form-select" #FaultType="ngModel" 
+              [(ngModel)]="fService.formData.FaultType" >
+                <option selected>--Select Unit--</option>
+                <option *ngFor="let fault of faultList" value="{{fault.Description}}" >{{fault.Description}}</option>
+              </select>
+              
+            </div>
+            <div class="col-3"> <button class="btn btn-primary" (click)="addFault()">Add Fault Type</button></div>
+
+
+          </div><br>
+        <div class="form-group row ">
+            <label class="col-6 col-form-label">Building Name:</label>
+            <div class="col-5">
+              <select class="form-control" (change)="getUnits($event.target.value); getBDetails($event.target.value)" #BuildingName="ngModel"
+              [(ngModel)]="fService.formData.BuildingName" >
+                <option value="0">--Select Building--</option>
+                <option *ngFor="let building of buildingList" value="{{building.BuildingID}}">
+                  {{building.BuildingName}}</option>
+              </select>
+            </div>
+          </div><br>
+          <div class="form-group row ">
+            <label class="col-6 col-form-label">Unit Number:</label>
+            <div class="col-5" >
+              <select class="form-select" #UnitID="ngModel"  (change)="getDetails($event.target.value)"
+              [(ngModel)]="fService.formData.UnitNumber" >
+                <option selected>--Select Unit--</option>
+                <option *ngFor="let unit of unitList" value="{{unit.UnitID}}" >{{unit.UnitNumber}}</option>
+              </select>
+            </div>
+          </div><br>
+
+    
+
+        <p>Fault Details:</p>
+        
+            <br>
+            <textarea name="" id="" cols="88" rows="10" #Fault_Details="ngModel" 
+            [(ngModel)]="fService.formData.Fault_Details"></textarea>
+        
+            <br><br>
+        
+
+        <button class="button button5" data-bs-dismiss="modal">Cancel</button>
+        <button class="button button5" style="float: right;" data-bs-toggle="modal" data-bs-target="#reportModal" (click)="onSubmit()">Submit Fault</button>
+
+    </div>
+</div>
+
+<!-- Fault Reported Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="exampleModalLabel">Fault Reported</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <br><br>
+                <h3>Your fault has been sent to the landlord.</h3>
+                <br><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="width: 100px;">OK</button>
+
+            </div>
+        </div>
+    </div>
+</div>

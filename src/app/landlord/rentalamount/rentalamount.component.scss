@@ -1,0 +1,77 @@
+.main-div{
+    border: 1px solid;
+    border-color: black;
+
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 2%;
+
+    padding: 20px;
+
+    .container-fluid{
+        .row{
+
+            .left-div{
+                text-align: start;
+                h2{
+                    font-weight: bold;
+                    text-decoration: underline;
+        
+                    padding: 10px;
+                }
+            }
+
+            .right-div{
+                text-align: end;
+                
+                #filterButton{
+                    margin-left: 10px;
+        
+                    button{
+                        border: 1px solid;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+}
+
+// .container{
+//     border: 1px solid;
+//     width: 100%;
+
+//     margin-top: 2%;
+
+//     .row{
+
+//         .left-div{
+//             h2{
+//                 font-weight: bold;
+//                 text-decoration: underline;
+    
+//                 padding: 10px;
+//             }
+//         }
+
+//         .right-div{
+//             text-align: end;
+            
+//             #filterButton{
+//                 margin-left: 10px;
+    
+//                 button{
+//                     border: 1px solid;
+//                 }
+//             }
+//         }
+//     }
+// }

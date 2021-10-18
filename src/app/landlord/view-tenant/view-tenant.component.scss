@@ -1,0 +1,115 @@
+// .main-div{
+    // border: 1px solid;
+    // border-color: black;
+
+    // width: 90%;
+    // margin-left: 5%;
+    // margin-top: 5%;
+
+    // padding: 20px;
+    // padding-bottom: 50px;
+
+    // .heading-div{
+    //     // border: 1px solid;
+
+    //     h1{
+    //         font-weight: bold;
+    //         text-decoration: underline;
+    //         text-align: left;
+    //         display: inline;
+    
+    //         padding: 10px;
+    //     }
+    // }
+
+    // h1{
+    //     font-weight: bold;
+    //     text-decoration: underline;
+    //     text-align: left;
+    //     display: inline;
+
+    //     padding: 10px;
+    // }
+
+    // .right-div{
+    //     float: right;
+    //     // border: 1px solid;a
+
+    //     .searchBar{
+    //         margin: 0px 10px;
+    //     }
+
+    //     #filterButton{
+    //         border: 1px solid;
+    //     }
+    // }
+
+    // h4{
+    //     text-decoration: underline;
+    //     text-align: center;
+    // }
+
+    // .control-div{
+    //     text-align: center;
+        
+    //     mat-form-field{
+    //         padding: 6px;
+    //     }
+    // }
+
+    // .bottombuttons{
+    //     text-align: end;
+
+    //     button{
+    //         margin: 10px;
+    //     }
+    // }
+// }
+
+// ::ng-deep mat-form-field{
+//     border: 1px solid;
+//     border-color: red;
+// }
+
+.main-div{
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+
+    padding: 20px;
+
+    .left-div{
+        text-align: start;
+
+        h1{
+            display: inline;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: start;
+
+            padding: 10px;
+        }
+    }
+
+    .right-div{
+        text-align: end;
+
+        #filterButton{
+            margin-top: -10px;
+            margin-left: 10px;
+
+            button{
+                border: 1px solid;
+            }
+        }
+    }
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col mt-5 mb-5">
+      <div *ngIf="MaintenanceResult && MaintenanceResult.length > 0" >
+        <mat-card *ngFor="let maintenance of MaintenanceResult" style="margin: 10px;">
+          <div>
+            <a href="#" (click)="routeToViewMaintenance(maintenance)">
+              <h3>{{ maintenance.BuildingName }} Maintenance</h3>
+            </a>
+          </div>
+          <mat-card-content>
+            <p>Building Selected: {{ maintenance.BuildingName }}</p>
+            <p>Maintenance Type Selected: {{ maintenance.MaintenanceType }}</p>
+            <p>Service Provider: {{ maintenance.ServiceProvider }}</p>
+            <p></p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="MaintenanceResult && MaintenanceResult.length == 0">
+        <mat-card>
+          <h3>
+            No Results available for the selected Building and Maintenance Type
+          </h3>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="col mt-5 mb-5 centre">
+      <h1 style="text-align: center">
+        <u><b>Search For Maintenance:</b></u>
+      </h1>
+      <br />
+      <div class="form-group row centre">
+        <label class="col-3 col-form-label">Building Name:</label>
+        <div class="col-5">
+          <select class="form-select" [(ngModel)]="buildingSelected">
+            <option *ngFor="let building of Buildings$ | async" [value]="building.BuildingID">{{ building.BuildingName
+              }}</option>
+          </select>
+        </div>
+      </div>
+      <br />
+      <div class="form-group row centre">
+        <label class="col-3 col-form-label">Maintenance Type:</label>
+        <div class="col-5">
+          <select class="form-select" [(ngModel)]="maintenanceTypeSelected">
+            <option *ngFor="let maintenanceType of MaintenanceTypes$ | async"
+              [value]="maintenanceType.MaintenanceTypeID">{{ maintenanceType.Description }}</option>
+          </select>
+        </div>
+      </div>
+      <br /><br />
+      <!-- <button (click)="searchMaintenance()" [disabled]="!maintenanceTypeSelected || !buildingSelected">
+        Search Maintenance
+      </button> -->
+      <button mat-flat-button color="primary" (click)="searchMaintenance()" [disabled]="!maintenanceTypeSelected || !buildingSelected">Search Maintenance</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<div style="padding-left: 30%; padding-top: 5%;">
+  <form [formGroup]="form" (ngSubmit)="Capture()" class="example-form" style="text-align: center;">
+    <mat-card style="text-align: center; max-width: 60%;" >
+        <mat-card-content>
+            <div class="row">
+
+                    <div class="one" style="text-align: left; ">
+                      <h3><b><u>Disposal Charge</u></b></h3>
+                      &nbsp;&nbsp;
+                      Disposal Charge Percentage
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>{{DisposalChargePercentage}}%</mat-label>
+                        <input matInput placeholder="65%" type="number"  disabled>
+                      </mat-form-field><br><br>
+                      Disposal Charge Rate
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>R {{DisposalChargeRate}}.00  KL</mat-label>
+                        <input matInput placeholder="155" type="number" disabled>
+                      </mat-form-field><br><br>
+                      Consumption Amount: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>{{ConsumptionAmount}} KL</mat-label>
+                        <input matInput placeholder="APL1" disabled>
+                      </mat-form-field><br><br>
+
+                      Sewage Disposal Charge Units: &nbsp;&nbsp;
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>{{SewageDisposalChargeUnits}}</mat-label>
+                        <input matInput placeholder="APL2" disabled>
+                      </mat-form-field><br><br>
+                      Disposal Charge Amount: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>{{DisposalChargeAmount}}</mat-label>
+                        <input matInput placeholder="APL4" disabled>
+                      </mat-form-field><br><br>
+                      Fixed Charge Amount: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>{{FixedChargeAmount}}</mat-label>
+                        <input matInput placeholder="APL5" disabled>
+                      </mat-form-field><br><br>
+
+
+                      <!-- todo: add validations -->
+                      <form [formGroup]="form" (ngSubmit)="Save($event)" class="example-form" style="text-align: center;">
+                        <h3><b><u>Electricty</u></b></h3>
+                        &nbsp;&nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>Units</mat-label>
+                          <input matInput placeholder="155" type="number" formControlName="Units" name="Units">
+                        </mat-form-field> Kwh<br><br>
+                        &nbsp;&nbsp;
+                        <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>Rate</mat-label>
+                          <input matInput placeholder="350" type="number" formControlName="Rate" name="Rate">
+                        </mat-form-field> Kwh<br><br>
+                      <button mat-raised-button>SAVE</button>
+                      </form>
+                    </div>
+
+
+                    <div class="column"  style="text-align: left;">
+                      <h3><b><u>Sewage Fixed Charge</u></b></h3>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>R {{SewageFixedChargeRate}}.00 Per Day</mat-label>
+                        <input matInput placeholder="155" type="number" disabled>
+                      </mat-form-field><br><br>
+
+                      Amount of Days: &nbsp;&nbsp;<mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>{{Days}} days</mat-label>
+                        <input matInput placeholder="APL3" disabled>
+                      </mat-form-field><br><br>
+
+                      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                      Building Electricty Amount: &nbsp;&nbsp;
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>{{BuildingElectrictyAmount}} Kwh</mat-label>
+                        <input matInput placeholder="APL3" disabled>
+                      </mat-form-field><br><br>
+                    </div>
+                  </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button [disabled]="form.invalid || !clicked" color="primary" type="submit">CAPTURE</button>
+          <button mat-raised-button color="danger">CANCEL</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  </div>

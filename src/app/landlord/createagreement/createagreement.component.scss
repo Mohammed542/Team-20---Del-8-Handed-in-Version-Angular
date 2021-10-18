@@ -1,0 +1,145 @@
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  padding: 5px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.centre {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  height: 120px;
+  width: 200px;
+
+  text-align: center;
+  text-decoration: none;
+  float: right;
+  font-size: 24px;
+  margin: 16px 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 50px;
+}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+
+@font-face {
+  font-family: "Cambria Math";
+  panose-1: 2 4 5 3 5 4 6 3 2 4;
+}
+@font-face {
+  font-family: Calibri;
+  panose-1: 2 15 5 2 2 2 4 3 2 4;
+}
+@font-face {
+  font-family: "Calibri Light";
+  panose-1: 2 15 3 2 2 2 4 3 2 4;
+}
+/* Style Definitions */
+p.MsoNormal,
+li.MsoNormal,
+div.MsoNormal {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 8pt;
+  margin-left: 0cm;
+  line-height: 107%;
+  font-size: 11pt;
+  font-family: "Calibri", sans-serif;
+}
+h1 {
+  mso-style-link: "Heading 1 Char";
+  margin-top: 12pt;
+  margin-right: 0cm;
+  margin-bottom: 0cm;
+  margin-left: 0cm;
+  line-height: 107%;
+  page-break-after: avoid;
+  font-size: 16pt;
+  font-family: "Calibri Light", sans-serif;
+  color: #2f5496;
+  font-weight: normal;
+}
+p.MsoToc1,
+li.MsoToc1,
+div.MsoToc1 {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 5pt;
+  margin-left: 0cm;
+  line-height: 107%;
+  font-size: 11pt;
+  font-family: "Calibri", sans-serif;
+}
+a:link,
+span.MsoHyperlink {
+  color: #0563c1;
+  text-decoration: underline;
+}
+a:visited,
+span.MsoHyperlinkFollowed {
+  color: #954f72;
+  text-decoration: underline;
+}
+p.MsoTocHeading,
+li.MsoTocHeading,
+div.MsoTocHeading {
+  margin-top: 12pt;
+  margin-right: 0cm;
+  margin-bottom: 0cm;
+  margin-left: 0cm;
+  line-height: 107%;
+  page-break-after: avoid;
+  font-size: 16pt;
+  font-family: "Calibri Light", sans-serif;
+  color: #2f5496;
+}
+span.Heading1Char {
+  mso-style-name: "Heading 1 Char";
+  mso-style-link: "Heading 1";
+  font-family: "Calibri Light", sans-serif;
+  color: #2f5496;
+}
+.MsoChpDefault {
+  font-family: "Calibri", sans-serif;
+}
+.MsoPapDefault {
+  margin-bottom: 8pt;
+  line-height: 107%;
+}
+@page WordSection1 {
+  size: 21cm 841.95pt;
+  margin: 72pt 72pt 72pt 72pt;
+}
+div.WordSection1 {
+  page: WordSection1;
+}

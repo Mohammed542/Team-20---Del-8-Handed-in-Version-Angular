@@ -1,0 +1,64 @@
+label {
+  display: inline-block;
+  // width: 200px;
+  // text-align: right;
+  padding: 5px
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.centre {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  
+  border: none;
+  color: white;
+  height: 150px;
+  width: 260px;
+   
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 16px 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 60px;
+}
+
+.button5 {
+  background-color: rgb(22, 105, 230);
+  color: rgb(252, 248, 248);
+  border: 2px solid #404be0;
+ 
+}
+
+.button5:hover {
+  background-color: #4c87f5;
+  color: white;
+
+}
+
+.bottombuttons{
+  text-align: end;
+
+  button{
+      margin: 10px;
+  }
+}

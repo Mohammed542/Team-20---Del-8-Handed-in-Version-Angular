@@ -1,0 +1,282 @@
+<div class="container mt-3" style="height: 72%; width:50%">
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="container mt-5 mb-5">
+      <h1 style="text-align: center">
+        <u><b>Edit Maintenance Details:</b></u
+        ><br />
+      </h1>
+
+      <div class="col mb-5">
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label">Maintenance Type:</label>
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              disabled
+              value="{{ selectedMaintenance.MaintenanceType }}"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label">Building Name:</label>
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              disabled
+              value="{{ selectedMaintenance.BuildingName }}"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label">Service Provider Name:</label>
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              disabled
+              value="{{ selectedMaintenance.ServiceProvider }}"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label">Service Provider Email:</label>
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              disabled
+              value="{{ selectedMaintenance.SPEmailAddress }}"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label"
+            >Service Provider ID Number:</label
+          >
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              disabled
+              value="{{ selectedMaintenance.MaintenanceType }}"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label"
+            >Service Provider Cellphone Number:</label
+          >
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              disabled
+              value="{{ selectedMaintenance.SPCellphoneNumber }}"
+            />
+          </div>
+        </div>
+        <br />
+        <!-- <div class="form-group row centre">
+          <label class="col-3 col-form-label">Date of Employment:</label>
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              formControlName="dateOfEmployment"
+            />
+            <div
+              *ngIf="
+                dateOfEmployment.invalid &&
+                (dateOfEmployment.dirty || dateOfEmployment.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="dateOfEmployment.errors?.required">
+                Date of Employment is required.
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label">Date of Employment:</label>
+          <div class="col-5">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="text"
+                navigation="select"
+                name="dp"
+                ngbDatepicker
+                #d="ngbDatepicker"
+                formControlName="dateOfEmployment"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary fas fa-calendar"
+                  (click)="d.toggle()"
+                  type="button"
+                ></button>
+              </div>
+            </div>
+            <div
+              *ngIf="
+                dateOfEmployment.invalid &&
+                (dateOfEmployment.dirty || dateOfEmployment.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="dateOfEmployment.errors?.required">
+                Date of Employment is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="form-group row centre">
+          <label class="col-3 col-form-label">Amount Quoted:</label>
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="text"
+              name=""
+              id=""
+              formControlName="amountQuoted"
+            />
+            <div
+              *ngIf="
+                amountQuoted.invalid &&
+                (amountQuoted.dirty || amountQuoted.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="amountQuoted.errors?.required">
+                Amount Quoted is required.
+              </div>
+              <div *ngIf="amountQuoted.errors?.pattern">
+                Amount Quoted should be a Number eg. (5345)
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <!-- <button
+        class="button button5"
+        type="submit"
+        [disabled]="!editForm.valid"
+        data-bs-toggle="modal"
+        data-bs-target="#successEditModal"
+      >
+        Save
+      </button>
+      <button
+        class="button button5"
+        style="margin-left: 60px"
+        (click)="cancelEdit()"
+      >
+        Cancel
+      </button> -->
+
+      <div class="bottombuttons">
+        <button mat-flat-button color="primary" type="submit" [disabled]="!editForm.valid" data-bs-toggle="modal" data-bs-target="#successEditModal">Save</button>
+        <button mat-flat-button color="primary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Cancel Modal -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="cancelModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">
+          Unsuccessful Maintenance Edit
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <br /><br />
+        <h3>Your changes have not been saved. Please try again</h3>
+        <br /><br />
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          style="width: 100px;"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Edit Modal -->
+
+<!-- Modal -->
+
+<ng-template #successEditModal let-modal>
+  <div class="modal-header">
+    <h1 class="modal-title" id="exampleModalLabel">
+      Successful Maintenance Edit
+    </h1>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modal.dismiss()"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <br /><br />
+    <h3>Your changes have been successfully saved</h3>
+    <br /><br />
+  </div>
+  <div class="modal-footer">
+    <a
+      type="button"
+      class="btn btn-primary"
+      style="width: 100px;"
+      (click)="routeToViewMaintenance()"
+      >OK</a
+    >
+  </div>
+</ng-template>

@@ -1,0 +1,44 @@
+.main-div{
+    // border: 1px solid;
+    // border-color: black;
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+
+    padding: 20px;
+
+    .left-div{
+        text-align: start;
+
+        h1{
+            display: inline;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: start;
+
+            padding: 10px;
+        }
+    }
+
+    .right-div{
+        text-align: end;
+
+        #filterButton{
+            margin-top: -10px;
+            margin-left: 10px;
+
+            button{
+                border: 1px solid;
+            }
+        }
+    }
+
+    .bottombuttons{
+        text-align: center;
+    
+        button{
+            margin: 10px;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+<div class="main-div">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 left-div">
+                <h2>List of Rental Amounts:</h2>
+            </div>
+    
+            <div class="col-md-8 right-div">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix>search</mat-icon>
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Placeholder">
+                </mat-form-field>
+    
+                <span id="filterButton"><button mat-flat-button>Filter Options</button></span>
+            </div>
+    
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Rental Agreement ID</th>
+                            <th>Unit ID</th>
+                            <th>Building ID</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th><button mat-icon-button (click)="onAddClick()"><mat-icon>add</mat-icon></button></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button mat-icon-button [matMenuTriggerFor]="menu"
+                                    aria-label="Example icon button with a vertical three dot icon">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+    
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="onEditClick()">
+                                        <mat-icon>edit</mat-icon>
+                                        <span>Edit Rental Amount</span>
+                                    </button>
+                                    <button mat-menu-item (click)="onDeleteClick()">
+                                        <mat-icon>delete</mat-icon>
+                                        <span>Delete Rental Amount</span>
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

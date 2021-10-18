@@ -1,0 +1,123 @@
+<div mat-dialog-title style="display: flex; justify-content: space-between">
+  <h1>Update inpsection slot</h1>
+  <button mat-mini-fab color="warn" (click)="deleteInspection()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+<mat-hint *ngIf="data.Comment === '' && loading === false && form.controls?.selectedUnit?.value && inspectionTypes?.length === 1">
+  There is already a {{form.controls?.inspectionType?.value === 1 ? 'clear out inspection' : 'take on inspection'}} for
+  this unit. Inspection type cannot be updated
+</mat-hint>
+<mat-hint *ngIf="data.Comment !== ''">
+  This inspection has been completed. Fields cannot be updated
+</mat-hint>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <div class="col-12">
+      <label class="col-6">Date:</label>
+
+      <mat-form-field appearance="fill" class="col-6">
+        <mat-label>Choose a date</mat-label>
+        <input matInput formControlName="date" readonly />
+      </mat-form-field>
+      <mat-hint align="end">Please choose a date</mat-hint>
+    </div>
+
+    <div class="col-12">
+      <label class="col-6">Building Name:</label>
+
+      <mat-form-field appearance="fill" class="col-6">
+        <mat-label>Select Building</mat-label>
+        <mat-select (selectionChange)="onBuildingChange($event)" formControlName="selectedBuilding">
+          <mat-option *ngFor="let buildings of allBuildings" [value]="buildings.Building.BuildingID">{{
+            buildings.Building.BuildingName }}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Please select a building</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <label class="col-6">Unit Number:</label>
+
+      <mat-form-field appearance="fill" class="col-6">
+        <mat-label>Select Unit</mat-label>
+        <mat-select (selectionChange)="onUnitChange($event)" formControlName="selectedUnit">
+          <mat-option *ngIf="unitsList.length == 0">No Units</mat-option>
+          <mat-option *ngFor="let units of unitsList" [value]="units.UnitID">{{ units.UnitNumber }}
+          </mat-option>
+        </mat-select>
+        <mat-hint align="end">Please choose a unit number</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <label class="col-6">Tenant Name:</label>
+
+      <mat-form-field appearance="fill" class="col-6">
+        <input matInput placeholder="Name" formControlName="tenantName" readonly />
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <label class="col-6">Tenant Cellphone Number:</label>
+
+      <mat-form-field appearance="fill" class="col-6">
+        <input matInput placeholder="Cellphone Number" formControlName="cellPhoneNumber" readonly />
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <label class="col-6">Tenant Email Address:</label>
+
+      <mat-form-field appearance="fill" class="col-6">
+        <input matInput placeholder="Email Address" formControlName="emailAddress" readonly />
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 mb-5">
+      <label class="col-6">Inspection Type:</label>
+
+      <mat-form-field appearance="fill" class="col-6">
+        <mat-label>Select InspectionType</mat-label>
+        <mat-select formControlName="inspectionType">
+          <mat-option *ngFor="let item of inspectionTypes" [value]="item.InspectionTypeID">{{ item.Description }}
+          </mat-option>
+        </mat-select>
+        <mat-hint>Please select building and unit number before selecting inspection type</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <label class="col-6">Start Time:</label>
+      <mat-form-field appearance="fill" class="col-6">
+        <mat-label>Select Start Time</mat-label>
+        <mat-select formControlName="startTime" (selectionChange)="onChangeStartDate($event.value)">
+          <mat-option *ngFor="let time of startTimes" [value]="time">{{
+            time
+            }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="showError">This time has already been booked.</mat-error>        
+      <mat-hint align="end">Please select a start time</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <label class="col-6">End Time:</label>
+      <mat-form-field appearance="fill" class="col-6">
+        <input matInput placeholder="End Time" formControlName="endTime" datetime="HH:mm:ss" readonly />
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions style="display: flex; justify-content: space-between">
+  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+  <div>
+    <button  mat-raised-button color="primary" (click)="dialogRef.close(data.InspectionID)" [disabled]="form.invalid || loading"
+      class="mr-3">
+      Complete
+    </button>
+    <button mat-raised-button color="primary" (click)="update()" [disabled]="form.invalid || showError || loading || data.Comment !== ''">
+      Update
+    </button>
+  </div>
+</div>

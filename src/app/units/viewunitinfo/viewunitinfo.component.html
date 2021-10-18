@@ -1,0 +1,91 @@
+<div>
+    <form [formGroup]="form" class="example-form" style="text-align: center;">
+        <mat-card style="text-align: center; max-width: 100%;">
+            <mat-card-content>
+                <div class="row">
+                    <h2><b><u>View Unit Info</u></b></h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Building Name</mat-label>
+                            <input matInput formControlName="BuildingName" name="BuildingName" type="text" readonly>
+                            <mat-hint align="end">Building Name</mat-hint>
+                        </mat-form-field><br>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Number of Bedrooms</mat-label>
+                            <input matInput formControlName="NumberOfBedrooms" name="NumberOfBedrooms" type="number" readonly>
+                            <mat-hint align="end">Number of Bedrooms</mat-hint>
+                        </mat-form-field><br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Unit Number</mat-label>
+                            <input matInput formControlName="UnitNumber" name="UnitNumber" type="number" readonly>
+                            <mat-hint align="end">Unit Number</mat-hint>
+                        </mat-form-field><br>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Number of Bathrooms</mat-label>
+                            <input matInput formControlName="NumberOfBathrooms" name="NumberOfBathrooms" type="number" readonly>
+                            <mat-hint align="end">Number of Bathrooms</mat-hint>
+                        </mat-form-field><br>
+                    </div>                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Unit Type</mat-label>
+                            <input matInput formControlName="UnitType" name="UnitType" type="text" readonly>
+                            <mat-hint align="end">Select a Unit Type</mat-hint>
+                        </mat-form-field><br>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Building Size</mat-label>
+                            <input matInput placeholder="Size" formControlName="Size" name="Size" type="number" readonly>
+                            <mat-hint align="end">Square Meters</mat-hint>
+                        </mat-form-field><br>
+                    </div>                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Rental Amount</mat-label>
+                            <input matInput placeholder="RentalAmount" formControlName="RentalAmount" name="RentalAmount" type="number" readonly>
+                            <mat-hint align="end">Amount</mat-hint>
+                        </mat-form-field><br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Effective Date</mat-label>
+                            <input matInput placeholder="Effective Date" formControlName="Date" name="Date" readonly>
+                            <mat-hint align="end">Effective Date</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="warn" (click)="cancel()">CLOSE</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

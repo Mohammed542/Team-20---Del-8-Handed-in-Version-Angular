@@ -1,0 +1,25 @@
+<div style="padding-left: 40%; padding-top: 5%;">
+  <form class="example-form" style="text-align: center;">
+    <mat-card style="text-align: center; max-width: 30%;" >
+      <h1>Prime Properties</h1> 
+      <h2>Reset Password</h2>
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username">
+          </mat-form-field><br>
+  
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password">
+            </mat-form-field><br>
+          <a (click)="reset()">Reset Password</a><br>
+      </form>    
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="reset()">Reset Password</button> 
+      </mat-card-actions>
+  </mat-card>    
+  </form>      
+</div>
